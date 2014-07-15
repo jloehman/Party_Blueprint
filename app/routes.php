@@ -27,3 +27,7 @@ Route::get('/register', function()
 {
 	return View::make('pages_folder.register');
 });
+Route::get('/login', function()
+{
+	return View::make('pages_folder.login');
+});
