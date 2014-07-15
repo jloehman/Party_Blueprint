@@ -12,15 +12,17 @@ class Party extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('party', function($party)
+		Schema::create('parties', function($party)
 		{
 			$party->increments('id');
 			$party->string('party_name', 30);
-			$party->string('month', 15);
-			$party->integer('date');
-			$party->integer('year');
+			$party->date('event_date');
+			$party->time('start_time');
+			$party->time('end_time');
+			$party->string('location');
 			$party->string('user_id');
-			$party->integer('budget');
+			$party->double('budget');
+			$party->timestamps();
 
 		});
 
@@ -33,7 +35,7 @@ class Party extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('party');
+		Schema::drop('parties');
 	}
 
 }

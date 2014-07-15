@@ -12,11 +12,14 @@ class TodoList extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('todo_list', function($todo)
+		Schema::create('todos', function($todo)
 		{
 			$todo->increments('id');
-			$todo->string('title');
-			$todo->string('party_type');
+			$todo->string('name');
+			$todo->boolean('is_complete');
+			$todo->dateTime('due_at');
+			$todo->string('party_id');
+			$todo->timestamps();
 		});	
 	}
 
@@ -27,7 +30,7 @@ class TodoList extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('todo_list');
+		Schema::drop('todos');
 
 	}
 

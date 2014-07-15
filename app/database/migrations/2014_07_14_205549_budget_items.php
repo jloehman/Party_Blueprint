@@ -15,9 +15,11 @@ class BudgetItems extends Migration {
 		Schema::create('budget_items', function($budget)
 		{
 			$budget->increments('id');
-			$budget->string('party_name', 30);
-			$budget->integer('cost');
-			$budget->string('party_type');
+			$budget->string('party_id', 30);
+			$budget->string('name');
+			$budget->double('cost');
+			$budget->boolean('is_purchased');
+			$budget->timestamps();
 
 		});
 
