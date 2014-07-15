@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Saltflakes">
+		<meta name="description" content="cloud pepper is a plain and fine web theme based on twitter bootstrap.">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+		<link rel="stylesheet" type="text/css" href="css/camera.css">
+		<link rel="stylesheet" type="text/css" href="css/colorbox.css">
+		<link rel="stylesheet" type="text/css" href="css/cloud-pepper.css">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" >
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico" >
+		<title>CLOUD PEPPER - portfolio</title>
+	</head>
+	<body>
+		<!-- navigation -->
+		<div class="container" id="cp-top">
+			<div class="row visible-desktop">
+				<div class="span12 cp-nav">
+					<a href="index.html">
+					<div class="cp-logo"><img src="img/logo.png" alt="logo">
+					</div> </a>
+					<ul>
+						<li>
+							<a href="contact.html"><span class="cp-nav-link cp-nav-active" id="contact">CONTACT</span></a>
+						</li>
+						<li>
+							<a href="clients.html"><span class="cp-nav-link" id="clients">CLIENTS</span></a>
+						</li>
+						<li>
+							<a href="services.html"><span class="cp-nav-link" id="services">SERVICES</span></a>
+						</li>
+						<li>
+							<a href="portfolio.html"><span class="cp-nav-link" id="portfolio">PORTFOLIO</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row hidden-desktop">
+				<div class="span12 cp-nav">
+					<a href="index.html">
+					<div class="cp-logo"><img src="img/logo.png" alt="logo">
+					</div></a>
+
+					<select id="cp-nav-mobile" size="1">
+						<option value="index.html" id="index">HOME</option>
+						<option value="portfolio.html cp-nav-active" id="portfolio">PORTFOLIO</option>
+						<option value="services.html" id="services">SERVICES</option>
+						<option value="clients.html" id="clients">CLIENTS</option>
+						<option value="contact.html" id="contact" selected>CONTACT</option>
+					</select>
+				</div>
+			</div>
+		</div><!-- end navigation -->
+
+		<!-- content -->
+		<!-- google maps -->
+		<div class="container">
+			<div class="row">
+				<div class="span12 cp-img-teaser">
+					<iframe class="cp-gmaps" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=de&amp;geocode=&amp;q=new+york&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=46.946584,87.978516&amp;ie=UTF8&amp;hq=&amp;hnear=New+York+City,+New+York&amp;ll=40.714353,-74.005973&amp;spn=0.088347,0.171833&amp;t=m&amp;z=13&amp;output=embed"></iframe>
+				</div>
+			</div>
+		</div><!-- end google maps -->
+
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h2>ABOUT US</h2>
+					<h3>Who we are</h3>
+					<hr>
+					<p>
+						Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row visible-desktop cp-row-seperator"></div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<h2>ADDRESS</h2>
+					<h3>Here we are</h3>
+					<hr>
+					<address>
+						<strong>CLOUD PEPPER</strong>
+						<br>
+						1111 Main Street
+						<br>
+						New York
+						<br>
+						USA
+						<br>
+						<br>
+						Phone +1 123 3456780
+						<br>
+						Fax +1 123 3456789
+						<br>
+						E-Mail <a href="mailto:info@mail.com">info@mail.com</a>
+						<br>
+						Web <a href="www.mail.com">http://www.mail.com</a>
+					</address>
+				</div>
+				<!-- form -->
+				<div class="span8 offset1">
+					<h2 id="nachricht">MAIL</h2>
+					<h3>Send us a message</h3>
+					<hr>
+					<form id="cp-form-message" method="get" action="#">
+						<fieldset>
+							<div class="input-prepend">
+								<span class="add-on cp-tooltip" title="Name" rel="tooltip" data-placement="left"><i class="icon-user"></i></span>
+								<input class="input-xlarge required" type="text" id="cp-input-name" placeholder="Name" minlength="2" name="name">
+							</div>
+
+							<div class="input-prepend">
+								<span class="add-on cp-tooltip" title="E-Mail" rel="tooltip" data-placement="left">@</span>
+								<input class="input-xlarge required email" type="text" id="cp-input-email" placeholder="E-Mail" name="email">
+							</div>
+
+							<div class="input-prepend">
+								<span class="add-on cp-tooltip" title="Message" rel="tooltip" data-placement="left"><i class="icon-pencil"></i></span>
+								<textarea rows="5" class="input-xxlarge required cp-textbox-margin" type="text" id="cp-input-message" placeholder="Message" name="message"></textarea>
+							</div>
+
+							<div class="controls">
+								<button type="send" class="btn cp-button-margin">
+									Send
+								</button>
+							</div>
+						</fieldset>
+					</form>
+				</div><!-- end form -->
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h2>DIRECTIONS</h2>
+					<h3>Come and visit us</h3>
+					<hr>
+					<div class="span3 cp-gutter-correction">
+						<p>
+							<span class="cp-direction">NORTH </span>
+							<span class="cp-direction-location">from north avenue</span>
+						</p>
+						<ul>
+							<li>
+								Lorem ipsum dolor sit amet
+							</li>
+							<li>
+								consectetuer adipiscing elit
+							</li>
+							<li>
+								Aenean commodo ligula eget dolor
+							</li>
+							<li>
+								Nulla consequat massa
+							</li>
+						</ul>
+					</div>
+					<div class="span3">
+						<p>
+							<span class="cp-direction">EAST </span>
+							<span class="cp-direction-location">from east street</span>
+						</p>
+						<ul>
+							<li>
+								Lorem ipsum dolor sit amet
+							</li>
+							<li>
+								consectetuer adipiscing elit
+							</li>
+							<li>
+								Aenean commodo ligula eget dolor
+							</li>
+							<li>
+								magnis dis parturient montes
+							</li>
+						</ul>
+					</div>
+					<div class="span3">
+						<p>
+							<span class="cp-direction">SOUTH </span>
+							<span class="cp-direction-location">from south boulevard</span>
+						</p>
+						<ul>
+							<li>
+								Lorem ipsum dolor sit amet
+							</li>
+							<li>
+								consectetuer adipiscing elit
+							</li>
+							<li>
+								nascetur ridiculus mus
+							</li>
+							<li>
+								magnis dis parturient montes
+							</li>
+						</ul>
+					</div>
+					<div class="span3">
+						<p>
+							<span class="cp-direction">WEST </span>
+							<span class="cp-direction-location">from west road</span>
+						</p>
+						<ul>
+							<li>
+								penatibus et magnis dis
+							</li>
+							<li>
+								consectetuer adipiscing elit
+							</li>
+							<li>
+								nascetur ridiculus mus
+							</li>
+							<li>
+								magnis dis parturient montes
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div><!-- end content -->
+
+		<!-- to top -->
+		<div class="container visible-phone">
+			<div class="row">
+				<div class="span12">
+					<a href="#cp-top" class="cp-to-top">to top<i class="icon-arrow-up"></i></a>
+				</div>
+			</div>
+		</div><!-- end to top -->
+
+		<!-- footer -->
+		<div class="container">
+			<div class="row">
+				<div class="span12 cp-footer cp-span-footer">
+					<div class="span3 cp-gutter-correction">
+						<address>
+							CLOUD PEPPER
+							<br>
+							1111 Main Street
+							<br>
+							New York
+						</address>
+					</div>
+					<div class="span3">
+						<address>
+							Phone +1 123 3456780
+							<br>
+							Fax +1 123 3456789
+							<br>
+							E-Mail <a href="mailto:info@mail.com">info@mail.com</a>
+						</address>
+					</div>
+					<div class="span6">
+						<a href="#"><img src="img/36_facebook.png" class="cp-footer-img cp-tooltip" data-placement="top" title="facebook"></a>
+						<a href="#"><img src="img/36_googleplus.png" class="cp-footer-img cp-tooltip" data-placement="top" title="google+"></a>
+						<a href="#"><img src="img/36_twitter.png" class="cp-footer-img cp-tooltip" data-placement="top" title="twitter"></a>
+						<a href="#"><img src="img/36_rss.png" class="cp-footer-img cp-tooltip" data-placement="top" title="rss"></a>
+					</div>
+				</div>
+			</div>
+		</div><!-- end footer -->
+
+		<!-- scripts -->
+		<!-- http://jquery.com/ -->
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+		<!-- http://twitter.github.com/bootstrap/ -->
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		<!-- http://www.pixedelic.com/plugins/camera/ -->
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/camera.min.js"></script>
+
+		<!-- http://www.jacklmoore.com/colorbox -->
+		<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+
+		<!-- http://bassistance.de/jquery-plugins/jquery-plugin-validation/ -->
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+		<!-- fewo-pitzen scripts -->
+		<script type="text/javascript" src="js/cloud-pepper.js"></script>
+		<!-- end scripts -->
+	</body>
+</html>
