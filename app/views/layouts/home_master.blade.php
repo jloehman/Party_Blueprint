@@ -44,11 +44,9 @@
 					</div></a>
 
 					<select id="cp-nav-mobile" size="1">
-						<option value="index.html" id="index" selected>HOME</option>
-						<option value="portfolio.html" id="portfolio">PORTFOLIO</option>
-						<option value="services.html" id="services">SERVICES</option>
-						<option value="clients.html" id="clients">CLIENTS</option>
-						<option value="contact.html" id="contact">CONTACT</option>
+						<option value="/about" id="index" selected>ABOUT</option>
+						<option value="/contact" id="portfolio">CONTACT</option>
+						<option value="/register" id="services">REGISTER</option>
 					</select>
 				</div>
 			</div>
@@ -60,20 +58,18 @@
 				<div class="span12 cp-footer cp-span-footer">
 					<div class="span3 cp-gutter-correction">
 						<address>
-							CLOUD PEPPER
+							Simple Soiree
 							<br>
-							1111 Main Street
+							110 E Houston St
 							<br>
-							New York
+							San Antonio
 						</address>
 					</div>
 					<div class="span3">
 						<address>
-							Phone +1 123 3456780
+							Phone 210 3456780
 							<br>
-							Fax +1 123 3456789
-							<br>
-							E-Mail <a href="mailto:info@mail.com">info@mail.com</a>
+							E-Mail <a href="mailto:imsplesoiree@gmail.com">simplesoiree@gmail.com</a>
 						</address>
 					</div>
 					<div class="span6">
