@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>CLOUD PEPPER Documentation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Description">
+		<meta name="author" content="Saltflakes">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		
+		<style type="text/css">
+			body {
+				padding-bottom: 40px;
+			}
+			section {
+				padding: 60px 0 0 0;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<!-- Various Icons (Favicon, Touch Icon,... -->
+		<!--
+		<link rel="shortcut icon" href="assets/img/favicon.ico">
+		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.png">
+		-->
+	</head>
+
+	<body data-spy="scroll" data-target=".navbar" id="top">
+
+		<!-- ========================= NAVIGATION BAR >> START ========================= -->
+		<div class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+					<a class="brand" href="#overview">Cloud Pepper</a>
+					<div class="nav-collapse">
+						<ul class="nav">
+							<li>
+								<a href="#overview">Overview</a>
+							</li>
+							<li>
+								<a href="#markup">Markup</a>
+							</li>
+							<li>
+								<a href="#styles">Styles</a>
+							</li>
+							<li>
+								<a href="#javascript">JavaScript</a>
+							</li>
+							<li>
+								<a href="#credits">Credits</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========================= NAVIGATION BAR >> END ========================= -->
+
+		<!-- ========================= MAIN CONTAINER >> START ========================= -->
+		<div class="container">
+
+			<!-- ========================= SECTION: OVERVIEW >> START ========================= -->
+			<section id="overview">
+
+				<div class="hero-unit">
+					<h1 style="font-size: 57px;">Cloud Pepper HTML Template</h1>
+					<p>
+						Crafted with &hearts; by <a href="http://wrapbootstrap.com/user/Saltflakes">Saltflakes</a>
+					</p>
+					<p class="well well-small">
+						Thank you for purchasing our theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://wrapbootstrap.com/user/Saltflakes">here</a>. Thanks so much!
+					</p>
+
+				</div>
+
+				<hr>
+
+				<div class="row-fluid">
+					<div class="span3">
+						<table width="100%">
+							<tr>
+								<td>Author:</td>
+								<td>Saltflakes</td>
+							</tr>
+							<tr>
+								<td>Contact:</td>
+								<td><a href="#nowhere">support@saltflakes.net</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="span3">
+						<table width="100%">
+							<tr>
+								<td>Author URL:</td>
+								<td><a href="http://saltflakes.net">http://saltflakes.net</a></td>
+							</tr>
+							<tr>
+								<td>Item URL:</td>
+								<td><a href="https://wrapbootstrap.com/user/Saltflakes">Portfolio</a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="span3">
+						<table width="100%">
+							<tr>
+								<td>Current Version:</td>
+								<td>1.0.0</td>
+							</tr>
+							<tr>
+								<td>Documentation Version</td>
+								<td>1.0.0</td>
+							</tr>
+						</table>
+					</div>
+					<div class="span3">
+						<table width="100%">
+							<tr>
+								<td>Created:</td>
+								<td>2013-04-06</td>
+							</tr>
+							<tr>
+								<td>Modified:</td>
+								<td>2013-04-06</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<hr>
+
+			</section>
+			<!-- ========================= SECTION: OVERVIEW >> END ========================= -->
+
+			<!-- ========================= SECTION: MARKUP >> START ========================= -->
+			<section id="markup">
+				<div class="page-header">
+					<h1>Markup <small>Markup customization and highlights</small></h1>
+				</div>
+
+				<p>
+					This theme is a fixed layout with one column. All of the information within the main content area is nested within a div with an class of "container".
+				</p>
+				<hr />
+
+				<div class="row">
+					<div class="span3">
+						<h3>General Markup</h3>
+						<p>
+							The general template structure is the same throughout the template. Here is the general structure.
+						</p>
+					</div>
+
+					<div class="span9">
+						<!--
+						&lt;!DOCTYPE html&gt;
+						&lt;html lang=&quot;en&quot;&gt;
+						&lt;head&gt;
+						&lt;meta charset=&quot;utf-8&quot;&gt;
+						&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+						&lt;meta name=&quot;author&quot; content=&quot;Saltflakes&quot;&gt;
+						&lt;meta name=&quot;description&quot; content=&quot;cloud pepper is a plain and fine web theme based on twitter bootstrap.&quot;&gt;
+						&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.min.css&quot;&gt;
+						&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/camera.css&quot;&gt;
+						&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/colorbox.css&quot;&gt;
+						&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/cloud-pepper.css&quot;&gt;
+						&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;img/favicon.ico&quot; &gt;
+						&lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;img/favicon.ico&quot; &gt;
+						&lt;title&gt;CLOUD PEPPER - portfolio&lt;/title&gt;
+						&lt;/head&gt;
+						-->
+
+						<!-- Code Block >> Start -->
+						<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Saltflakes&quot;&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;cloud pepper ...&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.min.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/camera.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/colorbox.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/cloud-pepper.css&quot;&gt;
+	&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;img/favicon.ico&quot; &gt;
+	&lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;img/favicon.ico&quot; &gt;
+	&lt;title&gt;CLOUD PEPPER&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;!-- navigation --&gt;
+	&lt;!-- content area --&gt;
+	&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;
+	&lt;!-- footer --&gt;
+	&lt;!-- scripts --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+						</pre>
+						<!-- Code Block >> End -->
+
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row">
+					<div class="span3">
+						<h3>Navigation Top Border Color</h3>
+						<p>
+							If you would like to edit the color of the animated navigation border you would do the following:
+						</p>
+					</div>
+
+					<div class="span9">
+
+						<!-- Code Block >> Start -->
+						<pre class="prettyprint linenums">.cp-nav-link:hover {
+	border-bottom: solid 3px #90a6c2;
+}
+.cp-nav-active {
+	border-bottom: solid 3px #436e9d !important;
+}</pre>
+						<!-- Code Block >> End -->
+
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row">
+					<div class="span3">
+						<h3>Change Navigation</h3>
+						<p>
+							If you want to change the menu structure or simply edit links and page names, search for the navigation lines.
+						</p>
+					</div>
+
+					<div class="span9">
+
+						<!-- Code Block >> Start -->
+						<pre class="prettyprint linenums">
+&lt;!-- navigation --&gt;
+&lt;div class=&quot;container&quot; id=&quot;cp-top&quot;&gt;
+	&lt;div class=&quot;row visible-desktop&quot;&gt;
+		&lt;div class=&quot;span12 cp-nav&quot;&gt;
+			&lt;a href=&quot;index.html&quot;&gt;
+			&lt;div class=&quot;cp-logo&quot;&gt;&lt;img src=&quot;img/logo.png&quot; alt=&quot;logo&quot;&gt;
+			&lt;/div&gt; &lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;contact.html&quot;&gt;&lt;span class=&quot;cp-nav-link&quot; id=&quot;contact&quot;&gt;CONTACT&lt;/span&gt;&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;clients.html&quot;&gt;&lt;span class=&quot;cp-nav-link&quot; id=&quot;clients&quot;&gt;CLIENTS&lt;/span&gt;&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;services.html&quot;&gt;&lt;span class=&quot;cp-nav-link&quot; id=&quot;services&quot;&gt;SERVICES&lt;/span&gt;&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href=&quot;portfolio.html&quot;&gt;&lt;span class=&quot;cp-nav-link&quot; id=&quot;portfolio&quot;&gt;PORTFOLIO&lt;/span&gt;&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;row hidden-desktop&quot;&gt;
+		&lt;div class=&quot;span12 cp-nav&quot;&gt;
+			&lt;a href=&quot;index.html&quot;&gt;
+			&lt;div class=&quot;cp-logo&quot;&gt;&lt;img src=&quot;img/logo.png&quot; alt=&quot;logo&quot;&gt;
+			&lt;/div&gt;&lt;/a&gt;
+
+			&lt;select id=&quot;cp-nav-mobile&quot; size=&quot;1&quot;&gt;
+				&lt;option value=&quot;index.html&quot; id=&quot;index&quot; selected&gt;HOME&lt;/option&gt;
+				&lt;option value=&quot;portfolio.html&quot; id=&quot;portfolio&quot;&gt;PORTFOLIO&lt;/option&gt;
+				&lt;option value=&quot;services.html&quot; id=&quot;services&quot;&gt;SERVICES&lt;/option&gt;
+				&lt;option value=&quot;clients.html&quot; id=&quot;clients&quot;&gt;CLIENTS&lt;/option&gt;
+				&lt;option value=&quot;contact.html&quot; id=&quot;contact&quot;&gt;CONTACT&lt;/option&gt;
+			&lt;/select&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;!-- end navigation --&gt;
+</pre>
+						<!-- Code Block >> End -->
+
+					</div>
+				</div>
+			</section>
+			<!-- ========================= SECTION: MARKUP >> END ========================= -->
+
+			<!-- ========================= SECTION: STYLES >> START ========================= -->
+			<section id="styles">
+				<div class="page-header">
+					<h1>Styles <small>Styles customization and highlights</small></h1>
+				</div>
+
+				<div class="row">
+					<div class="span3">
+						<h3>Stylesheets</h3>
+						<p>
+							Here's a list of the stylesheet files we are using with this template, you can find more information opening each file:
+						</p>
+					</div>
+					<div class="span9">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>File Name</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+									<code>
+										cloud-pepper.css
+									</code></td>
+									<td>Here you find all important CSS styles</td>
+								</tr>
+								<tr>
+									<td>
+										<code>
+										bootstrap.css
+									</code>
+									<code>
+										bootstrap-min.css
+									</code></td>
+									<td>Bootstrap CSS in compressed version</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										camera.css
+									</code></td>
+									<td>Camera Slider CSS</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										colorbox.css
+									</code></td>
+									<td>Colorbox (Modal) CSS</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<!-- ========================= SECTION: STYLES >> END ========================= -->
+
+			<!-- ========================= SECTION: JAVASCRIPT >> START ========================= -->
+			<section id="javascript">
+
+				<div class="page-header">
+					<h1>JavaScript <small>JavaScript customization and highlights</small></h1>
+				</div>
+
+				<div class="row">
+					<div class="span3">
+						<h3>JavaScript Files</h3>
+						<p>
+							Here is a list of all javascript plugins used in this template
+						</p>
+					</div>
+					<div class="span9">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>Tag</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+									<code>
+										cloud-pepper.js
+									</code></td>
+									<td>Most of the animation in this site is carried out from the standard script.</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										jquery-1.8.2.min.js
+									</code></td>
+									<td>jQuery is a Javascript library that greatly reduces the amount of code that you must write.</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										bootstrap.min.js
+									</code>
+									<code>
+										bootstrap.js
+									</code></td>
+									<td>Twitter Bootstap is a front-end framework with responsive grid</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										camera.min.js
+									</code></td>
+									<td>Camera Slider is an image and html slider</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										jquery.colorbox-min.js
+									</code></td>
+									<td>Colorbox is a jQuery lightbox</td>
+								</tr>
+
+								<tr>
+									<td>
+									<code>
+										jquery.validate.js
+									</code>
+									<code>
+										jquery.validate.min.js
+									</code></td>
+									<td>jQuery Validation is a form validator</td>
+								</tr>
+								<tr>
+									<td>
+									<code>
+										jquery-easing.js
+									</code></td>
+									<td>jQuery Easing for some easing options</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row">
+					<div class="span3">
+						<h3>Customize Slider</h3>
+						<p>
+							If you want to change the slider's speed transition, open up the file
+							<code>
+								cloud-pepper.js
+							</code>
+							and change the following code:
+						</p>
+					</div>
+					<div class="span9">
+
+						<!-- Code Block >> Start -->
+						<pre class="prettyprint js linenums:103">// camera slider:
+if ($('#camera_wrap_1').length > 0) {
+	jQuery('#camera_wrap_1').camera({
+		height : '56%',
+		pagination : true,
+		thumbnails : false,
+		fx : 'simpleFade',
+		time : 5000,
+		transPeriod : 3000,
+		imagePath : '../images/'
+	});
+}
+</pre>
+						<!-- Code Block >> End -->
+
+					</div>
+				</div>
+
+			</section>
+			<!-- ========================= SECTION: JAVASCRIPT >> END ========================= -->
+
+			<!-- ========================= SECTION: ALERTS >> START ========================= -->
+			<section id="credits">
+				<div class="page-header">
+					<h1>Credits </h1>
+				</div>
+				<p>
+					I've used the following files as listed.
+				</p>
+				<h3>JavaScript</h3>
+				<ol>
+					<li>
+						<a href="http://jquery.com">jQuery</a><small>&mdash; JavaScript library</small>
+					</li>
+					<li>
+						<a href="http://bootstrap.twitter.com">Bootstrap</a><small>&mdash; Bootstrap Framework. </small>
+					</li>
+					<li>
+						<a href="http://www.pixedelic.com/plugins/camera/">Camera</a><small>&mdash; jQuery powered slider </small>
+					</li>
+					<li>
+						<a href="http://www.jacklmoore.com/colorbox">Colorbox</a><small>&mdash; jQuery powered modal plugin </small>
+					</li>
+					<li>
+						<a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">Validation</a><small>&mdash; jQuery powerd validation plugin</small>
+					</li>
+				</ol>
+				<h3>Photos</h3>
+				<ol>
+					<li>
+						<a href="http://www.jigsoar.com">Jigsoar Icons</a><small>&mdash; selected social icons</small>
+					</li>
+
+					<li>
+						Photos taken by my self <small> They can be used under <a href="http://creativecommons.org/licenses/by/3.0/">Attribution License 3.0</a></small>
+					</li>
+				</ol>
+
+			</section>
+			<!-- ========================= SECTION: ALERTS >> END ========================= -->
+
+			<hr />
+
+			<div class="goodbye">
+				<p>
+					Once again, thank you so much for purchasing this theme. As we said at the beginning, we'd be glad to help you if you have any questions relating to this theme. No guarantees, but we'll do our best to assist.
+				</p>
+			</div>
+
+			<hr />
+
+			<footer>
+				<p>
+					&copy; Saltflakes 2013
+				</p>
+			</footer>
+
+		</div>
+		<!-- ========================= MAIN CONTAINER >> END ========================= -->
+
+		<!-- CHANGELOG >> START -->
+		<div class="modal hide fade" id="changelog" tabindex="-1" role="dialog" aria-labelledby="changelog-label" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					×
+				</button>
+				<h3 id="changelog-label">Changelog</h3>
+			</div>
+			<div class="modal-body">
+
+				<!-- Code Block >> Start -->
+				<pre>Legend:
++   Addition
+^   Change
+-   Removed
+*   Security Fix
+#   Bug Fix
+!   Note</pre>
+				<!-- Code Block >> End -->
+
+				<!-- Code Block >> Start -->
+				<pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+				<!-- Code Block >> End -->
+
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">
+					Close
+				</button>
+			</div>
+		</div>
+		<!-- CHANGELOG >> END -->
+
+		<!-- loading javascripts -->
+		<script src="../js/jquery-1.8.2.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- <script src="js/google-code-prettify/prettify.js"></script> -->
+		<!-- <script src="js/scripts.js"></script> -->
+
+		<!-- init javascripts -->
+		<!-- <script src="assets/js/init.js"></script> -->
+
+	</body>
+
+</html>
