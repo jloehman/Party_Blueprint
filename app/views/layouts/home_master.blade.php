@@ -22,7 +22,7 @@
 			<div class="row visible-desktop">
 				<div class="span12 cp-nav">
 					<a href="/">
-					<div class="cp-logo"><img src="simple_soiree_template/img/logo.png" alt="logo">
+					<div class="cp-logo"><img src="/simple_soiree_template/img/logo.png" alt="logo">
 					</div> </a>
 					<ul>
 						<li>
@@ -32,7 +32,10 @@
 							<a href="/contact"><span class="cp-nav-link" id="clients">CONTACT</span></a>
 						</li>
 						<li>
-							<a href="/register"><span class="cp-nav-link" id="services">REGISTER</span></a>
+							<a href="/register"><span class="cp-nav-link" id="register">REGISTER</span></a>
+						</li>
+						<li>
+							<a href="/login"><span class="cp-nav-link" id="login">LOGIN</span></a>
 						</li>
 					</ul>
 				</div>

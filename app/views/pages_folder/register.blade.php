@@ -1,13 +1,13 @@
 @extends('layouts.home_master')
 
-@section('content')
+@section('content') 
 
 
 <form class="form-horizontal" action='' method="POST">
   <fieldset>
     <div id="legend">
-      <legend class="">Register</legend>
-    </div>
+<!--       <legend class="">Register</legend>
+ -->    </div>
     <div class="control-group">
       <!-- First -->
       <label class="control-label"  for="first_name">First Name</label>

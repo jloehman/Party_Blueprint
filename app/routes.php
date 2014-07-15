@@ -51,3 +51,7 @@ Route::get('/admin_admin', function()
 {
 	return View::make('pages_folder.admin_admin');
 });
+Route::get('/login', function()
+{
+	return View::make('pages_folder.login');
+});
