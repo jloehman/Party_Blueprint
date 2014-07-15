@@ -3,7 +3,8 @@
 class UserTableSeeder extends Seeder {
 	public function run()
 	{
-		DB::table('users')->delete();
+
+       DB::table('users')->delete();
 
        $users = new User();
        $users->first_name = 'admin';
