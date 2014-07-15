@@ -13,5 +13,17 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('pages_folder.home');
+});
+Route::get('/about', function()
+{
+	return View::make('pages_folder.about');
+});
+Route::get('/contact', function()
+{
+	return View::make('pages_folder.contact');
+});
+Route::get('/register', function()
+{
+	return View::make('pages_folder.register');
 });
