@@ -210,11 +210,11 @@
 								<div id="collapse1" class="accordion-body collapse">
 									<ul class="nav nav-stacked submenu">
 										<li>
-											<a href="users.html">
+											<a href="/todo_list">
 												<span class="box">
 													<i class="radmin-icon radmin-user"></i>
 												</span>
-												<span class="hidden-tablet hidden-phone">Users</span>
+												<span class="hidden-tablet hidden-phone">To Do List</span>
 											</a>
 										</li>
 										<li>
