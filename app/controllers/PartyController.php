@@ -1,14 +1,14 @@
 <?php
 
 class PartyController extends \BaseController {
-	public function __construct()
-	{
+	//public function __construct()
+	//{
 	    // call base controller constructor
-	    parent::__construct();
+	    //parent::__construct();
 
 	    // run auth filter before all methods on this controller
-	    $this->beforeFilter('auth');
-	}
+	    //$this->beforeFilter('auth');
+	//}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -52,12 +52,12 @@ class PartyController extends \BaseController {
 
 		}
 		else
-		{	
-
+		{
+			//Need to ask about the user here and the one to many relationship
 			$todo = new Todo();
 			$todo->user()->associate(Auth::user());
 			$todo->title = Input::get('title');
-			$post->save();
+			$todo->save();
 			// set flash data
 			Session::flash('successMessage', 'Todo List item created successfully');
 
@@ -77,6 +77,8 @@ class PartyController extends \BaseController {
 	public function show($id)
 	{
 		//
+		$todo = Todo::find($id);
+		return View::make('pages_folder.todo_list')->with('todo', $todo);
 
 	}
 
@@ -89,8 +91,8 @@ class PartyController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
-		$todo = Todo::find($id);	
+		//Ask how to edit on the same page verses being redirect to a new page with that one item
+		$todo = Todo::find($id);
 		return View::make('pages_folder.todo_list')->with('todo', $todo);
 	}
 
@@ -110,15 +112,15 @@ class PartyController extends \BaseController {
 			Session::flash('errorMessage', 'Todo List item update Failed');
 
 			// retrieve flash data (same as any other session variable)
-			
+
 			return Redirect::back()->withInput()->withErrors($validator);
 		}
 		else
-		{	
+		{
 			$todo = Todo::find($id);
 			$todo->title = Input::get('title');
 			$todo->save();
-			// set flash data
+			// set flash data and to the view as well
 			Session::flash('successMessage', 'Todo List item updated successfully');
 
 			// retrieve flash data (same as any other session variable)
@@ -136,7 +138,7 @@ class PartyController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		//Need to implement an "Are you sure you want to delete this?"
 		$todo = Todo::findOrFail($id);
 		$todo->delete();
 		Session::flash('successMessage', 'Todo List item deleted successfully');

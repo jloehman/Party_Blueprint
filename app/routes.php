@@ -39,10 +39,9 @@ Route::get('/guest_list', function()
 {
 	return View::make('pages_folder.guest_list');
 });
-Route::get('/todo_list', function()
-{
-	return View::make('pages_folder.todo_list');
-});
+
+Route::resource('todo_list', 'PartyController');
+
 Route::get('/summary_page', function()
 {
 	return View::make('pages_folder.summary_page');
