@@ -42,8 +42,8 @@ class PartyController extends \BaseController {
 	{
 		//
 		$validator = Validator::make(Input::all(), Todo::$rules);
-		if ($validator->fails()) 
-		{	
+		if ($validator->fails())
+		{
 			Session::flash('errorMessage', 'There were errors submitting your form');
 
 			// retrieve flash data (same as any other session variable)
