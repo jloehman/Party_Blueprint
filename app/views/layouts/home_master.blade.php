@@ -13,7 +13,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="simple_soiree_template/img/favicon.ico" >
 		<link rel="icon" type="image/x-icon" href="simple_soiree_template/img/favicon.ico" >
 		<title>Simple Soiree</title>
-	
+
 @yield('topscript')
 </head>
 <body>
@@ -105,6 +105,7 @@
 		<!-- fewo-pitzen scripts -->
 		<script type="text/javascript" src="simple_soiree_template/js/cloud-pepper.js"></script>
 		<!-- end scripts -->
-</body>
-
 @yield('bottomscript')
+</body>
+</html>
+
