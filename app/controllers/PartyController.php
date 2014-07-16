@@ -1,7 +1,14 @@
 <?php
 
 class PartyController extends \BaseController {
+	public function __construct()
+	{
+	    // call base controller constructor
+	    parent::__construct();
 
+	    // run auth filter before all methods on this controller
+	    $this->beforeFilter('auth');
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +16,9 @@ class PartyController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		//Showing Todo items, 10 on each page
+		$todos = Todo::orderBy('id','desc')->paginate(10);
+		return View::make('pages_folder.todo_list')->with('todos', $todos);
 	}
 
 
@@ -20,7 +29,7 @@ class PartyController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('pages_folder.todo_list');
 	}
 
 
@@ -32,6 +41,30 @@ class PartyController extends \BaseController {
 	public function store()
 	{
 		//
+		$validator = Validator::make(Input::all(), Todo::$rules);
+		if ($validator->fails()) 
+		{	
+			Session::flash('errorMessage', 'There were errors submitting your form');
+
+			// retrieve flash data (same as any other session variable)
+
+			return Redirect::back()->withInput()->withErrors($validator);
+
+		}
+		else
+		{	
+
+			$todo = new Todo();
+			$todo->user()->associate(Auth::user());
+			$todo->title = Input::get('title');
+			$post->save();
+			// set flash data
+			Session::flash('successMessage', 'Todo List item created successfully');
+
+			// retrieve flash data (same as any other session variable)
+
+			return Redirect::action('PartyController@index');
+		}
 	}
 
 
@@ -44,6 +77,7 @@ class PartyController extends \BaseController {
 	public function show($id)
 	{
 		//
+
 	}
 
 
@@ -56,6 +90,8 @@ class PartyController extends \BaseController {
 	public function edit($id)
 	{
 		//
+		$todo = Todo::find($id);	
+		return View::make('pages_folder.todo_list')->with('todo', $todo);
 	}
 
 
@@ -68,6 +104,27 @@ class PartyController extends \BaseController {
 	public function update($id)
 	{
 		//
+		$validator = Validator::make(Input::all(), Todo::$rules);
+		if ($validator->fails()) 
+		{	// set flash data
+			Session::flash('errorMessage', 'Todo List item update Failed');
+
+			// retrieve flash data (same as any other session variable)
+			
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{	
+			$todo = Todo::find($id);
+			$todo->title = Input::get('title');
+			$todo->save();
+			// set flash data
+			Session::flash('successMessage', 'Todo List item updated successfully');
+
+			// retrieve flash data (same as any other session variable)
+
+			return Redirect::action('PartyController@index');
+		}
 	}
 
 
@@ -80,6 +137,11 @@ class PartyController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+		$todo = Todo::findOrFail($id);
+		$todo->delete();
+		Session::flash('successMessage', 'Todo List item deleted successfully');
+
+		return Redirect::action('pages_folder.todo_list');
 	}
 
 

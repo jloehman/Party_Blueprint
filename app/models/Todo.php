@@ -14,6 +14,9 @@ class Todo extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'todos';
+	static public $rules = [
+    	'title' => 'required|max:100'
+    ];
 
 	public function parties()
 	{
