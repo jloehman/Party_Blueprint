@@ -16,9 +16,8 @@ class TodoList extends Migration {
 		{
 			$todo->increments('id');
 			$todo->string('name');
+			$todo->date('done_by');
 			$todo->boolean('is_complete');
-			$todo->dateTime('due_at');
-			$todo->string('party_id');
 			$todo->timestamps();
 		});	
 	}

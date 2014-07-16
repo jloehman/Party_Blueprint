@@ -42,6 +42,8 @@ Route::get('/guest_list', function()
 
 Route::resource('todo_list', 'PartyController');
 
+Route::resource('buy_list', 'PartyController');
+
 Route::get('/summary_page', function()
 {
 	return View::make('pages_folder.summary_page');
