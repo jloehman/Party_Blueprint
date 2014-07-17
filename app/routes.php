@@ -61,3 +61,4 @@ Route::get('/login', function()
 {
 	return View::make('pages_folder.login');
 });
+
