@@ -1,28 +1,19 @@
 @extends('layouts.user_master')
 @section('content')
 <h1>To Buy Items</h1>
-<div class="table-responsive">
+<div class=" table table-responsive table-condensed">
   <table class="table table-bordered table-striped">
   	<tr>
   		<th>Name</th>
   		<th>Quantity</th>
   		<th>Cost</th>
-  		<th>Purchased By</th>
-  		<th>Completed</th>
   		<th>Actions</th>
   	</tr>
 @foreach($budget_items as $budget_item)
   	<tr>
   		<td>{{{ $budget_item->name }}}</td>
   		<td>{{{ $budget_item->qty }}}</td>
-  		<td>{{{ $budget_item->cost }}}</td>
-  		<td>{{{ $budget_item->done_by }}}</td>
-  		<!-- this needs to be a checkbox -->
-  		<td>
-  			<!-- this needs to be submitted -->
-  			{{ Form::checkbox('is_purchased')}}
-
-  		</td>
+  		<td>${{{ $budget_item->cost }}}</td>
   		<td>{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
 			{{ Form::submit('Delete') }}
 			{{ Form::close() }}
@@ -56,11 +47,10 @@
 		<!-- Change this error message -->
 		{{ $errors->first('cost', '<span class="help-block">:message</span><br>') }}
 	</div>
-	<div>
-		{{ Form::label('done_by', 'Done By') }}<br>
-		{{ Form::text('done_by', null, array('placeholder' => 'yyyy-mm-dd')) }}<br>
-		{{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
-	</div>
 		{{ Form::submit('Add Item') }}
 		{{ Form::close() }}
+@stop
+
+@section('bottomscript')
+
 @stop
