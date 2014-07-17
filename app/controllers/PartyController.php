@@ -48,7 +48,7 @@ class PartyController extends \BaseController {
 
 			// retrieve flash data (same as any other session variable)
 
-			return Redirect::action('PartyController@index');
+			return Redirect::route('todo_list.index');
 
 		}
 		else
@@ -63,8 +63,7 @@ class PartyController extends \BaseController {
 			Session::flash('successMessage', 'Todo List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-
-			return Redirect::action('PartyController@index');
+			return Redirect::route('todo_list.index');
 		}
 	}
 

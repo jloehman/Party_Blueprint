@@ -45,7 +45,7 @@ Route::get('/guest_list', function()
 	return View::make('pages_folder.guest_list');
 });
 
-Route::resource('todo_list', 'PartyController');
+Route::resource('/todo_list', 'PartyController');
 
 Route::get('/summary_page', function()
 {
