@@ -17,7 +17,9 @@ class BudgetItems extends Migration {
 			$budget->increments('id');
 			$budget->string('party_id', 30);
 			$budget->string('name');
+			$budget->integer('qty');
 			$budget->double('cost');
+			$budget->date('done_by');
 			$budget->boolean('is_purchased');
 			$budget->timestamps();
 
