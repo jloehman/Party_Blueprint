@@ -19,8 +19,8 @@ class GuestsTable extends Migration {
 			$guests->string('name', 50);
 		    $guests->string('email', 200)->unique();
 		    $guests->string('phone', 20);
-		    $guests->boolean('is_attending', 5);
-		    $guests->text('comment');
+		    $guests->boolean('is_attending', 5)->nullable();
+		    $guests->text('comment')->nullable();
 		    $guests->timestamps();
 		});
 

@@ -218,11 +218,11 @@
 											</a>
 										</li>
 										<li>
-											<a href="invoices.html">
+											<a href="/budget_item">
 												<span class="box">
 													<i class="radmin-icon radmin-clipboard-2"></i>
 												</span>
-												<span class="hidden-tablet hidden-phone">Invoices</span>
+												<span class="hidden-tablet hidden-phone">Budget Items</span>
 											</a>
 										</li>
 										<li class="submenu-last">

@@ -9,8 +9,8 @@ class BudgetItemController extends \BaseController {
 	 */
 	public function index()
 	{
-		$budget_items = Budget_item::orderBy('id','desc')->paginate(10);
-		return View::make('pages_folder.budget_item')->with('budget_items', $budget_items);
+		$budget_items = BudgetItem::orderBy('id','desc')->paginate(10);
+		return View::make('pages_folder.budget_item')->with('budget_items', $budget_items));
 	}
 
 
@@ -33,7 +33,7 @@ class BudgetItemController extends \BaseController {
 	public function store()
 	{
 		//
-		$validator = Validator::make(Input::all(), Budget_item::$rules);
+		$validator = Validator::make(Input::all(), BudgetItem::$rules);
 		if ($validator->fails())
 		{
 			Session::flash('errorMessage', 'There were errors submitting your form');
@@ -46,11 +46,12 @@ class BudgetItemController extends \BaseController {
 		else
 		{
 			//Need to ask about the user here and the one to many relationship
-			$budget_item = new Budget_item();
+			$budget_item = new BudgetItem();
 			// $todo->user()->associate(Auth::user());
 			$budget_item->name = Input::get('name');
 			$budget_item->qty = Input::get('qty');
 			$budget_item->cost = Input::get('cost');
+			$budget_item->done_by = Input::get('done_by');
 			$budget_item->is_purchased = Input::get('is_purchased');
 			$budget_item->save();
 			// set flash data
@@ -71,7 +72,7 @@ class BudgetItemController extends \BaseController {
 	public function show($id)
 	{
 		//
-		$budget_item = Budget_item::find($id);
+		$budget_item = BudgetItem::find($id);
 		return View::make('pages_folder.budget_item')->with('budget_item', $budget_item);
 	}
 
@@ -84,7 +85,7 @@ class BudgetItemController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$budget_item = Budget_item::find($id);
+		$budget_item = BudgetItem::find($id);
 		return View::make('pages_folder.budget_item')->with('budget_item', $budget_item);
 	}
 
@@ -97,9 +98,9 @@ class BudgetItemController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		{
+
 		//
-		$validator = Validator::make(Input::all(), Budget_item::$rules);
+		$validator = Validator::make(Input::all(), BudgetItem::$rules);
 		if ($validator->fails()) 
 		{	// set flash data
 			Session::flash('errorMessage', 'Buy List item update Failed');
@@ -110,8 +111,12 @@ class BudgetItemController extends \BaseController {
 		}
 		else
 		{
-			$budget_item = Budget_item::find($id);
-			$budget_item->title = Input::get('title');
+			$budget_item = BudgetItem::find($id);
+			$budget_item->name = Input::get('name');
+			$budget_item->qty = Input::get('qty');
+			$budget_item->cost = Input::get('cost');
+			$budget_item->done_by = Input::get('done_by');
+			$budget_item->is_purchased = Input::get('is_purchased');
 			$budget_item->save();
 			// set flash data and to the view as well
 			Session::flash('successMessage', 'Buy List item updated successfully');
@@ -133,7 +138,7 @@ class BudgetItemController extends \BaseController {
 	public function destroy($id)
 	{
 		//Need to implement an "Are you sure you want to delete this?"
-		$budget_item = Todo::findOrFail($id);
+		$budget_item = BudgetItem::findOrFail($id);
 		$budget_item->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 

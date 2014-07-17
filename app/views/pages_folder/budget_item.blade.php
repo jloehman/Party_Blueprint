@@ -23,7 +23,7 @@
   			{{ Form::checkbox('is_purchased')}}
 
   		</td>
-  		<td>{{ Form::open(array('action' => array('PartyController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
+  		<td>{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
 			{{ Form::submit('Delete') }}
 			{{ Form::close() }}
 		</td>
@@ -37,7 +37,7 @@
 
 
 
-	{{ Form::open(array('action' => 'PartyController@store')) }}
+	{{ Form::open(array('action' => 'BudgetItemController@store')) }}
   	<div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>

@@ -9,7 +9,7 @@ class GuestController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		//look into pagination..for everything
 		$guests = Guest::orderBy('id','desc')->paginate(10);
 		return View::make('pages_folder.guest_list')->with('guests', $guests);
 	}
@@ -54,7 +54,7 @@ class GuestController extends \BaseController {
 			$guest->email = Input::get('email');
 			$guest->phone = Input::get('phone');
 			$guest->is_attending = Input::get('is_attending');
-			$guest->is_attending = Input::get('comment');
+			$guest->comment = Input::get('comment');
 			$guest->save();
 			// set flash data
 			Session::flash('successMessage', 'Guest List item created successfully');
@@ -114,7 +114,11 @@ class GuestController extends \BaseController {
 		else
 		{
 			$guest = Guest::find($id);
-			$guest->title = Input::get('title');
+			$guest->name = Input::get('name');
+			$guest->email = Input::get('email');
+			$guest->phone = Input::get('phone');
+			$guest->is_attending = Input::get('is_attending');
+			$guest->comment = Input::get('comment');
 			$guest->save();
 			// set flash data and to the view as well
 			Session::flash('successMessage', 'Guest List item updated successfully');
@@ -139,7 +143,7 @@ class GuestController extends \BaseController {
 		$guest->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 
-		return Redirect::action('BudgetItemController@index');
+		return Redirect::action('GuestController@index');
 	}
 
 
