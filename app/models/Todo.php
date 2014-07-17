@@ -6,6 +6,7 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Todo extends Eloquent implements UserInterface, RemindableInterface {
+
 	use UserTrait, RemindableTrait;
 
 	/**
@@ -14,8 +15,10 @@ class Todo extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'todos';
+
 	static public $rules = [
-    	'title' => 'required|max:100'
+    	'name' => 'required|max:100',
+    	'done_by' => 'required'
     ];
 
 	public function parties()

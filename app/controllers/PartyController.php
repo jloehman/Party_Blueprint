@@ -48,15 +48,16 @@ class PartyController extends \BaseController {
 
 			// retrieve flash data (same as any other session variable)
 
-			return Redirect::back()->withInput()->withErrors($validator);
+			return Redirect::action('PartyController@index');
 
 		}
 		else
 		{
 			//Need to ask about the user here and the one to many relationship
 			$todo = new Todo();
-			$todo->user()->associate(Auth::user());
-			$todo->title = Input::get('title');
+			// $todo->user()->associate(Auth::user());
+			$todo->name = Input::get('name');
+			$todo->done_by = Input::get('done_by');
 			$todo->save();
 			// set flash data
 			Session::flash('successMessage', 'Todo List item created successfully');
@@ -143,7 +144,7 @@ class PartyController extends \BaseController {
 		$todo->delete();
 		Session::flash('successMessage', 'Todo List item deleted successfully');
 
-		return Redirect::action('pages_folder.todo_list');
+		return Redirect::action('PartyController@index');
 	}
 
 

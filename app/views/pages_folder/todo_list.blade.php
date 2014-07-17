@@ -19,7 +19,10 @@
   			{{ Form::checkbox('is_complete')}}
 
   		</td>
-  		<td><a href="{{ action('PartyController@destroy', $todo->id) }}" class="btn btn-default btn-sm">Delete</a></td>
+  		<td>{{ Form::open(array('action' => array('PartyController@destroy', $todo->id), 'method' => 'DELETE' )) }}
+			{{ Form::submit('Delete') }}
+			{{ Form::close() }}
+		</td>
   	</tr>
 @endforeach
   </table>
@@ -31,6 +34,7 @@
 
 
 	<div>
+		{{ Form::open(array('action' => 'PartyController@store', 'method' => 'POST')) }}
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>
 		<!-- Change this error message -->
@@ -39,9 +43,9 @@
 	<div>
 		{{ Form::label('done_by', 'Done By') }}<br>
 		{{ Form::text('done_by', null, array('placeholder' => 'yyyy-mm-dd')) }}<br>
-		{{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
+		{{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
 	</div>
-  		{{ Form::submit('Update') }}
-  	{{ Form::close() }}
+  		{{ Form::submit('Add Todo') }}
+  		{{ Form::close() }}
 
 @stop
