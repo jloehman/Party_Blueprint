@@ -15,6 +15,11 @@ class Budget_item extends Eloquent implements UserInterface, RemindableInterface
 	 */
 	protected $table = 'budget_items';
 
+	static public $rules = [
+    	'name' => 'required|max:100',
+    	'cost' => 'required'
+    ];
+
 	public function parties()
 	{
 		$this->hasOne('Party');
