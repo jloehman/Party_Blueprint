@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('/login', 'HomeController@showLogin');
+
+Route::post('/login', 'HomeController@doLogin');
+
+Route::get('/logout', 'HomeController@logout');
+
 Route::get('/', function()
 {
 	return View::make('pages_folder.home');
@@ -56,8 +62,4 @@ Route::get('/admin_admin', function()
 	return View::make('pages_folder.admin_admin');
 });
 
-Route::get('/login', function()
-{
-	return View::make('pages_folder.login');
-});
 

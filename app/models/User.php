@@ -31,9 +31,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	//In production mode, don't hash passwords
 
-	// public function setPasswordAttribute($value)
-	// {
- //   		$this->attributes['password'] = Hash::make($value);
-	// }
+	public function setPasswordAttribute($value)
+	{
+   		$this->attributes['password'] = Hash::make($value);
+	}
 
 }
