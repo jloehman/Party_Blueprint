@@ -40,12 +40,11 @@ Route::get('/budget', function()
 	return View::make('pages_folder.budget');
 });
 
-Route::get('/guest_list', function()
-{
-	return View::make('pages_folder.guest_list');
-});
-
 Route::resource('/todo_list', 'PartyController');
+
+Route::resource('/guest_list', 'GuestController');
+
+Route::resource('/budget_item', 'BudgetItemController');
 
 Route::get('/summary_page', function()
 {
