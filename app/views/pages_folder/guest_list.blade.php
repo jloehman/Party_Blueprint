@@ -17,17 +17,15 @@
   		<td>{{{ $guest->name }}}</td>
   		<td>{{{ $guest->email }}}</td>
   		<td>{{{ $guest->phone }}}</td>
-  		<td>{{{ $guest->is_attending }}}</td>
 
   		<!-- this needs to be a checkbox -->
   		<td>
   			<!-- this needs to be submitted -->
-  			{{ Form::checkbox('rsvp')}}
+  			{{ Form::checkbox('is_attending')}}
 
   		</td>
-  		<td>{{{ $guest->is_attending }}}</td>
   		<td>{{{ $guest->comment }}}</td>
-  		<td>{{ Form::open(array('action' => array('PartyController@destroy', $todo->id), 'method' => 'DELETE' )) }}
+  		<td>{{ Form::open(array('action' => array('GuestController@destroy', $guest->id), 'method' => 'DELETE' )) }}
 			{{ Form::submit('Delete') }}
 			{{ Form::close() }}
 		</td>
@@ -42,7 +40,7 @@
 
 
 
-	{{ Form::open(array('action' => 'PartyController@store')) }}
+	{{ Form::open(array('action' => 'GuestController@store')) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>
@@ -59,20 +57,15 @@
 		{{ Form::text('phone', null, array('placeholder' => '###-###-####')) }}<br>
 		{{ $errors->first('phone', '<span class="help-block">:message</span><br>') }}
 	</div>
-	<div>
-		{{ Form::label('is_attending', 'is_attending') }}<br>
-		{{ Form::text('is_attending', null, array('placeholder' => 'RSVP')) }}<br>
-		{{ $errors->first('is_attending', '<span class="help-block">:message</span><br>') }}
-	</div>
 	<div class="form-group">
-		{{ Form::label('comment', 'Comment') }}
+		{{ Form::label('comment', 'Notes') }}
 			<div class="wmd-panel">
             <div id="wmd-button-bar"></div>
-            <textarea class="wmd-input" id="wmd-input"></textarea>	
-         {{ $errors->first('comment', '<span class="help-block">:message</span><br>') }}
+        {{ Form:: textarea('comment', Input::old('comment'), null, array('class' => 'wmd-input', 'id' => 'wmd-input')) }}
+        {{ $errors->first('comment', '<span class="help-block">:message</span><br>') }}
          	</div>
 	</div>
-	
+
 		{{ Form::submit('Add Guest') }}
 		{{ Form::close() }}
 
