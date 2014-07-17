@@ -29,12 +29,12 @@
 </div>
 
 
-	{{ Form::submit('Create A New Item') }}
+	{{-- Form::submit('Create A New Item') --}}
 
 
 
-	<div>
-		{{ Form::open(array('action' => 'PartyController@store', 'method' => 'POST')) }}
+	{{ Form::open(array('action' => 'PartyController@store')) }}
+  <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>
 		<!-- Change this error message -->
@@ -45,7 +45,7 @@
 		{{ Form::text('done_by', null, array('placeholder' => 'yyyy-mm-dd')) }}<br>
 		{{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
 	</div>
-  		{{ Form::submit('Add Todo') }}
-  		{{ Form::close() }}
+		{{ Form::submit('Add Todo') }}
+		{{ Form::close() }}
 
 @stop
