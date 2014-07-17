@@ -19,8 +19,6 @@ class BudgetItems extends Migration {
 			$budget->string('name');
 			$budget->integer('qty');
 			$budget->decimal('cost', 5, 2);
-			$budget->date('done_by')->nullable();
-			$budget->boolean('is_purchased')->nullable();
 			$budget->timestamps();
 
 		});

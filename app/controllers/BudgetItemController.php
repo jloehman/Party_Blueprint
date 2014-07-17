@@ -10,7 +10,7 @@ class BudgetItemController extends \BaseController {
 	public function index()
 	{
 		$budget_items = BudgetItem::orderBy('id','desc')->paginate(10);
-		return View::make('pages_folder.budget_item')->with('budget_items', $budget_items));
+		return View::make('pages_folder.budget_item')->with('budget_items', $budget_items);
 	}
 
 
@@ -51,8 +51,6 @@ class BudgetItemController extends \BaseController {
 			$budget_item->name = Input::get('name');
 			$budget_item->qty = Input::get('qty');
 			$budget_item->cost = Input::get('cost');
-			$budget_item->done_by = Input::get('done_by');
-			$budget_item->is_purchased = Input::get('is_purchased');
 			$budget_item->save();
 			// set flash data
 			Session::flash('successMessage', 'Buy List item created successfully');
@@ -115,8 +113,6 @@ class BudgetItemController extends \BaseController {
 			$budget_item->name = Input::get('name');
 			$budget_item->qty = Input::get('qty');
 			$budget_item->cost = Input::get('cost');
-			$budget_item->done_by = Input::get('done_by');
-			$budget_item->is_purchased = Input::get('is_purchased');
 			$budget_item->save();
 			// set flash data and to the view as well
 			Session::flash('successMessage', 'Buy List item updated successfully');
