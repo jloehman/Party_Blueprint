@@ -1,4 +1,19 @@
 @extends('layouts.user_master')
+
+@section('topscript')
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  });
+  </script>
+@stop
+
 @section('content')
 <h1>To Buy Items</h1>
 <div class="container-fluid content-wrapper">
@@ -11,7 +26,7 @@
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod mattis consectetur. 
 							Sed iaculis tincidunt egestas. Donec faucibus, justo quis dapibus tristique.
 									</p>
-									<br />
+									<br/>
 								</div>
 							</div>
 						</div>
@@ -53,10 +68,10 @@
 									<div class="container-responsive">
 	<div class="row-fluid">
 		 <div class="span6">
-			<ul class="unordered boxes">
+			<ul id="sortable1" class="connectedSortable">
 @foreach($budget_items as $budget_item)
 
-		  		<li class="unordered_item">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
+		  		<li class="ui-state-default">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
 		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
 					{{ Form::submit('Delete') }}
 					{{ Form::close() }}
@@ -65,7 +80,7 @@
   			</ul>
   		</div>
   		<div class="span6">
-			<ul class="unordered boxes">
+			<ul id="sortable2" class="connectedSortable">
 
   			</ul>
   		</div>
@@ -108,9 +123,6 @@
 
 	{{-- Form::submit('Create A New Item That Needs to be Purchased') --}}
 
-
-
-	
 @stop
 
 @section('bottomscript')
