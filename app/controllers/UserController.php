@@ -44,7 +44,7 @@ class UserController extends \BaseController {
 		else
 		{
 			//Need to ask about the user here and the one to many relationship
-			$user = new Todo();
+			$user = new User();
 			// $todo->user()->associate(Auth::user());
 			$user->first_name = Input::get('first_name');
 			$user->last_name = Input::get('last_name');
