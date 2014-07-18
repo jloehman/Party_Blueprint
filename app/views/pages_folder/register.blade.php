@@ -3,60 +3,43 @@
 @section('content') 
 
 
-<form class="form-horizontal" action='' method="POST">
-  <fieldset>
-    <div id="legend">
-<!--       <legend class="">Register</legend>
- -->    </div>
-    <div class="control-group">
-      <!-- First -->
-      <label class="control-label"  for="first_name">First Name</label>
-      <div class="controls">
-        <input type="text" id="first_name" name="first name" placeholder="" class="input-xlarge">
-      </div>
-    </div>
-    <div class="control-group">
-      <!-- Last -->
-      <label class="control-label"  for="last_name">Last Name</label>
-      <div class="controls">
-        <input type="text" id="last_name" name="last name" placeholder="" class="input-xlarge">        
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- E-mail -->
-      <label class="control-label" for="email">E-mail</label>
-      <div class="controls">
-        <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-        <p class="help-block">Please provide your E-mail</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password-->
-      <label class="control-label" for="password">Password</label>
-      <div class="controls">
-        <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-        <p class="help-block">Password should be at least 4 characters</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Password -->
-      <label class="control-label"  for="password_confirm">Password (Confirm)</label>
-      <div class="controls">
-        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
-        <p class="help-block">Please confirm password</p>
-      </div>
-    </div>
- 
-    <div class="control-group">
-      <!-- Button -->
-      <div class="controls">
-        <button class="btn btn-success">Register</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+
+  <body>
+
+    {{ Form::open(array('action' => HomeController@showWelcome')) }}
+    {{ Form::label('first name', 'First Name') }}
+    {{ Form::text('first_name', null, array('class' =>'form-control')) }}
+    <br>
+    {{ Form::open(array('action' => HomeController@showWelcome')) }}
+    {{ Form::label('last name', 'Last Name') }}
+    {{ Form::text('last_name', null, array('class' =>'form-control')) }}
+    <br>
+    {{ Form::open(array('action' => HomeController@showWelcome')) }}
+    {{ Form::label('first name', 'First Name') }}
+    {{ Form::text('first_name', null, array('class' =>'form-control')) }}
+    <br>
+    {{ Form::open(array('action' => HomeController@showWelcome')) }}
+    {{ Form::label('email', 'Email') }}
+    {{ Form::text('email', null, array('class' =>'form-control')) }}
+    <br>
+    {{ Form::label('password', 'Password:')}}
+        {{ Form::password('password', array('class' => 'form-control'))}}
+    <br>
+    {{ Form::label('password_confirm', 'Confirm Password:')}}
+        {{ Form::password('password_confirm', array('class' => 'form-control'))}}
+    <br>
+    <button type="Submit" class="btn btn-default">Register</button>
+
+    {{ Form::close() }}
+
+
+ </body>
+</html>
 
 @stop
