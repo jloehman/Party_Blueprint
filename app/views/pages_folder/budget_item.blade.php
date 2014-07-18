@@ -1,34 +1,78 @@
 @extends('layouts.user_master')
 @section('content')
 <h1>To Buy Items</h1>
-<div class=" table table-responsive table-condensed">
-  <table class="table table-bordered table-striped">
-  	<tr>
-  		<th>Name</th>
-  		<th>Quantity</th>
-  		<th>Cost</th>
-  		<th>Actions</th>
-  	</tr>
+<div class="container-fluid content-wrapper">
+
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="hero-unit non-index">
+									<h2>Invoices</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod mattis consectetur. 
+							Sed iaculis tincidunt egestas. Donec faucibus, justo quis dapibus tristique.
+									</p>
+									<br />
+								</div>
+							</div>
+						</div>
+
+						<div class="row-fluid">
+							<div class="span12">
+								<ul class="breadcrumb">
+									<li>
+										<a href="index.html">
+											<i class="radmin-icon radmin-home"></i>
+											Dashboard
+										</a>
+										<span class="divider">/</span>
+									</li>
+									<li>
+										<a href="invoices.html#">
+											<i class="radmin-icon radmin-file"></i>
+											Sample Pages
+										</a>
+										<span class="divider">/</span>
+									</li>
+									<li class="active">
+										<i class="radmin-icon radmin-clipboard-2"></i>
+										Invoices
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="row-fluid">
+							<div class="span12">
+								<h4 class="title">Create an invoice</h4>
+								<div class="squiggly-border"></div>
+
+								<div class="progress progress-grey">
+									<div class="bar" style="width: 30%;"></div>
+								</div>
+
+									<div class="container-responsive">
+	<div class="row-fluid">
+		 <div class="span6">
+			<ul class="unordered boxes">
 @foreach($budget_items as $budget_item)
-  	<tr>
-  		<td>{{{ $budget_item->name }}}</td>
-  		<td>{{{ $budget_item->qty }}}</td>
-  		<td>${{{ $budget_item->cost }}}</td>
-  		<td>{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
-			{{ Form::submit('Delete') }}
-			{{ Form::close() }}
-		</td>
-  	</tr>
+
+		  		<li class="unordered_item">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
+		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
+					{{ Form::submit('Delete') }}
+					{{ Form::close() }}
+				</li>
 @endforeach
-  </table>
+  			</ul>
+  		</div>
+  		<div class="span6">
+			<ul class="unordered boxes">
+
+  			</ul>
+  		</div>
+ 	</div>
 </div>
 
-
-	{{-- Form::submit('Create A New Item That Needs to be Purchased') --}}
-
-
-
-	{{ Form::open(array('action' => 'BudgetItemController@store')) }}
+{{ Form::open(array('action' => 'BudgetItemController@store', "class" => "form-horizontal invoice-form")) }}
   	<div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>
@@ -49,6 +93,24 @@
 	</div>
 		{{ Form::submit('Add Item') }}
 		{{ Form::close() }}
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sticky-footer-push"></div>
+	</div>
+
+
+
+	{{-- Form::submit('Create A New Item That Needs to be Purchased') --}}
+
+
+
+	
 @stop
 
 @section('bottomscript')

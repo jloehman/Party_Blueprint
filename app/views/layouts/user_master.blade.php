@@ -20,6 +20,7 @@
 	<link href="/admin_template/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="/admin_template/css/radmin.css" rel="stylesheet" id="main-stylesheet">
 	<link href="/admin_template/css/radmin-responsive.css" rel="stylesheet">
+	<link href="/css/budget_item.css" rel="stylesheet">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/admin_template/scripts/bootstrap.min.js"></script>

@@ -1,0 +1,15 @@
+ul.boxes {
+	margin: 0px;
+}
+
+.boxes li {
+	background: #ccc;
+	list-style-type: none;
+	padding: 3px;
+	margin-bottom: 10px;
+}
+
+.boxes {
+	border: 1px solid #000;
+	padding: 10px;
+}
