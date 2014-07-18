@@ -31,10 +31,7 @@ Route::get('/contact', function()
 	return View::make('pages_folder.contact');
 });
 
-Route::get('/register', function()
-{
-	return View::make('pages_folder.register');
-});
+Route::resource('/register', 'UserController');
 
 Route::get('/personal_admin', function()
 {
