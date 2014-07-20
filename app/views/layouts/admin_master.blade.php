@@ -26,7 +26,7 @@
 					</div> </a>
 					<ul>
 						<li>
-							<a href="/contact"><span class="cp-nav-link" id="clients">LOGOUT</span></a>
+							<a href="/contact"><span class="cp-nav-link" id="clients">{{ link_to_action('HomeController@logout', 'LOGOUT') }}</span></a>
 						</li>
 						<li>
 							<a href="/admin_users"><span class="cp-nav-link" id="contact">USER MANAGEMENT</span></a>
