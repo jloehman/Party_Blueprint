@@ -5,13 +5,6 @@
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    $( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
-  });
-  </script>
 @stop
 
 @section('content')
@@ -61,17 +54,16 @@
 								<h4 class="title">Create an invoice</h4>
 								<div class="squiggly-border"></div>
 
-								<div class="progress progress-grey">
-									<div class="bar" style="width: 30%;"></div>
-								</div>
+								
 
 									<div class="container-responsive">
 	<div class="row-fluid">
 		 <div class="span6">
-			<ul id="sortable1" class="connectedSortable">
+		 	<div id="ajax-message">
+			<ul id="sortable1" class="connectedSortable" >
 @foreach($budget_items as $budget_item)
 
-		  		<li class="ui-state-default">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
+		  		<li class="ui-state-default budget-item">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
 		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
 					{{ Form::submit('Delete') }}
 					{{ Form::close() }}
@@ -85,6 +77,7 @@
   			</ul>
   		</div>
  	</div>
+</div>
 </div>
 
 {{ Form::open(array('action' => 'BudgetItemController@store', "class" => "form-horizontal invoice-form")) }}
@@ -126,5 +119,61 @@
 @stop
 
 @section('bottomscript')
+<script>
+  $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+
+  $("#sortable2").on('sortchange', function() {
+  	
+  });
+
+// drag and drop table to update budget
+// 
+// star rating system
+// 
+// usage with timers
+// 
+// grab a new job
+// 
+$('#ajax-form').on('submit', function (e) {
+    e.preventDefault();
+    var formValues = $(this).serialize();
+    console.log(formValues);
+
+    $.ajax({
+        url: "/ajax",
+        type: "POST",
+        data: formValues,
+        dataType: "json",
+        success: function (data) {
+            $('#ajax-message').html(data.message);
+        }
+    });
+});
+
+$('.btn-ajax').on('click', function () {
+
+    console.log('Clicked the button');
+
+    var toSend = {
+        'id': 1,
+        'name': 'test'
+    };
+
+    $.ajax({
+        url: "/ajax",
+        type: "POST",
+        data: toSend,
+        dataType: "json",
+        success: function (data) {
+            $('#ajax-message').html(data.message);
+        }
+    });
+
+});
+
+
+</script>
 
 @stop

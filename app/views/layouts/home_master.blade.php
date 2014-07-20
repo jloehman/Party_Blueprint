@@ -22,7 +22,7 @@
 			<div class="row visible-desktop">
 				<div class="span12 cp-nav">
 					<a href="/">
-					<div class="cp-logo"><img src="/simple_soiree_template/img/logo.png" alt="logo">
+					<div class="cp-logo"><img src="/public/simple_soiree.jpeg" alt="logo">
 					</div> </a>
 					<ul>
 						<li>
