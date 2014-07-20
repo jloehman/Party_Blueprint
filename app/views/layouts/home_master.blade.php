@@ -34,9 +34,13 @@
 						<li>
 							<a href="/register"><span class="cp-nav-link" id="register">REGISTER</span></a>
 						</li>
-						<li>
-							<a href="/login"><span class="cp-nav-link" id="login">LOGIN</span></a>
-						</li>
+							@if (Auth::check())
+		 					<!-- user is logged in -->
+							<li>{{ link_to_action('HomeController@logout', 'LOGOUT') }}</li>
+							@else
+   							<!-- user not NOT logged in -->
+    						<li>{{ link_to_action('HomeController@showLogin', 'LOGIN') }}</li>
+    						@endif
 					</ul>
 				</div>
 			</div>
