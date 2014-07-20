@@ -44,9 +44,9 @@
 					</div></a>
 
 					<select id="cp-nav-mobile" size="1">
-						<option value="/about" id="index" selected>ABOUT</option>
-						<option value="/contact" id="portfolio">CONTACT</option>
-						<option value="/register" id="services">REGISTER</option>
+						<option value="/about" id="index" selected>LOGOUT</option>
+						<option value="/admin_users" id="portfolio">USER MANAGEMENT</option>
+						<option value="/admin_admin" id="services">ADMIN MANAGEMENT</option>
 					</select>
 				</div>
 			</div>
