@@ -43,6 +43,10 @@ Route::get('/budget', function()
 	return View::make('pages_folder.budget');
 });
 
+Route::resource('/admin_users', 'AdminUserController');
+
+Route::resource('/admin_admin', 'AdminController');
+
 Route::resource('/todo_list', 'PartyController');
 
 Route::resource('/guest_list', 'GuestController');
@@ -54,10 +58,6 @@ Route::get('/summary_page', function()
 	return View::make('pages_folder.summary_page');
 });
 
-Route::get('/admin_admin', function()
-{
-	return View::make('pages_folder.admin_admin');
-});
 Route::get('ajax', function () {
     return View::make('ajax');
 });
