@@ -29,10 +29,10 @@
 							<a href="/contact"><span class="cp-nav-link" id="clients">LOGOUT</span></a>
 						</li>
 						<li>
-							<a href="/about"><span class="cp-nav-link" id="contact">USER MANAGEMENT</span></a>
+							<a href="/admin_users"><span class="cp-nav-link" id="contact">USER MANAGEMENT</span></a>
 						</li>
 						<li>
-							<a href="/contact"><span class="cp-nav-link" id="clients">ADMIN MANAGEMENT</span></a>
+							<a href="/admin_admin"><span class="cp-nav-link" id="clients">ADMIN MANAGEMENT</span></a>
 						</li>
 					</ul>
 				</div>

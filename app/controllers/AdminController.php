@@ -101,7 +101,7 @@ class AdminController extends \BaseController {
 		$user->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 
-		return Redirect::action('UserController@index');
+		return Redirect::action('AdminController@index');
 	}
 
 

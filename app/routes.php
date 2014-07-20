@@ -43,6 +43,8 @@ Route::get('/budget', function()
 	return View::make('pages_folder.budget');
 });
 
+Route::resource('/admin_users', 'AdminUserController');
+
 Route::resource('/admin_admin', 'AdminController');
 
 Route::resource('/todo_list', 'PartyController');
