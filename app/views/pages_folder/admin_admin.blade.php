@@ -35,7 +35,8 @@
 		    <!-- {{ Form::label('password_confirm', 'Confirm Password:')}}
 		        {{ Form::password('password_confirm', array('class' => 'form-control'))}}
 		    <br> -->
-		    {{ Form::hidden('is_admin', null, array('value'=>true)) }}
+		    <!-- {{ Form::hidden('is_admin', null, array('value'=>true)) }} -->
+		    <input type="hidden" name="is_admin" value="1">
 		    <button type="Submit" class="btn btn-default">Register</button>
 
 		    {{ Form::close()}}
