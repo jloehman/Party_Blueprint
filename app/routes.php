@@ -58,5 +58,28 @@ Route::get('/admin_admin', function()
 {
 	return View::make('pages_folder.admin_admin');
 });
+Route::get('ajax', function () {
+    return View::make('ajax');
+});
+
+Route::post('ajax', function () {
+
+    $name = Input::get('name');
+    $qty = Input::get('qty');
+    $cost =Input::get('cost');
+
+    $error = false;
+    $message = "Successfully processed id: $id with name: $name.";
+
+    $result = array(
+        'error' => $error,
+        'message' => $message,
+    );
+
+    return Response::json($result);
+
+});
+
+
 
 
