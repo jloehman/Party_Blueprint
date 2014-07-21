@@ -28,7 +28,7 @@ class HomeController extends BaseController {
 	    		if (Auth::user()->is_admin == true) {
 	    			return Redirect::action('AdminController@index');
 	    		}else{
-	    			return View::make('pages_folder.welcome');
+	    			return Redirect::action('WelcomeController@index');
 	    		}
     	}
 		else
