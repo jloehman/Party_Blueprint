@@ -146,5 +146,17 @@ class PartyController extends \BaseController {
 		return Redirect::action('PartyController@index');
 	}
 
+	public function summary($id)
+	{
+		$data = array
+		(
+			//need to include a parameter here for the budget part to work
+			'party' => Party::where('id', $id)->first(),
+			'guests' => Guest::where('party_id', $id)->get(),
+			'todos' => Todo::where('party_id', $id)->get()
+		);
+		return View::make('pages_folder.summary_page')->with($data);
+	}
+
 
 }
