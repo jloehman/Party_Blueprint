@@ -43,10 +43,6 @@ Route::get('/budget', function()
 	return View::make('pages_folder.budget');
 });
 
-Route::resource('/admin_users', 'AdminUserController');
-
-Route::resource('/admin_admin', 'AdminController');
-
 Route::resource('/todo_list', 'PartyController');
 
 Route::resource('/guest_list', 'GuestController');
@@ -58,12 +54,17 @@ Route::get('/summary_page', function()
 	return View::make('pages_folder.summary_page');
 });
 
-Route::get('ajax', function () {
-    return View::make('ajax');
+Route::get('/admin_admin', function()
+{
+	return View::make('pages_folder.admin_admin');
 });
 
-Route::post('ajax', function () {
+// Route::get('ajax', function () {
+//     return View::make('ajax');
+// });
 
+Route::post('ajax', function () {
+//can remove after moved in controller
     $name = Input::get('name');
     $qty = Input::get('qty');
     $cost =Input::get('cost');
