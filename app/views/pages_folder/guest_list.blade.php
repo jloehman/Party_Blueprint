@@ -21,7 +21,7 @@
   		<!-- this needs to be a checkbox -->
   		<td>
   			<!-- this needs to be submitted -->
-  			{{ Form::checkbox('is_attending')}}
+  			{{ Form::checkbox('is_attending', '0', Input::old('is_attending', false))}}
 
   		</td>
   		<td>{{{ $guest->comment }}}</td>

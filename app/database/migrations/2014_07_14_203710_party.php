@@ -20,7 +20,8 @@ class Party extends Migration {
 			$party->time('start_time');
 			$party->time('end_time');
 			$party->string('location');
-			$party->string('user_id');
+			$party->integer('user_id')->unsigned();
+			$party->foreign('user_id')->references('id')->on('users');
 			$party->double('budget');
 			$party->timestamps();
 
@@ -36,6 +37,8 @@ class Party extends Migration {
 	public function down()
 	{
 		Schema::drop('parties');
+		
 	}
 
 }
+

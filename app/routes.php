@@ -48,6 +48,7 @@ Route::resource('/todo_list', 'PartyController');
 Route::resource('/guest_list', 'GuestController');
 
 Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
+
 Route::resource('/budget_item', 'BudgetItemController');
 
 $name = Input::get('name');
@@ -56,15 +57,14 @@ $name = Input::get('name');
 
 Route::resource('/welcome', 'WelcomeController');
 
+Route::resource('/admin_users', 'AdminUserController');
+
 Route::get('/summary_page', function()
 {
 	return View::make('pages_folder.summary_page');
 });
 
-Route::get('/admin_admin', function()
-{
-	return View::make('pages_folder.admin_admin');
-});
+Route::resource('/admin_admin', 'AdminController');
 
 // Route::get('ajax', function () {
 //     return View::make('ajax');
