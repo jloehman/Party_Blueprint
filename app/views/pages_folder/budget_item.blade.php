@@ -47,9 +47,9 @@
 			<ul id="sortable1" class="connectedSortable" >
 @foreach($budget_items as $budget_item)
 
-		  		<li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
+		  		<li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
 		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
-					{{ Form::submit('Delete') }}
+					<font color="pink">{{ Form::submit('Delete') }}</font>
 					{{ Form::close() }}
 				</li>
 @endforeach
@@ -130,42 +130,42 @@
 // 
 // grab a new job
 // 
-$('#ajax-form').on('submit', function (e) {
-    e.preventDefault();
-    var formValues = $(this).serialize();
-    console.log(formValues);
+// $('#ajax-form').on('submit', function (e) {
+//     e.preventDefault();
+//     var formValues = $(this).serialize();
+//     console.log(formValues);
 
-    $.ajax({
-        url: "/ajax",
-        type: "POST",
-        data: formValues,
-        dataType: "json",
-        success: function (data) {
-            $('#ajax-message').html(data.message);
-        }
-    });
-});
+//     $.ajax({
+//         url: "/ajax",
+//         type: "POST",
+//         data: formValues,
+//         dataType: "json",
+//         success: function (data) {
+//             $('#ajax-message').html(data.message);
+//         }
+//     });
+// });
 
-$('.btn-ajax').on('click', function () {
+// $('.btn-ajax').on('click', function () {
 
-    console.log('Clicked the button');
+//     console.log('Clicked the button');
 
-    var toSend = {
-        'id': 1,
-        'name': 'test'
-    };
+//     var toSend = {
+//         'id': 1,
+//         'name': 'test'
+//     };
 
-    $.ajax({
-        url: "/ajax",
-        type: "POST",
-        data: toSend,
-        dataType: "json",
-        success: function (data) {
-            $('#ajax-message').html(data.message);
-        }
-    });
+//     $.ajax({
+//         url: "/ajax",
+//         type: "POST",
+//         data: toSend,
+//         dataType: "json",
+//         success: function (data) {
+//             $('#ajax-message').html(data.message);
+//         }
+//     });
 
-});
+// });
 
 
 </script>
