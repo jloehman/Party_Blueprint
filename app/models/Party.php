@@ -36,5 +36,10 @@ class Party extends Eloquent implements UserInterface, RemindableInterface {
 		$this->hasMany('Todo');
 	}
 
+	public function budgetItems()
+	{
+		$this->hasMany('BudgetItem');
+	}
+
 
 }
