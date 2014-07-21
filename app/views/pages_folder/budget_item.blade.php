@@ -89,24 +89,26 @@
       }
     }).disableSelection();
 
-  // $('#sortable2').droppable({
-  //   drop: function( event, ui ) {
+  $('#sortable2').droppable({
+    droppable: function( event, ui ) {
 
-  //     $('.list-group-item').mouseup(function() {
-  //       console.log('save it fool');
-  //     });
+      var id = $(ui.item).attr('data-budgetId', 'data-amount');
 
-  //     $.ajax({
-  //       url: "/update_purchase",
-  //       type: "PUT",
-  //       data: { budgetId: 'test' },
-  //       dataType: "json",
-  //       success: function (data) {
-  //           $('#ajax-message').html(data.message);
-  //       }
-  //     });
-  //   }
-  // })
+      $('.list-group-item').mouseup(function() {
+        console.log('save it fool');
+      });
+
+      $.ajax({
+        url: "/update_purchase",
+        type: "PUT",
+        data: { budgetId: id },
+        dataType: "json",
+        success: function (data) {
+            $('#ajax-message').html(data.message);
+        }
+      });
+    }
+  })
 
 
   // $("#sortable2").on('sortchange', function() {
@@ -114,7 +116,7 @@
   // 	 $.ajax({
   //       url: "/update_purchase",
   //       type: "PUT",
-  //       data: toSend,
+  //       data: { budgetId: id },
   //       dataType: "json",
   //       success: function (data) {
   //           $('#ajax-message').html(data.message);
@@ -130,42 +132,42 @@
 // 
 // grab a new job
 // 
-$('#ajax-form').on('submit', function (e) {
-    e.preventDefault();
-    var formValues = $(this).serialize();
-    console.log(formValues);
+// $('#ajax-form').on('submit', function (e) {
+//     e.preventDefault();
+//     var formValues = $(this).serialize();
+//     console.log(formValues);
 
-    $.ajax({
-        url: "/ajax",
-        type: "POST",
-        data: formValues,
-        dataType: "json",
-        success: function (data) {
-            $('#ajax-message').html(data.message);
-        }
-    });
-});
+//     $.ajax({
+//         url: "/ajax",
+//         type: "POST",
+//         data: formValues,
+//         dataType: "json",
+//         success: function (data) {
+//             $('#ajax-message').html(data.message);
+//         }
+//     });
+// });
 
-$('.btn-ajax').on('click', function () {
+// $('.btn-ajax').on('click', function () {
 
-    console.log('Clicked the button');
+//     console.log('Clicked the button');
 
-    var toSend = {
-        'id': 1,
-        'name': 'test'
-    };
+//     var toSend = {
+//         'id': 1,
+//         'name': 'test'
+//     };
 
-    $.ajax({
-        url: "/ajax",
-        type: "POST",
-        data: toSend,
-        dataType: "json",
-        success: function (data) {
-            $('#ajax-message').html(data.message);
-        }
-    });
+//     $.ajax({
+//         url: "/ajax",
+//         type: "POST",
+//         data: toSend,
+//         dataType: "json",
+//         success: function (data) {
+//             $('#ajax-message').html(data.message);
+//         }
+//     });
 
-});
+// });
 
 
 </script>
