@@ -123,26 +123,30 @@ class BudgetItemController extends \BaseController {
 		}
 	}
 
-public function ajax($id)
+public function ajax_update_purchased()
 {
-	$budget = Post::find(Input::get('name','cost')
+	$id = Input::get('budgetId');
+	$budget = BudgetItem::find($id);
+	$budget->is_purchased = 1;
+	$budget->save();
 
-	{
+	// 
 
-	$name = Input::get('name');
-    $qty = Input::get('qty');
-    $cost =Input::get('cost');
+	// $name = Input::get('name');
+ //    $qty = Input::get('qty');
+ //    $cost =Input::get('cost');
 
     
+ //    $error = false;
+ //    $message = "Over Budget on your $id party";
 
-    $message = "Over Budget";
+ //    $result = array(
+ //    	'error' => $error,
+ //    	'message' => $message,
+ //    	);
+ //    return Redirect::to('/budget_item')->with('name', 'cost');
 
-    $result = array(
-    	'message' => $message,
-    	);
-    return Redirect::('/budget_item')->with('name', 'cost');
-
-    }
+ //    }
 }
 
 

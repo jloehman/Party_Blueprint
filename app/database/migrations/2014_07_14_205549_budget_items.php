@@ -19,6 +19,7 @@ class BudgetItems extends Migration {
 			$budget->string('name');
 			$budget->integer('qty');
 			$budget->decimal('cost', 5, 2);
+			$budget->tinyInteger('is_purchased')->default(0);
 			$budget->timestamps();
 
 		});

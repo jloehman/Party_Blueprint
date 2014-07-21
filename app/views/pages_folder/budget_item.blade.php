@@ -47,7 +47,7 @@
 			<ul id="sortable1" class="connectedSortable" >
 @foreach($budget_items as $budget_item)
 
-		  		<li class="ui-state-default list-group-item">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
+		  		<li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
 		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
 					{{ Form::submit('Delete') }}
 					{{ Form::close() }}
@@ -71,12 +71,56 @@
 @section('bottomscript')
 <script>
   $( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable"
+      connectWith: ".connectedSortable",
+      stop : function(event, ui){ 
+        var id = $(ui.item).attr('data-budgetId');
+        var amount = $(ui.item).attr('data-amount');
+
+        $.ajax({
+          url: "/update_purchase",
+          type: "PUT",
+          data: { budgetId: id },
+          dataType: "json",
+          success: function (data) {
+              $('#ajax-message').html(data.message);
+          }
+        });
+        // console.log(id);
+      }
     }).disableSelection();
 
-  $("#sortable2").on('sortchange', function() {
+  // $('#sortable2').droppable({
+  //   drop: function( event, ui ) {
 
-  });
+  //     $('.list-group-item').mouseup(function() {
+  //       console.log('save it fool');
+  //     });
+
+  //     $.ajax({
+  //       url: "/update_purchase",
+  //       type: "PUT",
+  //       data: { budgetId: 'test' },
+  //       dataType: "json",
+  //       success: function (data) {
+  //           $('#ajax-message').html(data.message);
+  //       }
+  //     });
+  //   }
+  // })
+
+
+  // $("#sortable2").on('sortchange', function() {
+
+  // 	 $.ajax({
+  //       url: "/update_purchase",
+  //       type: "PUT",
+  //       data: toSend,
+  //       dataType: "json",
+  //       success: function (data) {
+  //           $('#ajax-message').html(data.message);
+  //       }
+  //   });
+  // });
 
 // drag and drop table to update budget
 // 

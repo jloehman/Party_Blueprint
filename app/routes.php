@@ -47,6 +47,7 @@ Route::resource('/todo_list', 'PartyController');
 
 Route::resource('/guest_list', 'GuestController');
 
+Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 Route::resource('/budget_item', 'BudgetItemController');
 
 Route::get('/summary_page', function()
@@ -63,24 +64,21 @@ Route::get('/admin_admin', function()
 //     return View::make('ajax');
 // });
 
-Route::post('ajax', function () {
-//can remove after moved in controller
-    $name = Input::get('name');
-    $qty = Input::get('qty');
-    $cost =Input::get('cost');
 
-    $error = false;
-    $message = "Successfully processed id: $id with name: $name.";
+// Route::post('/budget_item', function () {
+// //can remove after moved in controller
+//     $name = Input::get('name');
+//     $qty = Input::get('qty');
+//     $cost =Input::get('cost');
 
-    $result = array(
-        'error' => $error,
-        'message' => $message,
-    );
+//     $error = false;
+//     // $message = "Over Budget on your $id party";
 
-    return Response::json($result);
+//     // $result = array(
+//     //     'error' => $error,
+//     //     'message' => $message,
+//     // );
 
-});
+//     return Redirect::to('/budget_item')->with('name', 'cost');
 
-
-
-
+// });
