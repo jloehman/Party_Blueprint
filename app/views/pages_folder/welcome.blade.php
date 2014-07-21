@@ -18,6 +18,7 @@
 	  <div class="dropdown-menu" role="menu">
 	  	@foreach($parties as $party)
 	  	<!-- when one of these is chosen, I need it to render the specific information -->
+
 	        <a href="{{{ action('WelcomeController@show', $party->id) }}} class="list-group-item"">{{{ $party->party_name }}}</a>
 		@endforeach
 	  </div>

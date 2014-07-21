@@ -43,6 +43,7 @@ Route::get('/budget', function()
 	return View::make('pages_folder.budget');
 });
 
+Route::get('/summary/{id}', 'PartyController@summary');
 Route::resource('/todo_list', 'PartyController');
 
 Route::resource('/guest_list', 'GuestController');
@@ -58,11 +59,6 @@ $name = Input::get('name');
 Route::resource('/welcome', 'WelcomeController');
 
 Route::resource('/admin_users', 'AdminUserController');
-
-Route::get('/summary_page', function()
-{
-	return View::make('pages_folder.summary_page');
-});
 
 Route::resource('/admin_admin', 'AdminController');
 
