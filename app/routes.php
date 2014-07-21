@@ -57,10 +57,7 @@ Route::get('/summary_page', function()
 	return View::make('pages_folder.summary_page');
 });
 
-Route::get('/admin_admin', function()
-{
-	return View::make('pages_folder.admin_admin');
-});
+Route::resource('/admin_admin', 'AdminController');
 
 // Route::get('ajax', function () {
 //     return View::make('ajax');
