@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Party extends Migration {
+class CreatePartyTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -18,7 +18,7 @@ class Party extends Migration {
 			$party->string('party_name', 30);
 			$party->date('event_date');
 			$party->time('start_time');
-			$party->time('end_time');
+			$party->time('end_time')->nullable();
 			$party->string('location');
 			$party->integer('user_id')->unsigned();
 			$party->foreign('user_id')->references('id')->on('users');
