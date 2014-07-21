@@ -38,7 +38,7 @@ class WelcomeController extends \BaseController {
 
 			// retrieve flash data (same as any other session variable)
 
-			return Redirect::route('create_new_party.index');
+			return Redirect::back()->withInput()->withErrors($validator);
 
 		}
 		else
@@ -57,7 +57,7 @@ class WelcomeController extends \BaseController {
 			Session::flash('successMessage', 'Party Created Successfully!');
 
 			// retrieve flash data (same as any other session variable)
-			return Redirect::route('welcome.index');
+			return Redirect::route('personal_admin');
 		}
 	}
 

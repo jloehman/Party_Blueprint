@@ -49,6 +49,8 @@ Route::resource('/guest_list', 'GuestController');
 
 Route::resource('/budget_item', 'BudgetItemController');
 
+Route::resource('/welcome', 'WelcomeController');
+
 Route::get('/summary_page', function()
 {
 	return View::make('pages_folder.summary_page');

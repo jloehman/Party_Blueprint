@@ -20,17 +20,17 @@ class HomeController extends BaseController {
 		return View::make('pages_folder.login');
 	}
 	public function doLogin()
-	{
+	{	
 		$email = Input::get('email');
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password)))
 		{
-    		if ($user->is_admin == true) {
+	    		if ($user->is_admin == true) {
 
-    			return View::make('pages_folder.admin_admin');
-    		}else{
-    			return View::make('pages_folder.welcome');
-    		}
+	    			return View::make('pages_folder.admin_admin');
+	    		}else{
+	    			return View::make('pages_folder.welcome');
+	    		}
     	}
 		else
 		{
