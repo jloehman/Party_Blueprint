@@ -52,6 +52,10 @@ Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 
 Route::resource('/budget_item', 'BudgetItemController');
 
+$name = Input::get('name');
+//     $qty = Input::get('qty');
+//     $cost =Input::get('cost')
+
 Route::resource('/welcome', 'WelcomeController');
 
 Route::resource('/admin_users', 'AdminUserController');

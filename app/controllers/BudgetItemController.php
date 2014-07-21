@@ -125,10 +125,12 @@ class BudgetItemController extends \BaseController {
 
 public function ajax_update_purchased()
 {
-	$id = Input::get('budgetId');
+	$id = Input::get('budgetId', 'amount');
 	$budget = BudgetItem::find($id);
 	$budget->is_purchased = 1;
 	$budget->save();
+
+	return Redirect::action('BudgetItemController@inde');
 
 	// 
 
