@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder {
 
 		// $this->call('GuestsSeeder');
 
-		// $this->call('PartySeeder');
+		$this->call('PartyTableSeeder');
 
 		// $this->call('TodoListSeeder');
 

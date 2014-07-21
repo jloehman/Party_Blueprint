@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class GuestsTable extends Migration {
+class Guests extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,13 +15,15 @@ class GuestsTable extends Migration {
 		Schema::create('guests', function($guests)
 		{
 			$guests->increments('id');
-			$guests->string('party_id', 20);
+			$guests->integer('party_id')->unsigned();
 			$guests->string('name', 50);
 		    $guests->string('email', 200)->unique();
 		    $guests->string('phone', 20);
-		    $guests->boolean('is_attending', 5)->nullable();
+		    $guests->boolean('is_attending')->nullable();
 		    $guests->text('comment')->nullable();
 		    $guests->timestamps();
+
+		    $guests->foreign('party_id')->references('id')->on('parties');
 		});
 
 		
@@ -34,7 +36,8 @@ class GuestsTable extends Migration {
 	 */
 	public function down()
 	{
-				Schema::drop('guests');
+		Schema::drop('guests');
+		
 
 	}
 

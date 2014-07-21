@@ -20,4 +20,14 @@ class BudgetItem extends Eloquent {
 		$this->hasOne('Party');
 	}
 
+	public static function is_purchased()
+	{
+		return self::where('is_purchased', 1)->get();
+	}
+
+	public static function not_purchased()
+	{
+		return self::where('is_purchased', 0)->get();
+	}
+
 }

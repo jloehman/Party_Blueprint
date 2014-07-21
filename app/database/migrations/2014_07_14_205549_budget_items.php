@@ -15,13 +15,13 @@ class BudgetItems extends Migration {
 		Schema::create('budget_items', function($budget)
 		{
 			$budget->increments('id');
-			$budget->string('party_id', 30);
+			$budget->integer('party_id')->unsigned();
 			$budget->string('name');
 			$budget->integer('qty');
 			$budget->decimal('cost', 5, 2);
 			$budget->tinyInteger('is_purchased')->default(0);
 			$budget->timestamps();
-
+			$budget->foreign('party_id')->references('id')->on('parties');	
 		});
 
 	}
@@ -34,6 +34,10 @@ class BudgetItems extends Migration {
 	public function down()
 	{
 		Schema::drop('budget_items');
+		{
+			
+    		$budget->drop('party_id');
+		}
 	}
 
 }
