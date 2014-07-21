@@ -58,12 +58,13 @@ Route::get('/admin_admin', function()
 {
 	return View::make('pages_folder.admin_admin');
 });
-Route::get('ajax', function () {
-    return View::make('ajax');
-});
+
+// Route::get('ajax', function () {
+//     return View::make('ajax');
+// });
 
 Route::post('ajax', function () {
-
+//can remove after moved in controller
     $name = Input::get('name');
     $qty = Input::get('qty');
     $cost =Input::get('cost');

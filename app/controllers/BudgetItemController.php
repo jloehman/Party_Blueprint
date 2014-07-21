@@ -123,6 +123,27 @@ class BudgetItemController extends \BaseController {
 		}
 	}
 
+public function ajax($id)
+{
+	$budget = Post::find(Input::get('name','cost')
+
+	{
+
+	$name = Input::get('name');
+    $qty = Input::get('qty');
+    $cost =Input::get('cost');
+
+    
+
+    $message = "Over Budget";
+
+    $result = array(
+    	'message' => $message,
+    	);
+    return Redirect::('/budget_item')->with('name', 'cost');
+
+    }
+}
 
 
 	/**
