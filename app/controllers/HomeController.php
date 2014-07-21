@@ -25,9 +25,13 @@ class HomeController extends BaseController {
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password)))
 		{
-    		return Redirect::action('GuestController@index');
-    		
-		}
+    		if ($user->is_admin == true) {
+
+    			return View::make('pages_folder.admin_admin');
+    		}else{
+    			return View::make('pages_folder.welcome');
+    		}
+    	}
 		else
 		{
     		Session::flash('errorMessage', 'Email or password not found.');
