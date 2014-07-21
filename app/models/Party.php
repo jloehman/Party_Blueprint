@@ -15,6 +15,12 @@ class Party extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'parties';
 
+	static public $rules = [
+    	'party_name' => 'required|max:100',
+    	'location' => 'required',
+    	'event_date' => 'required',
+    ];
+
 	public function users()
 	{
 		$this->hasOne('User');
