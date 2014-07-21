@@ -48,9 +48,12 @@ Route::resource('/todo_list', 'PartyController');
 Route::resource('/guest_list', 'GuestController');
 
 Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
+
 Route::resource('/budget_item', 'BudgetItemController');
 
 Route::resource('/welcome', 'WelcomeController');
+
+Route::resource('/admin_users', 'AdminUserController');
 
 Route::get('/summary_page', function()
 {
