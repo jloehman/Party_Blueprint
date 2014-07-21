@@ -9,7 +9,6 @@
 
 @section('content')
 <h1>To Buy Items</h1>
-<hr>
 <div class="table">
 	<table class="table">
 		<th>Add an Item Here</th>
@@ -21,7 +20,7 @@
 	<div class="row-fluid">
 		<div class="col-md-3">
 			{{ Form::open(array('action' => 'BudgetItemController@store', "class" => "form-horizontal form-group")) }}
-	  	<div>
+	<div>
 			{{ Form::label('name', 'Name') }}<br>
 			{{ Form::text('name', Input::old('name')) }}<br>
 			<!-- Change this error message -->
@@ -42,14 +41,15 @@
 			{{ Form::submit('Add Item') }}
 			{{ Form::close() }}
 	</div>
+  
 		 <div class="receipt col-md-3">
 		 	<div id="ajax-message">
 			<ul id="sortable1" class="connectedSortable" >
-@foreach($budget_items as $budget_item)
+@foreach(BudgetItem::not_purchased() as $budget_item)
 
-		  		<li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}">(qty: {{{ $budget_item->qty }}}) <strong>{{{ $budget_item->name }}}</strong>  ${{{ $budget_item->cost }}}
+		  		<li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
 		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
-					{{ Form::submit('Delete') }}
+					<font color="pink">{{ Form::submit('Delete') }}</font>
 					{{ Form::close() }}
 				</li>
 @endforeach
@@ -58,6 +58,14 @@
  	</div>
  	<div class="receipt col-md-3">
 			<ul id="sortable2" class="connectedSortable">
+@foreach(BudgetItem::is_purchased() as $budget_item)
+
+          <li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
+            {{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
+          <font color="pink">{{ Form::submit('Delete') }}</font>
+          {{ Form::close() }}
+        </li>
+@endforeach
 
   			</ul>
   		</div>
@@ -130,42 +138,42 @@
 // 
 // grab a new job
 // 
-$('#ajax-form').on('submit', function (e) {
-    e.preventDefault();
-    var formValues = $(this).serialize();
-    console.log(formValues);
+// $('#ajax-form').on('submit', function (e) {
+//     e.preventDefault();
+//     var formValues = $(this).serialize();
+//     console.log(formValues);
 
-    $.ajax({
-        url: "/ajax",
-        type: "POST",
-        data: formValues,
-        dataType: "json",
-        success: function (data) {
-            $('#ajax-message').html(data.message);
-        }
-    });
-});
+//     $.ajax({
+//         url: "/ajax",
+//         type: "POST",
+//         data: formValues,
+//         dataType: "json",
+//         success: function (data) {
+//             $('#ajax-message').html(data.message);
+//         }
+//     });
+// });
 
-$('.btn-ajax').on('click', function () {
+// $('.btn-ajax').on('click', function () {
 
-    console.log('Clicked the button');
+//     console.log('Clicked the button');
 
-    var toSend = {
-        'id': 1,
-        'name': 'test'
-    };
+//     var toSend = {
+//         'id': 1,
+//         'name': 'test'
+//     };
 
-    $.ajax({
-        url: "/ajax",
-        type: "POST",
-        data: toSend,
-        dataType: "json",
-        success: function (data) {
-            $('#ajax-message').html(data.message);
-        }
-    });
+//     $.ajax({
+//         url: "/ajax",
+//         type: "POST",
+//         data: toSend,
+//         dataType: "json",
+//         success: function (data) {
+//             $('#ajax-message').html(data.message);
+//         }
+//     });
 
-});
+// });
 
 
 </script>

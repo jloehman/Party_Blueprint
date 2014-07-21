@@ -10,7 +10,7 @@ class GuestController extends \BaseController {
 	public function index()
 	{
 		//look into pagination..for everything
-		$guests = Guest::orderBy('id','desc')->paginate(10);
+		$guests = Guest::orderBy('id','desc');
 		return View::make('pages_folder.guest_list')->with('guests', $guests);
 	}
 

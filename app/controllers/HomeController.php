@@ -25,9 +25,8 @@ class HomeController extends BaseController {
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password)))
 		{
-	    		if ($user->is_admin == true) {
-
-	    			return View::make('pages_folder.admin_admin');
+	    		if (Auth::user()->is_admin == true) {
+	    			return Redirect::action('AdminController@index');
 	    		}else{
 	    			return View::make('pages_folder.welcome');
 	    		}

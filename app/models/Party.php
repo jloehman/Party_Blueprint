@@ -30,5 +30,10 @@ class Party extends Eloquent {
 		$this->hasMany('Todo');
 	}
 
+	public function budgetItems()
+	{
+		$this->hasMany('BudgetItem');
+	}
+
 
 }

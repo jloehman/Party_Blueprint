@@ -1,6 +1,6 @@
 <?php
 
-class UserTableSeeder extends Seeder {
+class UserTableSeeder extends DatabaseSeeder {
 	public function run()
 	{
 
