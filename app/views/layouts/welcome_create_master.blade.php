@@ -1,13 +1,24 @@
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-@yield('topscript')
-
-
+<!DOCTYPE html
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	@yield('topscript')
+</head>
+<body>
 @yield('content')
 
-	<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="assets/js/jquery-func.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/retina.js"></script>
-	<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 @yield('bottomscript')
+</body>
+</html>
+
+
+
+
+
+
