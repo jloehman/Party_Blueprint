@@ -2,6 +2,12 @@
 
 class AdminController extends \BaseController {
 
+	public function __construct()
+	{
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('isAdmin');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
