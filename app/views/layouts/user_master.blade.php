@@ -39,7 +39,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="/logout">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -48,20 +48,10 @@
 <nav class="sidebar-fixed">
     <ul class="list-group">
         <li id="dashboard"  class="label label-default">Dashboard</li>
-        <li class="list-group-item"><a href="#"><i class="icon-home"></i>Guests to Invite</a></li>
-        <li class="list-group-item"><a href="#"><i class="icon-cog"></i>Planning List</a></li>
-        <li class="list-group-item">
-            <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Budget Items</a>
-            <ul class="dropdown-menu" data-role="dropdown">
-                <li><a href="">Subitem 1</a></li>
-                <li><a href="">Subitem 2</a></li>
-                <li><a href="">Subitem 3</a></li>
-                <li class="divider"></li>
-                <li><a href="">Subitem 4</a></li>
-                <li class="disabled"><a href="">Subitem 4</a></li>
-            </ul>
-        </li>
-        <li class="list-group-item"><a href="#">Summary</a></li>
+        <li class="list-group-item"><a href="/guest_list"><i class="icon-home"></i>Guests to Invite</a></li>
+        <li class="list-group-item"><a href="/todo_list"><i class="icon-cog"></i>Planning List</a></li>
+        <li class="list-group-item"><a href="/budget_item"><i class="icon-tree-view"></i>Budget Items</a></li>
+        <li class="list-group-item"><a href="/summary/{id}">Summary</a></li>
     </ul>
 </nav>
 @yield('content')
