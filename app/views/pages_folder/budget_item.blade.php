@@ -65,6 +65,8 @@
           <font color="pink">{{ Form::submit('Delete') }}</font>
           {{ Form::close() }}
         </li>
+
+
 @endforeach
 
   			</ul>

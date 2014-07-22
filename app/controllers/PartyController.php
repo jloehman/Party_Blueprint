@@ -1,14 +1,13 @@
 <?php
 
 class PartyController extends \BaseController {
-	//public function __construct()
-	//{
-	    // call base controller constructor
-	    //parent::__construct();
+	
+	public function __construct()
+	{
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic');
+	}
 
-	    // run auth filter before all methods on this controller
-	    //$this->beforeFilter('auth');
-	//}
 	/**
 	 * Display a listing of the resource.
 	 *

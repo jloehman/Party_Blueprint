@@ -54,6 +54,16 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('isAdmin', function() {
+    if (Auth::user()->is_admin == 1) {
+        // You good
+    } else {
+        Session::flash('message', "Must be logged in");
+        return Redirect::action('HomeController@showLogin');
+    }
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

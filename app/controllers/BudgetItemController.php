@@ -2,6 +2,12 @@
 
 class BudgetItemController extends \BaseController {
 
+	public function __construct()
+	{
+	    // run auth filter before all methods on this controller except index and show
+	    $this->beforeFilter('auth.basic');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -47,10 +53,11 @@ class BudgetItemController extends \BaseController {
 		{
 			//Need to ask about the user here and the one to many relationship
 			$budget_item = new BudgetItem();
+			$budget = Input::get('budget');
 			// $todo->user()->associate(Auth::user());
 			$budget_item->name = Input::get('name');
 			$budget_item->qty = Input::get('qty');
-			$budget_item->cost = Input::get('cost');
+			$budget_item->cost = Input::get('cost')->decrement('cost', $budget);
 			$budget_item->party_id = Auth::user()->id;
 
 			$budget_item->save();
