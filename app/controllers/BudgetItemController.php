@@ -5,7 +5,7 @@ class BudgetItemController extends \BaseController {
 	public function __construct()
 	{
 	    // run auth filter before all methods on this controller except index and show
-	    $this->beforeFilter('auth.basic');
+	    $this->beforeFilter('auth');
 	}
 
 	/**
@@ -13,10 +13,19 @@ class BudgetItemController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
 		$budget_items = BudgetItem::orderBy('id','desc')->paginate(10);
-		return View::make('pages_folder.budget_item')->with('budget_items', $budget_items);
+		$party = Party::find($id);
+		$sumOfPurchased = $party->budgetItemsPurchasedTotal();
+
+		$data = array(
+			'budget_items' => $budget_items,
+			'party' => $party,
+			'sumOfPurchased' => $sumOfPurchased
+		);
+
+		return View::make('pages_folder.budget_item')->with($data);
 	}
 
 
@@ -36,7 +45,7 @@ class BudgetItemController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
 		//
 		$validator = Validator::make(Input::all(), BudgetItem::$rules);
@@ -46,26 +55,24 @@ class BudgetItemController extends \BaseController {
 
 			// retrieve flash data (same as any other session variable)
 
-			return Redirect::route('budget_item.index');
+			return Redirect::action('BudgetItemController@index', $id);
 
 		}
 		else
 		{
 			//Need to ask about the user here and the one to many relationship
 			$budget_item = new BudgetItem();
-			$budget = Input::get('budget');
-			// $todo->user()->associate(Auth::user());
 			$budget_item->name = Input::get('name');
 			$budget_item->qty = Input::get('qty');
-			$budget_item->cost = Input::get('cost')->decrement('cost', $budget);
-			$budget_item->party_id = Auth::user()->id;
+			$budget_item->cost = Input::get('cost');
+			$budget_item->party_id = $id;
 
 			$budget_item->save();
 			// set flash data
 			Session::flash('successMessage', 'Buy List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-			return Redirect::route('budget_item.index');
+			return Redirect::action('BudgetItemController@index', $id);
 		}
 	}
 
@@ -134,12 +141,12 @@ class BudgetItemController extends \BaseController {
 
 public function ajax_update_purchased()
 {
-	$id = Input::get('budgetId', 'amount');
+	$id = Input::get('budgetId');
 	$budget = BudgetItem::find($id);
-	$budget->is_purchased = 1;
+	$budget->is_purchased = (Input::get('is_purchased') == '1');
 	$budget->save();
 
-	return Redirect::action('BudgetItemController@inde');
+	return array('status' => 'success');
 
 	// 
 
@@ -174,7 +181,7 @@ public function ajax_update_purchased()
 		$budget_item->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 
-		return Redirect::action('BudgetItemController@index');
+		return Redirect::action('BudgetItemController@index', $id);
 	}
 
 
