@@ -47,7 +47,7 @@ class PartyController extends \BaseController {
 			Session::flash('errorMessage', 'There were errors submitting your form');
 
 			// retrieve flash data (same as any other session variable)
-			dd($todo);
+			// dd($todo);
 			// return Redirect::route('todo_list.index');
 
 		}
@@ -63,7 +63,7 @@ class PartyController extends \BaseController {
 			Session::flash('successMessage', 'Todo List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-			dd($todo);
+			// dd($todo);
 			// return View::make('/personal_admin');
 		}
 	}
@@ -149,13 +149,25 @@ class PartyController extends \BaseController {
 
 	public function summary($id)
 	{
+		$guests = '';
+		$todos = '';
+		try {
+			$guests = Guest::where('party_id', $id)->get();
+			$todos = Todo::where('party_id', $id)->get();
+		}
+		catch (Exception $e)
+		{
+		}
+
 		$data = array
 		(
 			//need to include a parameter here for the budget part to work
 			'party' => Party::where('id', $id)->first(),
-			'guests' => Guest::where('party_id', $id)->get(),
-			'todos' => Todo::where('party_id', $id)->get()
+			'guests' => $guests,
+			'todos' => $todos
 		);
+
+
 		return View::make('pages_folder.summary_page')->with($data);
 	}
 

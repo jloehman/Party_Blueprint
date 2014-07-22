@@ -35,6 +35,8 @@
 		  		<th>RSVP</th>
 		  		<th>Notes</th>
   			</tr>
+
+@if(strlen($guests) > 0)
 @foreach($guests as $guest)
   			<tr>
 	  			<td>{{{ $guest->name }}}</td>
@@ -47,6 +49,7 @@
 	  			<td>{{{ $guest->comment }}}</td>
   			</tr>
 @endforeach
+@endif
   		</table>
 	</div>
 </div>
@@ -58,6 +61,8 @@
 	  		<th>Done By</th>
 	  		<th>Completed</th>
 	  	</tr>
+
+@if(strlen($todos) > 0)
 @foreach($todos as $todo)
 	  	<tr>
 	  		<td>{{{ $todo->name }}}</td>
@@ -69,6 +74,7 @@
 	  		</td>
 	  	</tr>
 @endforeach
+@endif
 	  </table>
 	</div>
 </div>

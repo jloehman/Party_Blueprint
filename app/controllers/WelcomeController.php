@@ -59,7 +59,11 @@ class WelcomeController extends \BaseController {
 			Session::flash('successMessage', 'Party Created Successfully!');
 
 			// retrieve flash data (same as any other session variable)
-			return View::make('pages_folder.personal_admin');
+			
+			// redirect to summary page and send new id
+
+			// return View::make('pages_folder.summary_page');
+			return Redirect::action('PartyController@summary', $party->id);
 		}
 	}
 
@@ -73,7 +77,7 @@ class WelcomeController extends \BaseController {
 	public function show($id)
 	{
 		$party = Party::find($id);
-		return View::make('pages_folder.welcome')->with('party', $party);
+		return Redirect::action('PartyController@summary', $party->id);
 	}
 
 
