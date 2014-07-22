@@ -51,6 +51,8 @@ class BudgetItemController extends \BaseController {
 			$budget_item->name = Input::get('name');
 			$budget_item->qty = Input::get('qty');
 			$budget_item->cost = Input::get('cost');
+			$budget_item->party_id = Auth::user()->id;
+
 			$budget_item->save();
 			// set flash data
 			Session::flash('successMessage', 'Buy List item created successfully');
