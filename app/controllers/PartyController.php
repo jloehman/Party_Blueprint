@@ -47,8 +47,8 @@ class PartyController extends \BaseController {
 			Session::flash('errorMessage', 'There were errors submitting your form');
 
 			// retrieve flash data (same as any other session variable)
-
-			return Redirect::route('todo_list.index');
+			dd($todo);
+			// return Redirect::route('todo_list.index');
 
 		}
 		else
@@ -63,7 +63,8 @@ class PartyController extends \BaseController {
 			Session::flash('successMessage', 'Todo List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-			return Redirect::route('todo_list.index');
+			dd($todo);
+			// return View::make('/personal_admin');
 		}
 	}
 

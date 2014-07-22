@@ -52,12 +52,14 @@ class WelcomeController extends \BaseController {
 			$party->end_time = Input::get('end_time');
 			$party->location = Input::get('location');
 			$party->budget = Input::get('budget');
+			$party->user_id = Auth::user()->id;
 			$party->save();
+			
 			// set flash data
 			Session::flash('successMessage', 'Party Created Successfully!');
 
 			// retrieve flash data (same as any other session variable)
-			return Redirect::route('personal_admin');
+			return View::make('pages_folder.personal_admin');
 		}
 	}
 
