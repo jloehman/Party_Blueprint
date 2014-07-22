@@ -28,8 +28,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-      	<p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link">SomeBody</a></p>
-      	<li class="dropdown">
+        <p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link"></a></p>
+      	<p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link"></a></p>
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Parties<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
