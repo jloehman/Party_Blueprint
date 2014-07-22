@@ -17,22 +17,27 @@ class Party extends Eloquent {
 
 	public function users()
 	{
-		$this->hasOne('User');
+		return $this->hasOne('User');
 	}
 
 	public function guests()
 	{
-		$this->hasMany('Guest');
+		return $this->hasMany('Guest');
 	}
 
 	public function todos()
 	{
-		$this->hasMany('Todo');
+		return $this->hasMany('Todo');
 	}
 
 	public function budgetItems()
 	{
-		$this->hasMany('BudgetItem');
+		return $this->hasMany('BudgetItem');
+	}
+
+	public function budgetItemsPurchasedTotal()
+	{
+		return $this->budgetItems()->where('is_purchased', true)->sum('cost');
 	}
 
 

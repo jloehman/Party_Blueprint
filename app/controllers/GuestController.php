@@ -5,7 +5,7 @@ class GuestController extends \BaseController {
 	public function __construct()
 	{
 	    // run auth filter before all methods on this controller except index and show
-	    $this->beforeFilter('auth.basic');
+	    $this->beforeFilter('auth');
 	}
 
 
@@ -14,12 +14,20 @@ class GuestController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
 		//look into pagination..for everything
 		$guests = Guest::orderBy('id','desc');
-		return View::make('pages_folder.guest_list')->with('guests', $guests);
+		$party = Party::find($id);
+
+		$data = array(
+			'guests' => $guests,
+			'party' => $party
+		);
+
+		return View::make('pages_folder.guest_list')->with($data);
 	}
+		
 
 
 	/**
@@ -67,7 +75,7 @@ class GuestController extends \BaseController {
 			Session::flash('successMessage', 'Guest List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-			return Redirect::route('guest_list.index');
+			return Redirect::action('GuestController@index');
 		}
 	}
 

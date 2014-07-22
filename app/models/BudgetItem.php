@@ -30,4 +30,6 @@ class BudgetItem extends Eloquent {
 		return self::where('is_purchased', 0)->get();
 	}
 
+	
+
 }

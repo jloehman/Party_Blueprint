@@ -19,7 +19,7 @@
 <div class="container-responsive">
 	<div class="row-fluid">
 		<div class="col-md-3">
-			{{ Form::open(array('action' => 'BudgetItemController@store', "class" => "form-horizontal form-group")) }}
+			{{ Form::open(array('action' => array('BudgetItemController@store', $party->id), "class" => "form-horizontal form-group")) }}
 	<div>
 			{{ Form::label('name', 'Name') }}<br>
 			{{ Form::text('name', Input::old('name')) }}<br>
@@ -44,10 +44,10 @@
   
 		 <div class="receipt col-md-3">
 		 	<div id="ajax-message">
-			<ul id="sortable1" class="connectedSortable" >
+			<ul id="not_purchased" class="connectedSortable" >
 @foreach(BudgetItem::not_purchased() as $budget_item)
 
-		  		<li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
+		  		<li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
 		  			{{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
 					<font color="pink">{{ Form::submit('Delete') }}</font>
 					{{ Form::close() }}
@@ -57,11 +57,14 @@
   		</div>
  	</div>
  	<div class="receipt col-md-3">
-    <p><em>Budget:</em> $900</p>  <p><em>Total Remaining:</em> $200</p>
-			<ul id="sortable2" class="connectedSortable">
+    <p><em>Budget:</em> ${{ $party->budget }}</p>
+    <p id="totalRemaining" data-remaining="{{ $party->budget - $sumOfPurchased }}">
+      <em>Total Remaining:</em> ${{ $party->budget - $sumOfPurchased }}
+    </p>
+			<ul id="purchased" class="connectedSortable">
 @foreach(BudgetItem::is_purchased() as $budget_item)
 
-          <li class="ui-state-default list-group-item" data-budgetId="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
+          <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
             {{ Form::open(array('action' => array('BudgetItemController@destroy', $budget_item->id), 'method' => 'DELETE' )) }}
           <font color="pink">{{ Form::submit('Delete') }}</font>
           {{ Form::close() }}
@@ -81,104 +84,65 @@
 
 @section('bottomscript')
 <script>
-  $( "#sortable1, #sortable2" ).sortable({
-      connectWith: ".connectedSortable",
-      stop : function(event, ui){ 
-        var id = $(ui.item).attr('data-budgetId');
-        var amount = $(ui.item).attr('data-amount');
+  $( "#not_purchased, #purchased" ).sortable({
+      connectWith: ".connectedSortable"
+  }).disableSelection();
 
-        $.ajax({
-          url: "/update_purchase",
-          type: "PUT",
-          data: { budgetId: id },
-          dataType: "json",
-          success: function (data) {
-              $('#ajax-message').html(data.message);
-          }
-        });
-        // console.log(id);
+  $("#not_purchased").on("sortreceive", function(event, ui) {
+    console.log("You unpurchased me");
+    var id = $(ui.item).data('budgetid');
+    var amount = $(ui.item).data('amount');
+
+    var is_purchased = 0;
+
+    $.ajax({
+      url: "/update_purchase",
+      type: "PUT",
+      data: {
+        budgetId: id,
+        "is_purchased": is_purchased
+      },
+      dataType: "json",
+      success: function (data) {
+          $('#ajax-message').html(data.message);
+          var remaining = $("#totalRemaining").data("remaining");
+
+          remaining += parseInt(amount, 10);
+
+          $("#totalRemaining").data("remaining", remaining);
+          $("#totalRemaining").html('Remaining: $' + remaining);
       }
-    }).disableSelection();
+    });
+  });
 
-  // $('#sortable2').droppable({
-  //   drop: function( event, ui ) {
+  $("#purchased").on("sortreceive", function(event, ui) {
+    console.log("You bought me, yay!");
+    var id = $(ui.item).data('budgetid');
+    var amount = $(ui.item).data('amount');
 
-  //     $('.list-group-item').mouseup(function() {
-  //       console.log('save it fool');
-  //     });
+    var is_purchased = 1;
 
-  //     $.ajax({
-  //       url: "/update_purchase",
-  //       type: "PUT",
-  //       data: { budgetId: 'test' },
-  //       dataType: "json",
-  //       success: function (data) {
-  //           $('#ajax-message').html(data.message);
-  //       }
-  //     });
-  //   }
-  // })
+    var remaining = $("#totalRemaining").data("remaining");
 
+        remaining -= parseInt(amount, 10);
 
-  // $("#sortable2").on('sortchange', function() {
+        $("#totalRemaining").data("remaining", remaining);
+        $("#totalRemaining").html('Remaining: $' + remaining);
+      
 
-  // 	 $.ajax({
-  //       url: "/update_purchase",
-  //       type: "PUT",
-  //       data: toSend,
-  //       dataType: "json",
-  //       success: function (data) {
-  //           $('#ajax-message').html(data.message);
-  //       }
-  //   });
-  // });
-
-// drag and drop table to update budget
-// 
-// star rating system
-// 
-// usage with timers
-// 
-// grab a new job
-// 
-// $('#ajax-form').on('submit', function (e) {
-//     e.preventDefault();
-//     var formValues = $(this).serialize();
-//     console.log(formValues);
-
-//     $.ajax({
-//         url: "/ajax",
-//         type: "POST",
-//         data: formValues,
-//         dataType: "json",
-//         success: function (data) {
-//             $('#ajax-message').html(data.message);
-//         }
-//     });
-// });
-
-// $('.btn-ajax').on('click', function () {
-
-//     console.log('Clicked the button');
-
-//     var toSend = {
-//         'id': 1,
-//         'name': 'test'
-//     };
-
-//     $.ajax({
-//         url: "/ajax",
-//         type: "POST",
-//         data: toSend,
-//         dataType: "json",
-//         success: function (data) {
-//             $('#ajax-message').html(data.message);
-//         }
-//     });
-
-// });
-
-
+    $.ajax({
+      url: "/update_purchase",
+      type: "PUT",
+      data: {
+        budgetId: id,
+        "is_purchased": is_purchased
+      },
+      dataType: "json",
+      success: function (data) {
+        $('#ajax-message').html(data.message);
+       } 
+    });
+  });
 </script>
 
 @stop

@@ -18,11 +18,10 @@ class BudgetItems extends Migration {
 			$budget->integer('party_id')->unsigned();
 			$budget->string('name');
 			$budget->integer('qty');
-			$budget->decimal('cost', 5, 2);
+			$budget->decimal('cost', 7, 2);
 			$budget->tinyInteger('is_purchased')->default(0);
 			$budget->timestamps();
 			$budget->foreign('party_id')->references('id')->on('parties');	
-			$budget->foreign('party_id')->references('budget')->on('parties');
 		});
 
 	}

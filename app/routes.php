@@ -11,6 +11,13 @@
 |
 */
 
+// Route::get('party/{id}', function($id) {
+// 	$party = Party::find($id);
+
+// 	return $party->budgetItemsPurchasedTotal();
+// 	// $party::budgetItemsPurchasedTotal();
+// });
+
 Route::get('/login', 'HomeController@showLogin');
 
 Route::post('/login', 'HomeController@doLogin');
@@ -50,7 +57,13 @@ Route::resource('/guest_list', 'GuestController');
 
 Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 
-Route::resource('/budget_item', 'BudgetItemController');
+/// DO LIKE THIS -----------------------------------
+/// THEN LIKE THAT ---------------------------------
+/// WHEN I MOVE YOU MOVE ---------------------------
+/// JUST LIKE THIS ---------------------------------
+Route::resource('/parties/{id}/budget_item', 'BudgetItemController');
+
+Route::resource('/parties/{id}/guest_list', 'GuestController');
 
 $name = Input::get('name');
 //     $qty = Input::get('qty');
