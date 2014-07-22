@@ -20,7 +20,7 @@ class HomeController extends BaseController {
 		return View::make('pages_folder.login');
 	}
 	public function doLogin()
-	{	
+	{
 		$email = Input::get('email');
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password)))

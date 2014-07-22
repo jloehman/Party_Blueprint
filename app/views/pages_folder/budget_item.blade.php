@@ -57,6 +57,7 @@
   		</div>
  	</div>
  	<div class="receipt col-md-3">
+    <p><em>Budget:</em> $900</p>  <p><em>Total Remaining:</em> $200</p>
 			<ul id="sortable2" class="connectedSortable">
 @foreach(BudgetItem::is_purchased() as $budget_item)
 
@@ -66,8 +67,8 @@
           {{ Form::close() }}
         </li>
 @endforeach
-
   			</ul>
+      </div>
   		</div>
 </div>
 </div>

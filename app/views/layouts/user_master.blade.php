@@ -28,7 +28,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-      	<p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+      	<p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link">{{ Auth::()->first_name}}{{ Auth::()->last_name}}</a></p>
       	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Parties<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -45,7 +45,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<nav class="sidebar-fixed">
+<nav class="sidebar hovered">
     <ul class="list-group">
         <li id="dashboard"  class="label label-default">Dashboard</li>
         <li class="list-group-item"><a href="/guest_list"><i class="icon-home"></i>Guests to Invite</a></li>
