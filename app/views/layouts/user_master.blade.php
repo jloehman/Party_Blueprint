@@ -28,7 +28,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-      	<p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link">{{ Auth::(id)->first_name}}{{ Auth::(id)->last_name}}</a></p>
+      	<p id="user_name" class="navbar-text navbar-center">Signed in as <a href="#" class="navbar-link"></a></p>
       	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Parties<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
