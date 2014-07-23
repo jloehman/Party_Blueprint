@@ -42,7 +42,7 @@
 
 
 
-	{{ Form::open(array('action' => 'PartyController@store')) }}
+	{{ Form::open(array('action' => array('PartyController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>

@@ -17,7 +17,7 @@ class GuestController extends \BaseController {
 	public function index($id)
 	{
 		//look into pagination..for everything
-		$guests = Guest::orderBy('id','desc');
+		$guests = Guest::where('party_id', $id)->orderBy('id','desc')->get();
 		$party = Party::find($id);
 
 		$data = array(
@@ -47,24 +47,20 @@ class GuestController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
 		//
 		$validator = Validator::make(Input::all(), Guest::$rules);
 		if ($validator->fails())
 		{
 			Session::flash('errorMessage', 'There were errors submitting your form');
-
-			// retrieve flash data (same as any other session variable)
-
 			return Redirect::route('guest_list.index');
-
 		}
 		else
 		{
 			//Need to ask about the user here and the one to many relationship
 			$guest = new Guest();
-			// $todo->user()->associate(Auth::user());
+			$guest->party_id = $id;
 			$guest->name = Input::get('name');
 			$guest->email = Input::get('email');
 			$guest->phone = Input::get('phone');
@@ -75,7 +71,7 @@ class GuestController extends \BaseController {
 			Session::flash('successMessage', 'Guest List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-			return Redirect::action('GuestController@index');
+			return Redirect::action('GuestController@index', $id);
 		}
 	}
 
@@ -167,7 +163,7 @@ class GuestController extends \BaseController {
 		$guest->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 
-		return Redirect::action('GuestController@index');
+		return Redirect::action('GuestController@index', $id);
 	}
 
 

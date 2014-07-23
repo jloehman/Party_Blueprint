@@ -15,6 +15,21 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	public function showHome()
+	{
+		return View::make('pages_folder.home');
+	}
+
+	public function showAbout()
+	{
+		return View::make('pages_folder.about');
+	}
+
+	public function showContact()
+	{
+		return View::make('pages_folder.contact');
+	}
+
 	public function showLogin()
 	{
 		return View::make('pages_folder.login');

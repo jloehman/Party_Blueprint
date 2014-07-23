@@ -49,7 +49,7 @@
 
 
 
-	{{ Form::open(array('action' => 'GuestController@store')) }}
+	{{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>

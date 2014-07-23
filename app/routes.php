@@ -11,89 +11,42 @@
 |
 */
 
-// Route::get('party/{id}', function($id) {
-// 	$party = Party::find($id);
+// Home route
+Route::get('/', 'HomeController@showHome');
 
-// 	return $party->budgetItemsPurchasedTotal();
-// 	// $party::budgetItemsPurchasedTotal();
-// });
+// Content routes
+Route::get('/about', 'HomeController@showAbout');
+Route::get('/contact', 'HomeController@showContact');
 
+// Login/logout routes
 Route::get('/login', 'HomeController@showLogin');
-
 Route::post('/login', 'HomeController@doLogin');
-
 Route::get('/logout', 'HomeController@logout');
-
-Route::get('/', function()
-{
-	return View::make('pages_folder.home');
-});
-Route::get('/about', function()
-{
-	return View::make('pages_folder.about');
-});
-
-Route::get('/contact', function()
-{
-	return View::make('pages_folder.contact');
-});
-
 Route::resource('/register', 'UserController');
 
-Route::get('/personal_admin', function()
-{
-	return View::make('pages_folder.personal_admin');
-});
-
-Route::get('/budget', function()
-{
-	return View::make('pages_folder.budget');
-});
-
-Route::get('/summary/{id}', 'PartyController@summary');
-Route::resource('/todo_list', 'PartyController');
-
-Route::resource('/guest_list', 'GuestController');
-
-Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
-
-/// DO LIKE THIS -----------------------------------
-/// THEN LIKE THAT ---------------------------------
-/// WHEN I MOVE YOU MOVE ---------------------------
-/// JUST LIKE THIS ---------------------------------
-Route::resource('/parties/{id}/budget_item', 'BudgetItemController');
-
-Route::resource('/parties/{id}/guest_list', 'GuestController');
-
-$name = Input::get('name');
-//     $qty = Input::get('qty');
-//     $cost =Input::get('cost')
-
+// Controller that handles party database resource
 Route::resource('/welcome', 'WelcomeController');
 
-Route::resource('/admin_users', 'AdminUserController');
+// Budget Item controller
+Route::resource('/parties/{id}/budget_item', 'BudgetItemController');
 
+// Guest Controller
+Route::resource('/parties/{id}/guest_list', 'GuestController'); // ---------- note done
+
+// Todo list at party controller
+Route::resource('/parties/{id}/todo_list', 'PartyController'); // ---------- note done
+Route::get('/summary/{id}', 'PartyController@summary');
+
+// Admin and user management
+Route::resource('/admin_users', 'AdminUserController');
 Route::resource('/admin_admin', 'AdminController');
 
-// Route::get('ajax', function () {
-//     return View::make('ajax');
-// });
+// Ajax to update budget item drag and drop
+Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 
 
-// Route::post('/budget_item', function () {
-// //can remove after moved in controller
-//     $name = Input::get('name');
-//     $qty = Input::get('qty');
-//     $cost =Input::get('cost');
 
-//     $error = false;
-//     // $message = "Over Budget on your $id party";
 
-//     // $result = array(
-//     //     'error' => $error,
-//     //     'message' => $message,
-//     // );
 
-//     return Redirect::to('/budget_item')->with('name', 'cost');
 
-// });
+
