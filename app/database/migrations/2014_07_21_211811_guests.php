@@ -19,6 +19,7 @@ class Guests extends Migration {
 			$guests->string('name', 50);
 		    $guests->string('email', 200)->unique();
 		    $guests->string('phone', 20);
+		    $guests->boolean('plus')->nullable;
 		    $guests->boolean('is_attending')->nullable();
 		    $guests->text('comment')->nullable();
 		    $guests->timestamps();
