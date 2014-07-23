@@ -41,7 +41,7 @@ ul.boxes {
 	margin-right: 0px;
 }
 
-#sortable1, #sortable2 {
+#not_purchased, #purchased {
     border: 1px solid #eee;
     width: 182px;
     min-height: 100px;
@@ -52,7 +52,7 @@ ul.boxes {
     margin-right: 10px;
   }
   
-  #sortable1 li, #sortable2 li {
+  #not_purchased li, #purchased li {
     margin: 0 5px 5px 5px;
     padding: 5px;
     font-size: 1.2em;

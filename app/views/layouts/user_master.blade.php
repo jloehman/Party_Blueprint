@@ -48,10 +48,10 @@
 <nav class="sidebar hovered">
     <ul class="list-group">
         <li id="dashboard"  class="label label-default">Dashboard</li>
-        <li class="list-group-item"><a href="/guest_list"><i class="icon-home"></i>Guests to Invite</a></li>
-        <li class="list-group-item"><a href="/todo_list"><i class="icon-cog"></i>Planning List</a></li>
-        <li class="list-group-item"><a href="/budget_item"><i class="icon-tree-view"></i>Budget Items</a></li>
-        <li class="list-group-item"><a href="/summary/{id}">Summary</a></li>
+        <li class="list-group-item"><a href="{{ action('GuestController@index', $party->id) }}"><i class="icon-home"></i>Guests to Invite</a></li>
+        <li class="list-group-item"><a href="{{ action('PartyController@index', $party->id) }}"><i class="icon-cog"></i>Planning List</a></li>
+        <li class="list-group-item"><a href="{{ action('BudgetItemController@index', $party->id) }}"><i class="icon-tree-view"></i>Budget Items</a></li>
+        <li class="list-group-item"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
     </ul>
 </nav>
 @yield('content')
