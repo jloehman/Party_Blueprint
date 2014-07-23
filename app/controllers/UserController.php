@@ -56,6 +56,6 @@ class UserController extends \BaseController {
 			// set flash data
 			Session::flash('successMessage', 'Registered Successfully!');
 				//direct to the welcome create page
-    		   return Redirect::to('users/welcome_create_blade_thingy');
+    		   return Redirect::to('WelcomeController@create');
 		}
 

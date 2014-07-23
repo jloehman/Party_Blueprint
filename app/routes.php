@@ -44,6 +44,9 @@ Route::resource('/admin_admin', 'AdminController');
 // Ajax to update budget item drag and drop
 Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 
+// Contact form post route
+Route::post('/send', 'HomeController@send');
+
 
 
 
