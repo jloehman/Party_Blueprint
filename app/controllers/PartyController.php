@@ -13,11 +13,18 @@ class PartyController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
 		//Showing Todo items, 10 on each page
-		$todos = Todo::orderBy('id','desc')->paginate(10);
-		return View::make('pages_folder.todo_list')->with('todos', $todos);
+		$todos = Todo::where('party_id', $id)->orderBy('id','desc')->paginate(10);
+		$party = Party::find($id);
+
+		$data = array(
+			'guests' => $guests,
+			'party' => $party
+		);
+
+		return View::make('pages_folder.todo_list')->with($data);
 	}
 
 
@@ -165,7 +172,6 @@ class PartyController extends \BaseController {
 			'guests' => $guests,
 			'todos' => $todos
 		);
-
 
 		return View::make('pages_folder.summary_page')->with($data);
 	}
