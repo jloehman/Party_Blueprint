@@ -2,15 +2,6 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
- 
-   </head>
- <body>
-
-
    {{ Form::open(array('action' => 'HomeController@doContact')) }}
         {{ Form::label('name', 'Name:')}}
         {{ Form::text('name',null, array('class' => 'form-control'))}}
@@ -27,11 +18,4 @@
             
 
         {{ Form::close() }}
-     
-
-  </body>
-</html>
 @stop
-
-
-
