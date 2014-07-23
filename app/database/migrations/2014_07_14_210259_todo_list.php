@@ -19,6 +19,9 @@ class TodoList extends Migration {
 			$todo->date('done_by');
 			$todo->boolean('is_complete');
 			$todo->timestamps();
+			$todo->integer('party_id')->unsigned();
+			$todo->foreign('party_id')->references('id')->on('parties');	
+
 		});	
 	}
 
