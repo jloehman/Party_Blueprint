@@ -54,7 +54,7 @@ class GuestController extends \BaseController {
 		if ($validator->fails())
 		{
 			Session::flash('errorMessage', 'There were errors submitting your form');
-			return Redirect::route('guest_list.index');
+			return Redirect::action('GuestController@index');
 		}
 		else
 		{
