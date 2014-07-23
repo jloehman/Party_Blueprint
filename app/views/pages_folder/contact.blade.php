@@ -5,7 +5,7 @@
 <div class="container">
 <div class="row">
   <div class="col-md-12">
-     {{ Form::open(array('action' => 'HomeController@doContact')) }}
+     {{ Form::open(array('action' => 'HomeController@doContact'), 'method' => 'POST')) }}
        {{ Form::label('name', 'Name:')}}
        {{ Form::text('name',null, array('class' => 'form-control'))}}
        <br>
