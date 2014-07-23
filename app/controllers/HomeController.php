@@ -71,7 +71,7 @@ class HomeController extends BaseController {
 			// error message
 			Session::flash('errorMessage', 'Sorry, the email failed to send! All fields must be filled out correctly.');
 			// redirect with flash error
-			return Redirect::action('UserController@index');
+			return Redirect::action('HomeController@showContact');
 		} else {
 			//this array captures the input from the form. Never use message as an alias
 			//message will need to be used as $message and that is a built in helper so use a different alias
@@ -87,8 +87,9 @@ class HomeController extends BaseController {
 	        	$message->to('simplessoiree@gmail.com', 'Simple Soiree')->subject(Input::get('subject'));
 	    	});
 	    	//Success notification and redirects to the webpage
-    		Session::flash('emailMessage', 'Email Sent!');
-	    	return Redirect::action('UserController@index');
+    		Session::flash('successMessage', 'Email Sent!');
+	    	return Redirect::action('HomeController@showContact');
 		}
+	}
 }
 
