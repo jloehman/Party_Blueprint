@@ -34,12 +34,9 @@ class UserController extends \BaseController {
 			$validator = Validator::make(Input::all(), User::$rules);
 		if ($validator->fails())
 		{
-			Session::flash('errorMessage', 'There were errors submitting your form');
-
+			Session::flash('errorMessage', 'The following errors occurred')->withErrors($validator)->withInput();
 			// retrieve flash data (same as any other session variable)
-
-			return Redirect::route('register.index');
-
+    		return Redirect::route('register.index');
 		}
 		else
 		{
@@ -51,13 +48,14 @@ class UserController extends \BaseController {
 			$user->email = Input::get('email');
 			$user->password = Input::get('password');
 			$user->save();
+
+			Mail::send('users.mails.welcome_email', array('firstname'=>Input::get('firstname')), function($message){
+        		$message->to(Input::get('email'), Input::get('firstname').' '.Input::get('lastname'))->subject('Welcome to Simple Soiree, let\'s start planning!');
+    		});
+
 			// set flash data
 			Session::flash('successMessage', 'Registered Successfully!');
-
-			// retrieve flash data (same as any other session variable)
-			return Redirect::route('register.index');
+				//direct to the welcome create page
+    		   return Redirect::to('users/welcome_create_blade_thingy');
 		}
-	}
 
-
-}
