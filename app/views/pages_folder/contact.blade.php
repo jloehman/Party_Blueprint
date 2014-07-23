@@ -5,8 +5,28 @@
 <div class="container">
 <div class="row">
   <div class="col-md-12">
+     {{ Form::open(array('action' => 'HomeController@doContact')) }}
+       {{ Form::label('name', 'Name:')}}
+       {{ Form::text('name',null, array('class' => 'form-control'))}}
+       <br>
+       {{ Form::label('email', 'Email')}}
+       {{ Form::text('email',null, array('class' => 'form-control'))}}
+       <br>
+       {{ Form::label('message', 'Message::')}}
+       {{ Form::textarea('message',null, array('class' => 'form-control'))}}
+       
+       <br>
+       <button type="Submit" class="btn btn-default">Send</button>
 
-  <form role="form" action="{{{ action('HomeController@send') }}}" method="POST" >
+           
+
+       {{ Form::close() }}
+     </div>
+   </div>
+  </div>
+   
+
+ <!--  <form role="form" action="{{{ action('HomeController@send') }}}" method="POST" >
     <div class="col-lg-6">
       <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>
       <div class="form-group">
@@ -42,6 +62,6 @@
   </div>
 </div>
 
-</div>
+</div>-->
 
 @stop
