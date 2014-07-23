@@ -31,7 +31,8 @@ Route::resource('/welcome', 'WelcomeController');
 Route::resource('/parties/{id}/budget_item', 'BudgetItemController');
 
 // Guest Controller
-Route::resource('/parties/{id}/guest_list', 'GuestController'); // ---------- note done
+Route::resource('/parties/{id}/guest_list', 'GuestController');
+// Route::get('/parties/{id}/guest_list', array('as' => 'guests', 'uses' => 'UserController@showProfile'));
 
 // Todo list at party controller
 Route::resource('/parties/{id}/todo_list', 'PartyController'); // ---------- note done
