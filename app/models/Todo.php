@@ -23,7 +23,7 @@ class Todo extends Eloquent implements UserInterface, RemindableInterface {
 
 	public function parties()
 	{
-		$this->hasOne('Party');
+		return $this->hasOne('Party');
 	}
 
 }

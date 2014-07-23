@@ -17,13 +17,13 @@ class Guest extends Eloquent implements UserInterface, RemindableInterface {
 
 	static public $rules = [
     	'name' => 'required|max:100',
-    	'email' => 'required',
+    	'email' => 'required|email',
     	'phone' => 'required',
     ];
 
 	public function parties()
 	{
-		$this->hasOne('Party');
+		return $this->hasOne('Party');
 	}
 
 }
