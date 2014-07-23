@@ -53,3 +53,32 @@
 		</div><!-- end navigation -->
 @yield('content')
 <!-- footer -->
+		<div class="container">
+			<div class="row">
+				<div class="span12 cp-footer cp-span-footer">
+					<div class="span3 cp-gutter-correction">
+						<address>
+							Simple Soiree
+							<br>
+							110 E Houston St
+							<br>
+							San Antonio
+						</address>
+					</div>
+					<div class="span3">
+						<address>
+							Phone 210 3456780
+							<br>
+							E-Mail <a href="mailto:imsplesoiree@gmail.com">simplesoiree@gmail.com</a>
+						</address>
+					</div>
+					<div class="span6">
+						<a href="#"><img src="simple_soiree_template/img/36_facebook.png" class="cp-footer-img cp-tooltip" data-placement="top" title="facebook"></a>
+						<a href="#"><img src="simple_soiree_template/img/36_googleplus.png" class="cp-footer-img cp-tooltip" data-placement="top" title="google+"></a>
+						<a href="#"><img src="simple_soiree_template/img/36_twitter.png" class="cp-footer-img cp-tooltip" data-placement="top" title="twitter"></a>
+						<a href="#"><img src="simple_soiree_template/img/36_rss.png" class="cp-footer-img cp-tooltip" data-placement="top" title="rss"></a>
+					</div>
+				</div>
+			</div>
+		</div><!-- end footer -->
+<!-- footer -->
