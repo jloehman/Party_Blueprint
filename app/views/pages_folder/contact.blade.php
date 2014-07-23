@@ -10,7 +10,7 @@
    </head>
  <body>
 
-  
+
    {{ Form::open(array('action' => 'HomeController@doContact')) }}
         {{ Form::label('name', 'Name:')}}
         {{ Form::text('name',null, array('class' => 'form-control'))}}
@@ -34,6 +34,4 @@
 @stop
 
 
-
-labels:
 
