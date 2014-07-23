@@ -12,12 +12,13 @@ class BudgetItem extends Eloquent {
 
 	static public $rules = [
     	'name' => 'required|max:100',
-    	'cost' => 'required'
+    	'cost' => 'required|numeric',
+    	'qty' => 'numeric'
     ];
 
 	public function parties()
 	{
-		$this->hasOne('Party');
+		return $this->hasOne('Party');
 	}
 
 	public static function is_purchased()

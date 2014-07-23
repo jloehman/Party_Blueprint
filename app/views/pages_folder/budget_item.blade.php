@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-<h1>To Buy Items</h1>
+<h1>To Buy Items for {{ $party->party_name }}</h1>
 <div class="table">
 	<table class="table">
 		<th>Add an Item Here</th>

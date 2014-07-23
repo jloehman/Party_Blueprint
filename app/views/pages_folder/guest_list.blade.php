@@ -8,6 +8,7 @@
   		<th>Name</th>
   		<th>Email</th>
   		<th>Phone</th>
+      <th>+ 1</th>
   		<th>RSVP</th>
   		<th>Notes</th>
   		<th></th>
@@ -17,6 +18,13 @@
   		<td>{{{ $guest->name }}}</td>
   		<td>{{{ $guest->email }}}</td>
   		<td>{{{ $guest->phone }}}</td>
+      <td><button onclick class="btn btn-success btn-ajax">+ 1</button>
+
+        <form id="ajax-form">
+        <input type="text" name="plus"><br>
+        <input type="submit">
+        </form>
+      </td>
 
   		<!-- this needs to be a checkbox -->
   		<td>
@@ -36,11 +44,12 @@
 </div>
 
 
+
 	{{-- Form::submit('Add Guests') --}}
 
 
 
-	{{ Form::open(array('action' => 'GuestController@store')) }}
+	{{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>

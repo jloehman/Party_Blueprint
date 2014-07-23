@@ -18,6 +18,15 @@
   			<!-- this needs to be submitted -->
   			{{ Form::checkbox('is_complete')}}
 
+        <button onclick class="btn btn-success btn-ajax">complete</button>
+          <div id="ajax-message"></div>
+
+        <form id="ajax-form">
+          complete: <input type="click" name="complete"><br>
+          <input type="submit">
+        </form>
+
+
   		</td>
   		<td>{{ Form::open(array('action' => array('PartyController@destroy', $todo->id), 'method' => 'DELETE' )) }}
 			{{ Form::submit('Delete') }}
@@ -33,7 +42,7 @@
 
 
 
-	{{ Form::open(array('action' => 'PartyController@store')) }}
+	{{ Form::open(array('action' => array('PartyController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>

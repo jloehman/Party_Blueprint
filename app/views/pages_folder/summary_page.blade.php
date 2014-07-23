@@ -11,7 +11,7 @@
 				<th>Event Date</th>
 				<th>Event Time</th>
 				<th>Set Budget</th>
-				<th>Current Budget</th>
+
 			</tr>
 			<tr>
 				<td>{{{$party->party_name}}}</td>
@@ -19,8 +19,7 @@
 				<td>{{{$party->event_date}}}</td>
 				<td>{{{$party->start_time}}}</td>
 				<!-- These coincide with the budget information -->
-				<td>{{{$party->start_time}}}</td>
-				<td>{{{$party->start_time}}}</td>
+				<td>${{{$party->budget}}}</td>
 			</tr>
 		</table>
 	</div>
@@ -32,6 +31,7 @@
 		  		<th>Name</th>
 		  		<th>Email</th>
 		  		<th>Phone</th>
+		  		<th>+ 1</th>
 		  		<th>RSVP</th>
 		  		<th>Notes</th>
   			</tr>
@@ -45,6 +45,14 @@
 	  			<td>
 	  				<!-- this needs to be submitted -->
 	  				{{ Form::checkbox('is_attending')}}
+	  				<button class="btn btn-success btn-ajax">is attending</button>
+						<div id="ajax-message"></div>
+
+						<form id="ajax-form">
+						
+						<input type="click" name="is_attending"><br>
+						<input type="submit">
+						</form>
 	  			</td>
 	  			<td>{{{ $guest->comment }}}</td>
   			</tr>

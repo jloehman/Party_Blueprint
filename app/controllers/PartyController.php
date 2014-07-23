@@ -13,11 +13,18 @@ class PartyController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
 		//Showing Todo items, 10 on each page
-		$todos = Todo::orderBy('id','desc')->paginate(10);
-		return View::make('pages_folder.todo_list')->with('todos', $todos);
+		$todos = Todo::where('party_id', $id)->orderBy('id','desc')->paginate(10);
+		$party = Party::find($id);
+
+		$data = array(
+			'todos' => $todos,
+			'party' => $party
+		);
+
+		return View::make('pages_folder.todo_list')->with($data);
 	}
 
 
@@ -37,24 +44,21 @@ class PartyController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
 		//
 		$validator = Validator::make(Input::all(), Todo::$rules);
 		if ($validator->fails())
 		{
 			Session::flash('errorMessage', 'There were errors submitting your form');
-
-			// retrieve flash data (same as any other session variable)
-			// dd($todo);
-			// return Redirect::route('todo_list.index');
-
+			return Redirect::action('PartyController@index', $id);
 		}
 		else
 		{
 			//Need to ask about the user here and the one to many relationship
 			$todo = new Todo();
 			// $todo->user()->associate(Auth::user());
+			$todo->party_id = $id;
 			$todo->name = Input::get('name');
 			$todo->done_by = Input::get('done_by');
 			$todo->save();
@@ -62,8 +66,7 @@ class PartyController extends \BaseController {
 			Session::flash('successMessage', 'Todo List item created successfully');
 
 			// retrieve flash data (same as any other session variable)
-			// dd($todo);
-			// return View::make('/personal_admin');
+			return Redirect::action('PartyController@index', $id);
 		}
 	}
 
@@ -129,6 +132,15 @@ class PartyController extends \BaseController {
 		}
 	}
 
+// 	public function ajax_update_complete()
+// {
+// 	$id = Input::get('complete');
+// 	$budget = BudgetItem::find($id);
+// 	$budget->complete = (Input::get('complete') == '1');
+// 	$budget->save();
+
+// 	return array('status' => 'success');
+
 
 	/**
 	 * Remove the specified resource from storage.
@@ -165,7 +177,6 @@ class PartyController extends \BaseController {
 			'guests' => $guests,
 			'todos' => $todos
 		);
-
 
 		return View::make('pages_folder.summary_page')->with($data);
 	}
