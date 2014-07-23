@@ -22,7 +22,7 @@ class CreatePartyTable extends Migration {
 			$party->string('location');
 			$party->integer('user_id')->unsigned();
 			$party->foreign('user_id')->references('id')->on('users');
-			$party->double('budget');
+			$party->decimal('budget', 8, 2);
 			$party->timestamps();
 
 		});

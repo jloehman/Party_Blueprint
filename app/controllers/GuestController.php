@@ -140,6 +140,15 @@ class GuestController extends \BaseController {
 		}
 	}
 
+// 	public function ajax_update_plus()
+// {
+// 	$id = Input::get('plus');
+// 	$budget = BudgetItem::find($id);
+// 	$budget->is_purchased = (Input::get('plus') == '1');
+// 	$budget->save();
+
+// 	return array('status' => 'success');
+
 
 	/**
 	 * Remove the specified resource from storage.
