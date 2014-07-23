@@ -9,12 +9,13 @@
  
    </head>
  <body>
- //unsure on which controller to call
+
+  
    {{ Form::open(array('action' => 'HomeController@doContact')) }}
-        {{ Form::label('name', 'name:')}}
+        {{ Form::label('name', 'Name:')}}
         {{ Form::text('name',null, array('class' => 'form-control'))}}
         <br>
-        {{ Form::label('email', 'email')}}
+        {{ Form::label('email', 'Email')}}
         {{ Form::text('email',null, array('class' => 'form-control'))}}
         <br>
         {{ Form::label('message', 'Message::')}}
