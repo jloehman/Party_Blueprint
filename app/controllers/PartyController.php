@@ -129,6 +129,15 @@ class PartyController extends \BaseController {
 		}
 	}
 
+// 	public function ajax_update_complete()
+// {
+// 	$id = Input::get('complete');
+// 	$budget = BudgetItem::find($id);
+// 	$budget->complete = (Input::get('complete') == '1');
+// 	$budget->save();
+
+// 	return array('status' => 'success');
+
 
 	/**
 	 * Remove the specified resource from storage.
