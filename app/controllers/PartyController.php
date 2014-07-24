@@ -132,6 +132,7 @@ class PartyController extends \BaseController {
 		}
 	}
 
+
 	public function ajaxUpdatePlusOne() {
 		$id = Input::get('id');
 
@@ -154,15 +155,7 @@ class PartyController extends \BaseController {
 	}
 
 
-// 	return array('status' => 'success');
 
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($id)
 	{
 		//Need to implement an "Are you sure you want to delete this?"

@@ -8,13 +8,13 @@
   <div class="col-md-12">
      {{ Form::open(array('action' => array('HomeController@send', 'method' => 'POST'))) }}
        {{ Form::label('name', 'Name:')}}
-       {{ Form::text('name',null, array('class' => 'form-control'))}}
+       {{ Form::text('name',Input::old('name'), array('placeholder'=>'Name', 'class' => 'form-control'))}}
        <br>
        {{ Form::label('email', 'Email:')}}
-       {{ Form::text('email',null, array('class' => 'form-control'))}}
+       {{ Form::text('email',Input::old('email'), array('placeholder'=>'Email', 'class' => 'form-control'))}}
        <br>
        {{ Form::label('message', 'Message:')}}
-       {{ Form::textarea('message',null, array('class' => 'form-control'))}}
+       {{ Form::textarea('message',Input::old('message'), array('placeholder'=>'Enter Your Message Here', 'class' => 'form-control'))}}
        
        <br>
        <button type="Submit" class="btn btn-default">Send</button>

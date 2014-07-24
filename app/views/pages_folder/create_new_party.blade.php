@@ -16,28 +16,28 @@
 				{{ Form::open(array('action' => 'WelcomeController@store', "class" => "form-horizontal form-group")) }}
 			  	<div class="specs">
 					{{ Form::label('party_name', 'Party Name') }}<br>
-					{{ Form::text('party_name', Input::old('party_name')) }}<br>
+					{{ Form::text('party_name', Input::old('party_name'), array('placeholder'=>'Party Name', 'class' => 'form-control')) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
 
 					{{ Form::label('location', 'Location') }}<br>
-					{{ Form::text('location', Input::old('location')) }}<br>
+					{{ Form::text('location', Input::old('location'), array('placeholder'=>'Location', 'class' => 'form-control')) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('location', '<span class="help-block">:message</span><br>') }}
 
 					{{ Form::label('event_date', 'Event Date') }}<br>
-					{{ Form::text('event_date', Input::old('event_date')) }}<br>
+					{{ Form::text('event_date', Input::old('event_date'), array('placeholder'=>'YYYY-MM-DD', 'class' => 'form-control')) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('event_date', '<span class="help-block">:message</span><br>') }}
 
 					{{ Form::label('start_time', 'Event Time') }}<br>
-					{{ Form::text('start_time', Input::old('start_time')) }}<br>
+					{{ Form::text('start_time', Input::old('start_time'), array('placeholder'=>'00:00:00', 'class' => 'form-control')) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('start_time', '<span class="help-block">:message</span><br>') }}
 				</div>
 				<div class="set_budget">
 					{{ Form::label('budget', 'Budget') }}<br>
-					{{ Form::text('budget', Input::old('budget')) }}<br>
+					{{ Form::text('budget', Input::old('budget'), array('placeholder'=>'EX: 0.00', 'class' => 'form-control')) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('budget', '<span class="help-block">:message</span><br>') }}
 				</div>
