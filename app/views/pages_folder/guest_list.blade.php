@@ -52,7 +52,7 @@
 
               </td>
   		<td>{{{ $guest->comment }}}</td>
-  		<td>{{ Form::open(array('action' => array('GuestController@destroy', $guest->id), 'method' => 'DELETE' )) }}
+  		<td>{{ Form::open(array('url' => action('GuestController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
 			{{ Form::submit('Delete') }}
 			{{ Form::close() }}
 		</td>

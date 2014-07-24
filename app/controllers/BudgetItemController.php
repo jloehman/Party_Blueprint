@@ -174,14 +174,14 @@ public function ajax_update_purchased()
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($party_id, $id)
 	{
 		//Need to implement an "Are you sure you want to delete this?"
 		$budget_item = BudgetItem::findOrFail($id);
 		$budget_item->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 
-		return Redirect::action('BudgetItemController@index', $id);
+		return Redirect::action('BudgetItemController@index', $party_id);
 	}
 
 

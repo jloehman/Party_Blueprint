@@ -23,10 +23,10 @@
 
                     <span class="glyphicon glyphicon-ok"></span>
   		</td>
-  		<td>{{ Form::open(array('action' => array('PartyController@destroy', $todo->id), 'method' => 'DELETE' )) }}
-			{{ Form::submit('Delete') }}
-			{{ Form::close() }}
-		</td>
+    <td>{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
+      {{ Form::submit('Delete') }}
+      {{ Form::close() }}
+    </td>
   	</tr>
 @endforeach
   </table>
