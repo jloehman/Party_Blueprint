@@ -174,7 +174,7 @@ class GuestController extends \BaseController {
 		//
 		$guest = Guest::findOrFail($id);
 		$guest->delete();
-		Session::flash('successMessage', 'Buy List item deleted successfully');
+		Session::flash('successMessage', 'Guest removed');
 
 		return Redirect::action('GuestController@index', $party_id);
 	}
