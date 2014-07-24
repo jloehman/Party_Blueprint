@@ -159,14 +159,14 @@ class GuestController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($party_id, $id)
 	{
 		//
 		$guest = Guest::findOrFail($id);
 		$guest->delete();
 		Session::flash('successMessage', 'Buy List item deleted successfully');
 
-		return Redirect::action('GuestController@index', $id);
+		return Redirect::action('GuestController@index', $party_id);
 	}
 
 

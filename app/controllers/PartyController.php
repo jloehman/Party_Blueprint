@@ -163,11 +163,11 @@ class PartyController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($party_id, $id)
 	{
 		//Need to implement an "Are you sure you want to delete this?"
-		$todo = Todo::findOrFail($id);
-		$todo->delete();
+		$party = party::findOrFail($id);
+		$party->delete();
 		Session::flash('successMessage', 'Todo List item deleted successfully');
 
 		return Redirect::action('PartyController@index');
