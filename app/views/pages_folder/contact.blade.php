@@ -2,27 +2,54 @@
 
 @section('content')
 
+    <!--Content-->
+    <section id="page-title" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h3>Get In Touch</h3>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="container">
-<div class="row">
-  <div class="col-md-12">
+     <!--Content-->      
+    <section id="content2" class="section">
+      <div class="container">
+        <div class="row">
+
      {{ Form::open(array('action' => array('HomeController@send', 'method' => 'POST'))) }}
+     <div class="col-sm-4">
+        <div class="control-group">  
+            <div class="controls">
        {{ Form::label('name', 'Name:')}}
-       {{ Form::text('name',null, array('class' => 'form-control'))}}
-       <br>
+       {{ Form::text('name',Input::old('name'), array('placeholder'=>'Name', 'class' => 'form-control'))}}
+            </div>
+        </div>
+        <div class="control-group">  
+            <div class="controls">
        {{ Form::label('email', 'Email:')}}
-       {{ Form::text('email',null, array('class' => 'form-control'))}}
-       <br>
+       {{ Form::text('email',Input::old('email'), array('placeholder'=>'Email', 'class' => 'form-control'))}}
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+          <div class="control-group">
+              <div class="controls">
        {{ Form::label('message', 'Message:')}}
-       {{ Form::textarea('message',null, array('class' => 'form-control'))}}
-       
-       <br>
-       <button type="Submit" class="btn btn-default">Send</button>
+       {{ Form::textarea('message',Input::old('message'), array('placeholder'=>'Enter Your Message Here', 'class' => 'form-control'))}}
+              </div>
+          </div>
+          <div class="text-right">  
+              <input type="hidden" name="save" value="contact">
+                  <button type="Submit" class="btn btn-default">Send</button>
+              </div>
+          </div>
        <!--{{ Form::submit('Send', null, array('class' => 'btn btn-default')) }}-->
        {{ Form::close() }}
      </div>
    </div>
-  </div>
+  </section>
    
 
  <!--  <form role="form" action="{{{ action('HomeController@send') }}}" method="POST" >

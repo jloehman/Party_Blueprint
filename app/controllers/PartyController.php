@@ -132,6 +132,7 @@ class PartyController extends \BaseController {
 		}
 	}
 
+
 	public function ajaxUpdatePlusOne() {
 		$id = Input::get('id');
 
@@ -144,18 +145,18 @@ class PartyController extends \BaseController {
 	}
 
 	public function ajaxUpdateTodo() {
-		$id = Input::get('2');
+		$id = Input::get('id');
 
-		$todo = Party::findOrFail($id);
-		$todo->plus = Input::get('value');
+		$todo = Todo::findOrFail($id);
+		$todo->is_complete = true;
 		$todo->save();
 
 		return Response::json(['success' => true]);
 	}
 
 
-// 	return array('status' => 'success');
 
+<<<<<<< HEAD
 
 	/**
 	 * Remove the specified resource from storage.
@@ -164,6 +165,9 @@ class PartyController extends \BaseController {
 	 * @return Response
 	 */
 	public function destroy($party_id, $id)
+=======
+	public function destroy($id)
+>>>>>>> a42c2c326b9444e76b5dddc444ec9bec8a86f665
 	{
 		//Need to implement an "Are you sure you want to delete this?"
 		$party = party::findOrFail($id);

@@ -18,13 +18,10 @@
   			<!-- this needs to be submitted -->
 <div class="btn-group">
                   <button type="button"
-                    class="btn btn-success todo-btn @if($todo->todo) active @endif"
-                    data-value="1" data-todoid="{{{ $todo->is_complete }}}">
+                    class="btn btn-success is_complete-btn @if($todo->is_complete) active @endif" 
+                    data-todoid="{{{ $todo->id }}}">
 
                     <span class="glyphicon glyphicon-ok"></span>
-        
-
-
   		</td>
     <td>{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
       {{ Form::submit('Delete') }}
@@ -43,13 +40,13 @@
 	{{ Form::open(array('action' => array('PartyController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
-		{{ Form::text('name', Input::old('name')) }}<br>
+		{{ Form::text('name', Input::old('name'), array('placeholder' => 'Name'))}}<br>
 		<!-- Change this error message -->
 		{{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
 	</div>
 	<div>
 		{{ Form::label('done_by', 'Done By') }}<br>
-		{{ Form::text('done_by', null, array('placeholder' => 'yyyy-mm-dd')) }}<br>
+		{{ Form::text('done_by', null, array('placeholder' => 'YYYY-MM-DD')) }}<br>
 		{{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
 	</div>
 		{{ Form::submit('Add Todo') }}
@@ -60,18 +57,15 @@
 @section('bottomscript')
 <script type="text/javascript">
 
-  $(".todo-btn").on('click', function() {
-    var plusValue = $(this).data('value');
+  $(".is_complete-btn").on('click', function() {
     var todoid = $(this).data('todoid');
 
-    $(".todo-btn[data-value=" + plusValue + "]").addClass('active');
-    $(".todo-btn[data-value!=" + plusValue + "]").removeClass('active');
+    $(this).addClass('active');
 
     $.ajax({
-      url: '/addTodo',
+      url: '/updateTodo',
       type: "POST",
       data: {
-        value: plusValue,
         id: todoid
       },
       dataType: 'json'
