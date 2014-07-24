@@ -145,10 +145,10 @@ class PartyController extends \BaseController {
 	}
 
 	public function ajaxUpdateTodo() {
-		$id = Input::get('2');
+		$id = Input::get('id');
 
-		$todo = Party::findOrFail($id);
-		$todo->plus = Input::get('value');
+		$todo = Todo::findOrFail($id);
+		$todo->is_complete = true;
 		$todo->save();
 
 		return Response::json(['success' => true]);

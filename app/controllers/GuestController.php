@@ -149,7 +149,17 @@ class GuestController extends \BaseController {
 		$guest->plus = Input::get('value');
 		$guest->save();
 
-		// return Response::json(['success' => true]);
+		return Response::json(['success' => true]);
+	}
+
+	public function ajaxGuestShow(){
+		$id = Input::get('id');
+
+		$guest = Guest::findOrFail($id);
+		$guest->is_attending = Input::get('value');
+		$guest->save();
+
+		return Response::json(['success' => true]);
 	}
 
 
