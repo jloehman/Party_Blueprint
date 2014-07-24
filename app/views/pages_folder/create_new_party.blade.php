@@ -8,7 +8,7 @@
 			<div class="row_two">
 				<p class="step_one"><em>1. Set Party Attributes</em></p>
 				<p class="step_two"><em>2. Set Your Budget</em></p>
-				<p class="step-three">3. Click Create!</p>
+				<p class="step_three">3. Click Create!</p>
 			</div>
 		</div>
 		<div class="form">

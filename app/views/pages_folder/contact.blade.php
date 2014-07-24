@@ -2,24 +2,23 @@
 
 @section('content')
 
+
 <div class="container">
 <div class="row">
   <div class="col-md-12">
-     {{ Form::open(array('action' => 'HomeController@doContact'), 'method' => 'POST')) }}
+     {{ Form::open(array('action' => array('HomeController@send', 'method' => 'POST'))) }}
        {{ Form::label('name', 'Name:')}}
        {{ Form::text('name',null, array('class' => 'form-control'))}}
        <br>
-       {{ Form::label('email', 'Email')}}
+       {{ Form::label('email', 'Email:')}}
        {{ Form::text('email',null, array('class' => 'form-control'))}}
        <br>
-       {{ Form::label('message', 'Message::')}}
+       {{ Form::label('message', 'Message:')}}
        {{ Form::textarea('message',null, array('class' => 'form-control'))}}
        
        <br>
        <button type="Submit" class="btn btn-default">Send</button>
-
-           
-
+       <!--{{ Form::submit('Send', null, array('class' => 'btn btn-default')) }}-->
        {{ Form::close() }}
      </div>
    </div>

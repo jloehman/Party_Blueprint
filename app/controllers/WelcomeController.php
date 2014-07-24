@@ -14,8 +14,8 @@ class WelcomeController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{	$parties = Party::orderBy('id','desc')->paginate(10);
-		return View::make('pages_folder.welcome')->with('parties', $parties);
+	{
+		return View::make('pages_folder.welcome');
 	}
 
 
