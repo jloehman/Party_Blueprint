@@ -1,17 +1,9 @@
 @extends('layouts.home_master')
 
-@section('content') 
-
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-
-  </head>
+@section('content')
 
   <body>
-
+<div class="form">
     {{ Form::open(array('action' => 'UserController@store')) }}
     {{ Form::label('first_name', 'First Name') }}
     {{ Form::text('first_name', null, array('class' =>'form-control')) }}
@@ -33,9 +25,6 @@
     <button type="Submit" class="btn btn-default">Register</button>
 
     {{ Form::close()}}
-
-
- </body>
-</html>
+</div>
 
 @stop
