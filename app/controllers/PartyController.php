@@ -166,7 +166,7 @@ class PartyController extends \BaseController {
 		$todo->delete();
 		Session::flash('successMessage', 'Item removed');
 
-		return Redirect::action('PartyController@index');
+		return Redirect::action('PartyController@index', $party_id);
 	}
 
 	public function summary($id)

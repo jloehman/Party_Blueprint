@@ -48,7 +48,7 @@
 		{{ Form::text('done_by', null, array('placeholder' => 'YYYY-MM-DD')) }}<br>
 		{{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
 	</div>
-		{{ Form::submit('Add Todo') }}
+		{{ Form::submit('Add') }}
 		{{ Form::close() }}
 
 @stop
