@@ -156,18 +156,10 @@ class PartyController extends \BaseController {
 
 
 
-<<<<<<< HEAD
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	
 	public function destroy($party_id, $id)
-=======
-	public function destroy($id)
->>>>>>> a42c2c326b9444e76b5dddc444ec9bec8a86f665
+
 	{
 		//Need to implement an "Are you sure you want to delete this?"
 		$party = party::findOrFail($id);
