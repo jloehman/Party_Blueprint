@@ -31,10 +31,13 @@ Route::resource('/welcome', 'WelcomeController');
 Route::resource('/parties/{id}/budget_item', 'BudgetItemController');
 
 // Guest Controller
+Route::post('/addAttend', ' GuestController@ajaxUpdateAttend');
 Route::resource('/parties/{id}/guest_list', 'GuestController');
 // Route::get('/parties/{id}/guest_list', array('as' => 'guests', 'uses' => 'UserController@showProfile'));
 
 // Todo list at party controller
+Route::post('/addTodo', 'PartyController@ajaxUpdateTodo');
+Route::post('/plusOne', 'PartyController@ajaxUpdatePlusOne');
 Route::resource('/parties/{id}/todo_list', 'PartyController'); // ---------- note done
 Route::get('/summary/{id}', 'PartyController@summary');
 
@@ -54,12 +57,16 @@ Route::post('/ajax-temp', function() {
 	$id = Input::get('id');
 
 	$guest = Guest::findOrFail($id);
-	$guest->plus = Input::get('value');
 	$guest->is_attending = Input::get('value');
 	$guest->save();
 
 	return Response::json(['success' => true]);
 });
+
+
+
+
+
 
 
 

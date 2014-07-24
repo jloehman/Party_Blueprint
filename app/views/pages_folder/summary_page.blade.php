@@ -62,13 +62,13 @@
 			  				<div class="btn-group">
 			  					<button type="button"
 			  						class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
-			  						data-value="1" data-showid="{{{ $guest->id }}}">
+			  						data-value="1" data-guestid="{{{ $guest->id }}}">
 
 			  						<span class="glyphicon glyphicon-ok"></span>
 
 			  						<button type="button"
 			  						class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
-			  						data-value="0" data-showid="{{{ $guest->id }}}">
+			  						data-value="0" data-guestid="{{{ $guest->id }}}">
 
 			  						<span class="glyphicon glyphicon-remove"></span>
 
@@ -116,7 +116,7 @@
 		$(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
 
 		$.ajax({
-			url: '/summary',
+			url: '/plusOne',
 			type: "POST",
 			data: {
 				value: plusValue,
@@ -125,21 +125,19 @@
 			dataType: 'json'
 		});
 	});
-</script>
-<script type="text/javascript">
 
-	$(".plus-btn").on('click', function() {
-		var plusValue = $(this).data('value');
+	$(".is_attending-btn").on('click', function() {
+		var attendingValue = $(this).data('value');
 		var guestId = $(this).data('guestid');
 
-		$(".plus-btn[data-value=" + plusValue + "]").addClass('active');
-		$(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+		$(".is_attending-btn[data-value=" + attendingValue + "]").addClass('active');
+		$(".is_attending-btn[data-value!=" + attendingValue + "]").removeClass('active');
 
 		$.ajax({
 			url: '/ajax-temp',
 			type: "POST",
 			data: {
-				value: plusValue,
+				value: attendingValue,
 				id: guestId
 			},
 			dataType: 'json'

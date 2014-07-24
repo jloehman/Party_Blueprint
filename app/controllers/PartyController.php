@@ -132,15 +132,30 @@ class PartyController extends \BaseController {
 		}
 	}
 
-// 	return array('status' => 'success');
+
+	public function ajaxUpdatePlusOne() {
+		$id = Input::get('id');
+
+		$guest = Guest::findOrFail($id);
+		$guest->plus = Input::get('value');
+		$guest->save();
+
+		return Response::json(['success' => true]);
+
+	}
+
+	public function ajaxUpdateTodo() {
+		$id = Input::get('2');
+
+		$todo = Party::findOrFail($id);
+		$todo->plus = Input::get('value');
+		$todo->save();
+
+		return Response::json(['success' => true]);
+	}
 
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+
 	public function destroy($id)
 	{
 		//Need to implement an "Are you sure you want to delete this?"

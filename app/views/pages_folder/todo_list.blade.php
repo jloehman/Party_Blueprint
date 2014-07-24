@@ -16,11 +16,10 @@
   		<!-- this needs to be a checkbox -->
   		<td>
   			<!-- this needs to be submitted -->
-  			{{ Form::checkbox('is_complete')}}
 <div class="btn-group">
                   <button type="button"
-                    class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
-                    data-value="1" data-showid="{{{ $todo->is_complete }}}">
+                    class="btn btn-success todo-btn @if($todo->todo) active @endif"
+                    data-value="1" data-todoid="{{{ $todo->is_complete }}}">
 
                     <span class="glyphicon glyphicon-ok"></span>
         
@@ -61,19 +60,19 @@
 @section('bottomscript')
 <script type="text/javascript">
 
-  $(".plus-btn").on('click', function() {
+  $(".todo-btn").on('click', function() {
     var plusValue = $(this).data('value');
-    var guestId = $(this).data('guestid');
+    var todoid = $(this).data('todoid');
 
-    $(".plus-btn[data-value=" + plusValue + "]").addClass('active');
-    $(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+    $(".todo-btn[data-value=" + plusValue + "]").addClass('active');
+    $(".todo-btn[data-value!=" + plusValue + "]").removeClass('active');
 
     $.ajax({
-      url: '/',
+      url: '/addTodo',
       type: "POST",
       data: {
         value: plusValue,
-        id: guestId
+        id: todoid
       },
       dataType: 'json'
     });
