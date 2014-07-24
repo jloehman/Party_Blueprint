@@ -140,14 +140,16 @@ class GuestController extends \BaseController {
 		}
 	}
 
-// 	public function ajax_update_plus()
-// {
-// 	$id = Input::get('plus');
-// 	$budget = BudgetItem::find($id);
-// 	$budget->is_purchased = (Input::get('plus') == '1');
-// 	$budget->save();
+Route::post('/guest', function() {
+	$id = Input::get('id');
 
-// 	return array('status' => 'success');
+	$guest = Guest::findOrFail($id);
+	$guest->plus = Input::get('value');
+	$guest->is_attending = Input::get('value');
+	$guest->save();
+
+	return Response::json(['success' => true]);
+});
 
 
 	/**

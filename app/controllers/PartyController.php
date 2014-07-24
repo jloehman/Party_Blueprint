@@ -132,12 +132,16 @@ class PartyController extends \BaseController {
 		}
 	}
 
-// 	public function ajax_update_complete()
-// {
-// 	$id = Input::get('complete');
-// 	$budget = BudgetItem::find($id);
-// 	$budget->complete = (Input::get('complete') == '1');
-// 	$budget->save();
+Route::post('/summary', function() {
+	$id = Input::get('id');
+
+	$guest = Guest::findOrFail($id);
+	$guest->plus = Input::get('value');
+	$guest->is_attending = Input::get('value');
+	$guest->save();
+
+	return Response::json(['success' => true]);
+});
 
 // 	return array('status' => 'success');
 

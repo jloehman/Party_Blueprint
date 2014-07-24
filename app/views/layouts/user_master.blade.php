@@ -55,6 +55,11 @@
     </ul>
 </nav>
 @yield('content')
+
+    <script type="text/javascript" src="/simple_soiree_template/js/jquery-1.8.2.min.js"></script>
+
+    <!-- http://twitter.github.com/bootstrap/ -->
+    <script type="text/javascript" src="/simple_soiree_template/js/bootstrap.min.js"></script>
 @yield('bottomscript')
 </body>
 </html>

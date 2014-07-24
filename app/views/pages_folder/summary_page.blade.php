@@ -24,6 +24,7 @@
 		</table>
 	</div>
 </div>
+
 <div class="guest_view">
 	<div class="table-responsive">
   		<table class="table table-bordered table-striped">
@@ -31,36 +32,56 @@
 		  		<th>Name</th>
 		  		<th>Email</th>
 		  		<th>Phone</th>
-		  		<th>+ 1</th>
-		  		<th>RSVP</th>
+		  		<th><center>+1</center></th>
+		  		<th><center>RSVP</center></th>
 		  		<th>Notes</th>
   			</tr>
+			@if(count($guests) > 0)
+				@foreach($guests as $guest)
+		  			<tr>
+			  			<td>{{{ $guest->name }}}</td>
+			  			<td>{{{ $guest->email }}}</td>
+			  			<td>{{{ $guest->phone }}}</td>
+			  			<td>
+			  				<div class="btn-group">
+			  					<button type="button"
+			  						class="btn btn-success plus-btn @if($guest->plus) active @endif"
+			  						data-value="1" data-guestid="{{{ $guest->id }}}">
 
-@if(strlen($guests) > 0)
-@foreach($guests as $guest)
-  			<tr>
-	  			<td>{{{ $guest->name }}}</td>
-	  			<td>{{{ $guest->email }}}</td>
-	  			<td>{{{ $guest->phone }}}</td>
-	  			<td>
-	  				<!-- this needs to be submitted -->
-	  				{{ Form::checkbox('is_attending')}}
-	  				<button class="btn btn-success btn-ajax">is attending</button>
-						<div id="ajax-message"></div>
+			  						<span class="glyphicon glyphicon-plus"></span>
+			  					</button>
+			  					<button type="button"
+			  						class="btn btn-info plus-btn @if(!$guest->plus) active @endif"
+			  						data-value="0" data-guestid="{{{ $guest->id }}}">
 
-						<form id="ajax-form">
-						
-						<input type="click" name="is_attending"><br>
-						<input type="submit">
-						</form>
-	  			</td>
-	  			<td>{{{ $guest->comment }}}</td>
-  			</tr>
-@endforeach
-@endif
+			  						<span class="glyphicon glyphicon-remove"></span>
+			  					</button>
+			  				</div>
+			  			</td>
+			  			<td>
+			  				<div class="btn-group">
+			  					<button type="button"
+			  						class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
+			  						data-value="1" data-showid="{{{ $guest->id }}}">
+
+			  						<span class="glyphicon glyphicon-ok"></span>
+
+			  						<button type="button"
+			  						class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
+			  						data-value="0" data-showid="{{{ $guest->id }}}">
+
+			  						<span class="glyphicon glyphicon-remove"></span>
+
+			  			</td>
+			  			<td>{{{ $guest->comment }}}
+			  			</td>
+		  			</tr>
+				@endforeach
+			@endif
   		</table>
 	</div>
 </div>
+
 <div class="todo_view">
 	<div class="table-responsive">
 	  <table class="table table-bordered table-striped">
@@ -69,21 +90,64 @@
 	  		<th>Done By</th>
 	  		<th>Completed</th>
 	  	</tr>
-
-@if(strlen($todos) > 0)
-@foreach($todos as $todo)
-	  	<tr>
-	  		<td>{{{ $todo->name }}}</td>
-	  		<td>{{{ $todo->done_by }}}</td>
-	  		<!-- this needs to be a checkbox -->
-	  		<td>
-	  			<!-- this needs to be submitted -->
-	  			{{ Form::checkbox('is_complete')}}
-	  		</td>
-	  	</tr>
-@endforeach
-@endif
+			@if(count($todos) > 0)
+				@foreach($todos as $todo)
+				  	<tr>
+				  		<td>{{{ $todo->name }}}</td>
+				  		<td>{{{ $todo->done_by }}}</td>
+				  		<td></td>
+				  	</tr>
+				@endforeach
+			@endif
 	  </table>
 	</div>
 </div>
 @stop
+
+@section('bottomscript')
+
+<script type="text/javascript">
+
+	$(".plus-btn").on('click', function() {
+		var plusValue = $(this).data('value');
+		var guestId = $(this).data('guestid');
+
+		$(".plus-btn[data-value=" + plusValue + "]").addClass('active');
+		$(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+
+		$.ajax({
+			url: '/summary',
+			type: "POST",
+			data: {
+				value: plusValue,
+				id: guestId
+			},
+			dataType: 'json'
+		});
+	});
+</script>
+<script type="text/javascript">
+
+	$(".plus-btn").on('click', function() {
+		var plusValue = $(this).data('value');
+		var guestId = $(this).data('guestid');
+
+		$(".plus-btn[data-value=" + plusValue + "]").addClass('active');
+		$(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+
+		$.ajax({
+			url: '/ajax-temp',
+			type: "POST",
+			data: {
+				value: plusValue,
+				id: guestId
+			},
+			dataType: 'json'
+		});
+	});
+</script>
+
+
+
+@stop
+
