@@ -42,7 +42,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand img-responsive" href="#"><img src="/public/simple_soiree.jpeg" alt="logo"></a>
+          <a class="navbar-brand img-responsive" href="/"><img src="/public/simple_soiree.jpeg" alt="logo"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -115,7 +115,7 @@
 	  <div class="container">
 	    <div class="row margin-40">
 	      <div class="col-sm-10 col-sm-offset-1 text-center">
-	        <p>1234 Main Street Atlanta, GA 30305 | 404.555.5555  |  <a href="mailto:support@themearmada.com"><i class="icon-envelope-alt"></i> support@themearmada.com</a></p>
+	        <p>112 E. Pecan St. San Antonio, TX 78205  |  <a href="/contact"><i class="icon-envelope-alt"></i> simplessoiree@gmail.com</a></p>
 	        <hr>
 	      </div>
 	    </div>
@@ -129,8 +129,6 @@
 						<li><a class="google" href="http://www.googleplus.com" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li>
 						<li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa fa-camera-retro fa-3x"></i></a></li>
 						<li><a class="pinterest" href="http://www.pinterest.com" target="_blank"><i class="fa fa-pinterest fa-3x"></i></a></li>
-						<li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a></li>
-						<li><a class="Github" href="http://www.github.com" target="_blank"><i class="fa fa-github-alt fa-3x"></i></a></li>
 					</ul>
 	      </div>
 	    </div>
