@@ -132,16 +132,27 @@ class PartyController extends \BaseController {
 		}
 	}
 
-Route::post('/summary', function() {
-	$id = Input::get('id');
+	public function ajaxUpdatePlusOne() {
+		$id = Input::get('id');
 
-	$guest = Guest::findOrFail($id);
-	$guest->plus = Input::get('value');
-	$guest->is_attending = Input::get('value');
-	$guest->save();
+		$guest = Guest::findOrFail($id);
+		$guest->plus = Input::get('value');
+		$guest->save();
 
-	return Response::json(['success' => true]);
-});
+		return Response::json(['success' => true]);
+
+	}
+
+	public function ajaxUpdateTodo() {
+		$id = Input::get('2');
+
+		$todo = Party::findOrFail($id);
+		$todo->plus = Input::get('value');
+		$todo->save();
+
+		return Response::json(['success' => true]);
+	}
+
 
 // 	return array('status' => 'success');
 
