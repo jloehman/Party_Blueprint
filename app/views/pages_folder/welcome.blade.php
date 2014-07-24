@@ -19,17 +19,10 @@
 		  	@foreach(Auth::user()->parties as $party)
 	  	<!-- when one of these is chosen, I need it to render the specific information -->
 
-<<<<<<< HEAD
-	        <a href="{{{ action('PartyController@summary', $party->id) }}}" class="list-group-item">{{{ $party->party_name }}}</a><br>
-		@endforeach
-	  </div>
-	</div>
-=======
 		        <a href="{{{ action('PartyController@summary', $party->id) }}}" class="list-group-item">{{{ $party->party_name }}}</a><br>
 			@endforeach
 		  </div>
 		</div>
 	@endif
->>>>>>> master
 </div>
 @stop
