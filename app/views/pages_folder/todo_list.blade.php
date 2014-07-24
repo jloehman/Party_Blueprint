@@ -17,11 +17,10 @@
   		<td>
   			<!-- this needs to be submitted -->
 <div class="btn-group">
-                  <button type="checkbox"
+                  <input type="checkbox"
                     class="btn btn-success is_complete-btn @if($todo->is_complete) active @endif" 
-                    data-todoid="{{{ $todo->id }}}">
+                    data-todoid="{{{ $todo->id }}}"></input>
 
-                    <span class="glyphicon glyphicon-ok"></span>
   		</td>
     <td>{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
       {{ Form::submit('Delete') }}
