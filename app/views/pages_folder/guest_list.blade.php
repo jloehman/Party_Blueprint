@@ -110,7 +110,7 @@
     $(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
 
     $.ajax({
-      url: '/addAttend',
+      url: '/plusOne',
       type: "POST",
       data: {
         value: plusValue,
@@ -122,7 +122,7 @@
 
   $(".is_attending-btn").on('click', function() {
     var attendingValue = $(this).data('value');
-    var guestId = $(this).data('guestid');
+    var showid = $(this).data('showid');
 
     $(".is_attending-btn[data-value=" + attendingValue + "]").addClass('active');
     $(".is_attending-btn[data-value!=" + attendingValue + "]").removeClass('active');
@@ -132,7 +132,7 @@
       type: "POST",
       data: {
         value: attendingValue,
-        id: guestId
+        id: showid
       },
       dataType: 'json'
     });
