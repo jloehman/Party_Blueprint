@@ -132,17 +132,6 @@ class PartyController extends \BaseController {
 		}
 	}
 
-Route::post('/summary', function() {
-	$id = Input::get('id');
-
-	$guest = Guest::findOrFail($id);
-	$guest->plus = Input::get('value');
-	$guest->is_attending = Input::get('value');
-	$guest->save();
-
-	return Response::json(['success' => true]);
-});
-
 // 	return array('status' => 'success');
 
 

@@ -140,16 +140,16 @@ class GuestController extends \BaseController {
 		}
 	}
 
-Route::post('/guest', function() {
-	$id = Input::get('id');
+// Route::post('/guest', function() {
+// 	$id = Input::get('id');
 
-	$guest = Guest::findOrFail($id);
-	$guest->plus = Input::get('value');
-	$guest->is_attending = Input::get('value');
-	$guest->save();
+// 	$guest = Guest::findOrFail($id);
+// 	$guest->plus = Input::get('value');
+// 	$guest->is_attending = Input::get('value');
+// 	$guest->save();
 
-	return Response::json(['success' => true]);
-});
+// 	return Response::json(['success' => true]);
+// });
 
 
 	/**

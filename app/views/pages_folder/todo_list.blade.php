@@ -44,13 +44,13 @@
 	{{ Form::open(array('action' => array('PartyController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
-		{{ Form::text('name', Input::old('name')) }}<br>
+		{{ Form::text('name', Input::old('name'), array('placeholder' => 'Name'))}}<br>
 		<!-- Change this error message -->
 		{{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
 	</div>
 	<div>
 		{{ Form::label('done_by', 'Done By') }}<br>
-		{{ Form::text('done_by', null, array('placeholder' => 'yyyy-mm-dd')) }}<br>
+		{{ Form::text('done_by', null, array('placeholder' => 'YYYY-MM-DD')) }}<br>
 		{{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
 	</div>
 		{{ Form::submit('Add Todo') }}
