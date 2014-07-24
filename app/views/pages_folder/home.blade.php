@@ -53,7 +53,6 @@
     <section id="services" class="section">
       <div class="container">
         <div class="row text-center">
-          
           <!--Seciton 1-->
           <div class="col-sm-4 service margin-30">
             <a href="#">
@@ -62,7 +61,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
             </a>
           </div>
-          
+
           <!--Seciton 2-->
           <div class="col-sm-4 service margin-30">
             <a href="#">
