@@ -17,7 +17,7 @@
   		<td>
   			<!-- this needs to be submitted -->
 <div class="btn-group">
-                  <button type="button"
+                  <button type="checkbox"
                     class="btn btn-success is_complete-btn @if($todo->is_complete) active @endif" 
                     data-todoid="{{{ $todo->id }}}">
 
