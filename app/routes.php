@@ -49,6 +49,18 @@ Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 Route::post('/send', 'HomeController@send');
 
 
+//in controller or routes
+Route::post('/ajax-temp', function() {
+	$id = Input::get('id');
+
+	$guest = Guest::findOrFail($id);
+	$guest->plus = Input::get('value');
+	$guest->is_attending = Input::get('value');
+	$guest->save();
+
+	return Response::json(['success' => true]);
+});
+
 
 
 

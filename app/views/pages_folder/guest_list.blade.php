@@ -8,7 +8,6 @@
   		<th>Name</th>
   		<th>Email</th>
   		<th>Phone</th>
-      <th>+ 1</th>
   		<th>RSVP</th>
   		<th>Notes</th>
   		<th></th>
@@ -18,20 +17,39 @@
   		<td>{{{ $guest->name }}}</td>
   		<td>{{{ $guest->email }}}</td>
   		<td>{{{ $guest->phone }}}</td>
-      <td><button onclick class="btn btn-success btn-ajax">+ 1</button>
-
-        <form id="ajax-form">
-        <input type="text" name="plus"><br>
-        <input type="submit">
-        </form>
-      </td>
 
   		<!-- this needs to be a checkbox -->
   		<td>
-  			<!-- this needs to be submitted -->
-  			{{ Form::checkbox('is_attending', '0', Input::old('is_attending', false))}}
+                <div class="btn-group">
+                  <button type="button"
+                    class="btn btn-success plus-btn @if($guest->plus) active @endif"
+                    data-value="1" data-guestid="{{{ $guest->id }}}">
 
-  		</td>
+                    <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+                  <button type="button"
+                    class="btn btn-info plus-btn @if(!$guest->plus) active @endif"
+                    data-value="0" data-guestid="{{{ $guest->id }}}">
+
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button type="button"
+                    class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
+                    data-value="1" data-showid="{{{ $guest->id }}}">
+
+                    <span class="glyphicon glyphicon-ok"></span>
+
+                    <button type="button"
+                    class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
+                    data-value="0" data-showid="{{{ $guest->id }}}">
+
+                    <span class="glyphicon glyphicon-remove"></span>
+
+              </td>
   		<td>{{{ $guest->comment }}}</td>
   		<td>{{ Form::open(array('action' => array('GuestController@destroy', $guest->id), 'method' => 'DELETE' )) }}
 			{{ Form::submit('Delete') }}
@@ -44,12 +62,11 @@
 </div>
 
 
-
 	{{-- Form::submit('Add Guests') --}}
 
 
 
-	{{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
+	{{ Form::open(array('action' => 'GuestController@store')) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>
@@ -79,3 +96,53 @@
 		{{ Form::close() }}
 
 @stop
+
+@section('bottomscript')
+
+<script type="text/javascript">
+
+  $(".plus-btn").on('click', function() {
+    var plusValue = $(this).data('value');
+    var guestId = $(this).data('guestid');
+
+    $(".plus-btn[data-value=" + plusValue + "]").addClass('active');
+    $(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+
+    $.ajax({
+      url: '/guest',
+      type: "POST",
+      data: {
+        value: plusValue,
+        id: guestId
+      },
+      dataType: 'json'
+    });
+  });
+</script>
+<script type="text/javascript">
+
+  $(".plus-btn").on('click', function() {
+    var plusValue = $(this).data('value');
+    var guestId = $(this).data('guestid');
+
+    $(".plus-btn[data-value=" + plusValue + "]").addClass('active');
+    $(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+
+    $.ajax({
+      url: '/guest',
+      type: "POST",
+      data: {
+        value: plusValue,
+        id: guestId
+      },
+      dataType: 'json'
+    });
+  });
+</script>
+
+@stop
+
+
+
+@stop
+
