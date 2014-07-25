@@ -134,19 +134,19 @@
 	<div>
 			{{ Form::label('name', 'Name') }}<br>
 			{{ Form::text('name', Input::old('name')) }}<br>
-			<!-- Change this error message -->
+			<!Change this error message -->
 			<!-- {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
 		</div>
 		<div>
 			{{ Form::label('qty', 'Quantity') }}<br>
 			{{ Form::text('qty', Input::old('qty')) }}<br>
-			<!-- Change this error message -->
+			<!-Change this error message -->
 			<!-- {{ $errors->first('qty', '<span class="help-block">:message</span><br>') }}
 		</div>
 		<div>
 			{{ Form::label('cost', 'Cost') }}<br>
 			{{ Form::text('cost', Input::old('cost')) }}<br>
-			<!-- Change this error message -->
+			<! Change this error message -->
 			<!-- {{ $errors->first('cost', '<span class="help-block">:message</span><br>') }}
 		</div>
 			{{ Form::submit('Add Item') }}
@@ -158,7 +158,7 @@
 @foreach(BudgetItem::not_purchased() as $budget_item)
 
 		  		<li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
-		  	{{ Form::open(array('action' => array('BudgetItemController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
+		  	{{ Form::open(array('url' => action('BudgetItemController@destroy',[$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
 <font color="pink">{{ Form::submit('Delete') }}</font>
       {{ Form::close() }}
     </li>
