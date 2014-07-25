@@ -6,11 +6,18 @@
 	</div>
 		<div class="steps">
 			<div class="row_two">
-				<p class="step_one"><em>1. Set Party Attributes</em></p>
-				<p class="step_two"><em>2. Set Your Budget</em></p>
-				<p class="step_three">3. Click Create!</p>
+				<div class="step_one">
+					<p><em>1. Set Party Attributes</em></p>
+				</div>
+				<div class="step_two">
+					<p><em>2. Set Your Budget</em></p>
+				</div>
+				<div class="step_three">
+					<p><em>3. Click Create!</em></p>
+				</div>
 			</div>
 		</div>
+		<hr>
 		<div class="form">
 			<div class="row_three">
 				{{ Form::open(array('action' => 'WelcomeController@store', "class" => "form-horizontal form-group")) }}
@@ -26,12 +33,12 @@
 					{{ $errors->first('location', '<span class="help-block">:message</span><br>') }}
 
 					{{ Form::label('event_date', 'Event Date') }}<br>
-					{{ Form::text('event_date', Input::old('event_date'), array('placeholder'=>'YYYY-MM-DD', 'class' => 'form-control')) }}<br>
+					{{ Form::text('event_date', Input::old('event_date'), array('placeholder'=>'YYYY-MM-DD', 'class' => 'form-control', 'id' => "datetimepicker")) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('event_date', '<span class="help-block">:message</span><br>') }}
 
 					{{ Form::label('start_time', 'Event Time') }}<br>
-					{{ Form::text('start_time', Input::old('start_time'), array('placeholder'=>'00:00:00', 'class' => 'form-control')) }}<br>
+					{{ Form::text('start_time', Input::old('start_time'), array('placeholder'=>'00:00:00', 'class' => 'form-control', 'id' => 'datetimepicker2')) }}<br>
 					<!-- Change this error message -->
 					{{ $errors->first('start_time', '<span class="help-block">:message</span><br>') }}
 				</div>
@@ -42,11 +49,28 @@
 					{{ $errors->first('budget', '<span class="help-block">:message</span><br>') }}
 				</div>
 				<div class="create_button">
-					{{ Form::submit('Create Party') }}
+					{{ Form::submit('Create Party', array('class' => 'btn')) }}
 					{{ Form::close() }}
 				</div>
 			</div>
 		</div>
 
 </div>
+@stop
+
+@section('bottomscript')
+<script>
+
+	$('#datetimepicker').datetimepicker({
+		startDate: new Date(),
+		format: 'Y/m/d',
+		timepicker: false
+	});
+
+	$('#datetimepicker2').datetimepicker({
+		datepicker: false,
+		format: 'H:i:s'
+	});
+
+</script>
 @stop

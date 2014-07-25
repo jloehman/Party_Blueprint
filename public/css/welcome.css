@@ -1,3 +1,7 @@
+body {
+	background-image: url('/party_soiree_template/bootstrap3/multipage/img/grid_noise.png');
+}
+
  h1.welcome {
 	font-size: 100px;
 	font-family: 'La Belle Aurore', cursive;
@@ -6,9 +10,32 @@
 	margin-right: 15px;
 }
 
-body {
-	background-image: url('/party_soiree_template/bootstrap3/multipage/img/grid_noise.png');
+h1.steps_header {
+	font-family: 'La Belle Aurore', cursive;
+	font-size: 80px;
 }
+
+.steps {
+	position: relative;
+}
+
+.step_one {
+	float: left;
+}
+.step_two {
+	float: left;
+	margin-left:100px;
+	margin-right: 100px;
+}
+
+.btn {
+	background-color: #00d0c1;
+	color: #000;
+	margin-left:468px;
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
 .btn-create {
 	background-color: #00d0c1;
 	color: #000;
