@@ -14,7 +14,8 @@
       
       
     <!--Content-->      
-    <section id="content2" class="section">
+     <section id="content2">
+    
       <div class="container">
        <!--  <div class="row"> -->
           
@@ -25,7 +26,7 @@
             <article class="margin-60">
   			<h3>Existing Users</h3><br>
 			<div class="table-responsive">
-	  			<table class="table table-bordered table-striped">
+	  			<table class="table table-bordered table-striped table-hover">
 		  	<tr>
 		  		<th class="text-center">First Name</th>
 		  		<th class="text-center">Last Name</th>
@@ -60,5 +61,9 @@
                  
       <!-- </div> -->
     </section>
+
+    <section class="adminUserFooter">
+	  
+	</section>
 
 @stop

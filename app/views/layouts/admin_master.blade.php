@@ -16,7 +16,9 @@
 		  <!-- Styles -->
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/font-awesome.min.css">
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/animate.css">
+		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/admin.css">
 		  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		  <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
 
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/bootstrap.min.css">
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/main.css">
@@ -46,9 +48,9 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-             <li><a href="/admin_users"><span class="cp-nav-link" id="contact">USER</span></a></li>
-             <li><a href="/admin_admin"><span class="cp-nav-link" id="clients">ADMIN</span></a></li>
-            <li>{{ link_to_action('HomeController@logout', 'LOGOUT') }}</li>
+          	 <li><a href="/admin_admin">ADMIN</a></li>
+             <li><a href="/admin_users">USER</a></li>
+             <li>{{ link_to_action('HomeController@logout', 'LOGOUT') }}</li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -119,42 +121,8 @@
 		</div> --><!-- end footer -->
 <!-- footer -->
 <!--Bottom Section-->
-	<section id="bottom">
-	  <div class="container">
-	    <div class="row margin-40">
-	      <div class="col-sm-10 col-sm-offset-1 text-center">
-	        <p>1234 Main Street Atlanta, GA 30305 | 404.555.5555  |  <a href="mailto:support@themearmada.com"><i class="icon-envelope-alt"></i> support@themearmada.com</a></p>
-	        <hr>
-	      </div>
-	    </div>
-	    
-	    <div class="row">
-	      <div class="col-sm-10 col-sm-offset-1 text-center">
-	        <!--Social Icons-->          
-	        <ul class="social-icons">
-				<li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-3x"></i></a></li>
-				<li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-3x"></i></a></li>
-				<li><a class="google" href="http://www.googleplus.com" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li>
-				<li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa fa-camera-retro fa-3x"></i></a></li>
-				<li><a class="pinterest" href="http://www.pinterest.com" target="_blank"><i class="fa fa-pinterest fa-3x"></i></a></li>
-				<li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="fa fa-linkedin fa-3x"></i></a></li>
-				<li><a class="Github" href="http://www.github.com" target="_blank"><i class="fa fa-github-alt fa-3x"></i></a></li>
-			</ul>
-	      </div>
-	    </div>
-	  </div>
-	</section>
-
-	<section id="footer">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-sm-12 text-center">
-	        <p>@ Copyright. All Rights Reserved. Created by <a href="http://www.themearmada.com">Theme Armada.</a></p>
-	      </div>
-	    </div>
-	  </div>
-	</section>
-
+	
+	
 <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -171,5 +139,5 @@
       }(window.jQuery)
     </script>
 @yield('bottomscript')
-</body>script>
+</body>
 </html>

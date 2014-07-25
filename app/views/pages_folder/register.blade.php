@@ -13,7 +13,7 @@
     <div class="control-group">
         <div class="controls">
             <div class="input-prepend">
-    {{ Form::label('first_name', 'First Name') }}
+    {{ Form::label('first_name', 'First Name:') }}
     {{ Form::text('first_name', Input::old('first_name'), array('placeholder'=>'First Name','class' =>'form-control')) }}
             </div>
         </div>
@@ -21,7 +21,7 @@
     <div class="control-group">
         <div class="controls">
             <div class="input-prepend">
-    {{ Form::label('last_name', 'Last Name') }}
+    {{ Form::label('last_name', 'Last Name:') }}
     {{ Form::text('last_name', Input::old('last_name'), array('placeholder'=>'Last Name', 'class' =>'form-control')) }}
             </div>
         </div>
@@ -29,7 +29,7 @@
     <div class="control-group">
         <div class="controls">
             <div class="input-prepend">
-    {{ Form::label('email', 'Email') }}
+    {{ Form::label('email', 'Email:') }}
     {{ Form::text('email', Input::old('email'), array('placeholder'=>'Email', 'class' =>'form-control')) }}
             </div>
         </div>
@@ -37,7 +37,7 @@
     <div class="control-group">
         <div class="controls">
             <div class="input-prepend">
-    {{ Form::label('password', 'Password')}}
+    {{ Form::label('password', 'Password:')}}
     {{ Form::password('password', array('placeholder'=>'Password', 'class' => 'form-control'))}}
             </div>
         </div>

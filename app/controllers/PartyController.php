@@ -162,11 +162,11 @@ class PartyController extends \BaseController {
 
 	{
 		//Need to implement an "Are you sure you want to delete this?"
-		$party = party::findOrFail($id);
-		$party->delete();
-		Session::flash('successMessage', 'Todo List item deleted successfully');
+		$todo = Todo::findOrFail($id);
+		$todo->delete();
+		Session::flash('successMessage', 'Item removed');
 
-		return Redirect::action('PartyController@index');
+		return Redirect::action('PartyController@index', $party_id);
 	}
 
 	public function summary($id)

@@ -213,17 +213,19 @@
               </td> -->
              <!--  <td>
                 <div class="btn-group">
-                  <button type="button"
+                  <input type="checkbox"
                     class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
                     data-value="1" data-showid="{{{ $guest->id }}}">
 
                     <span class="glyphicon glyphicon-ok"></span>
+                  </input>
 
-                    <button type="button"
+                    <input type="checkbox"
                     class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
                     data-value="0" data-showid="{{{ $guest->id }}}">
 
                     <span class="glyphicon glyphicon-remove"></span>
+                  </input>
 
               </td> -->
   		<!-- <td>{{{ $guest->comment }}}</td>

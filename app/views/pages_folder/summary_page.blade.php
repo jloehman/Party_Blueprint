@@ -177,36 +177,37 @@
 			  			<td>{{{ $guest->name }}}</td>
 			  			<td>{{{ $guest->email }}}</td>
 			  			<td>{{{ $guest->phone }}}</td>
-			  			<td> -->
-			  				<!-- <div class="btn-group">
-			  					<button type="button"
+			  			<td>
+			  				<div class="btn-group">
+			  					<input type="checkbox"
 			  						class="btn btn-success plus-btn @if($guest->plus) active @endif"
 			  						data-value="1" data-guestid="{{{ $guest->id }}}">
 
 			  						<span class="glyphicon glyphicon-plus"></span>
-			  					</button>
-			  					<button type="button"
+			  					</input>
+			  					<input type="checkbox"
 			  						class="btn btn-info plus-btn @if(!$guest->plus) active @endif"
 			  						data-value="0" data-guestid="{{{ $guest->id }}}">
 
 			  						<span class="glyphicon glyphicon-remove"></span>
-			  					</button>
+			  					</input>
 			  				</div>
 			  			</td>
 			  			<td>
-			  				<div class="btn-group"> -->
-			  					<!-- <button type="button"
+			  				<div class="btn-group">
+			  					<input type="checkbox"
 			  						class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
 			  						data-value="1" data-guestid="{{{ $guest->id }}}">
 
 			  						<span class="glyphicon glyphicon-ok"></span>
+			  					</input>
 
-			  						<button type="button"
+			  						<input type="checkbox"
 			  						class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
 			  						data-value="0" data-guestid="{{{ $guest->id }}}">
 
-			  						<span class="glyphicon glyphicon-remove"></span> -->
-
+			  						<span class="glyphicon glyphicon-remove"></span>
+			  					</input>
 			  		<!-- 	</td>
 			  			<td>{{{ $guest->comment }}}
 			  			</td>

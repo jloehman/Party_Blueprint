@@ -1,0 +1,22 @@
+.adminfooter {
+   position:relative;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#26292B;
+}
+
+
+.adminbottom {
+	margin-bottom: 50px;
+}
+
+.adminUserFooter {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#26292B;
+}

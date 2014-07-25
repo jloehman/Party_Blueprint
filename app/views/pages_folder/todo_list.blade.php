@@ -112,7 +112,7 @@
 <!-- <div class="btn-group">
                   <button type="checkbox"
                     class="btn btn-success is_complete-btn @if($todo->is_complete) active @endif" 
-                    data-todoid="{{{ $todo->id }}}">
+                    data-todoid="{{{ $todo->id }}}"></input>
 
                     <span class="glyphicon glyphicon-ok"></span>
   		</td> -->
