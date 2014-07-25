@@ -144,6 +144,7 @@ class GuestController extends \BaseController {
 
 	public function ajaxUpdateAttend(){
 		$id = Input::get('id');
+		$is_plus = (Input::get('is_plus') == 1) ? false : true;
 
 		$guest = Guest::findOrFail($id);
 		$guest->plus = Input::get('value');

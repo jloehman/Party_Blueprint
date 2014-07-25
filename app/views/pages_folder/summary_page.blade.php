@@ -48,9 +48,9 @@
 			  			<tr>
 					  		<th>Name</th>
 					  		<th>Email</th>
-					  		<th>Phone</th>
-					  		<th><center>+1</center></th>
+					  		<th>Phone</th>					
 					  		<th><center>RSVP</center></th>
+					  		<th><center>+1</center></th>
 					  		<th>Notes</th>
 			  			</tr>
 						@if(count($guests) > 0)
@@ -60,36 +60,11 @@
 						  			<td>{{{ $guest->email }}}</td>
 						  			<td>{{{ $guest->phone }}}</td>
 						  			<td>
-						  				<div class="btn-group">
-						  					<button type="button"
-						  						class="btn btn-success plus-btn @if($guest->plus) active @endif"
-						  						data-value="1" data-guestid="{{{ $guest->id }}}">
-
-						  						<span class="glyphicon glyphicon-plus"></span>
-						  					</button>
-						  					<button type="button"
-						  						class="btn btn-info plus-btn @if(!$guest->plus) active @endif"
-						  						data-value="0" data-guestid="{{{ $guest->id }}}">
-
-						  						<span class="glyphicon glyphicon-remove"></span>
-						  					</button>
-						  				</div>
-						  			</td>
-						  			<td>
-						  				<div class="btn-group">
-						  					<button type="button"
-						  						class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
-						  						data-value="1" data-guestid="{{{ $guest->id }}}">
-
-						  						<span class="glyphicon glyphicon-ok"></span>
-
-						  						<button type="button"
-						  						class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
-						  						data-value="0" data-guestid="{{{ $guest->id }}}">
-
-						  						<span class="glyphicon glyphicon-remove"></span>
-						  				</div>
-						  			</td>
+                      <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
+                    </td>
+                    <td>
+                      <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
+                    </td>
 						  			<td>{{{ $guest->comment }}}
 						  			</td>
 					  			</tr>
@@ -112,7 +87,11 @@
 							  	<tr>
 							  		<td>{{{ $todo->name }}}</td>
 							  		<td>{{{ $todo->done_by }}}</td>
-							  		<td></td>
+							  		<td>
+                        <!-- this needs to be submitted -->
+                        <!--this doesn't have a closing div and missing button tags-->
+                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->
+                      </td>
 							  	</tr>
 							@endforeach
 						@endif
@@ -244,41 +223,58 @@
 
 <script type="text/javascript">
 
-	$(".plus-btn").on('click', function() {
-		var plusValue = $(this).data('value');
-		var guestId = $(this).data('guestid');
+  $(".plus_check").on('change', function() {
+    var guestId = $(this).data('guestid');
+    var isPlus = $(this).is(":checked");
 
-		$(".plus-btn[data-value=" + plusValue + "]").addClass('active');
-		$(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+    $(this).addClass('active');
 
-		$.ajax({
-			url: '/plusOne',
-			type: "POST",
-			data: {
-				value: plusValue,
-				id: guestId
-			},
-			dataType: 'json'
-		});
-	});
+    $.ajax({
+      url: '/plusOne',
+      type: "POST",
+      data: {
+        value: isPlus,
+        id: guestId
+      },
+      dataType: 'json'
+    });
+  });
 
-	$(".is_attending-btn").on('click', function() {
-		var attendingValue = $(this).data('value');
-		var guestId = $(this).data('guestid');
+  $(".is_attending_check").on('change', function() {
+    var guestId = $(this).data('guestid');
+    var isAttending = $(this).is(":checked");
 
-		$(".is_attending-btn[data-value=" + attendingValue + "]").addClass('active');
-		$(".is_attending-btn[data-value!=" + attendingValue + "]").removeClass('active');
+    $.ajax({
+      url: '/ajax-temp',
+      type: "POST",
+      data: {
+        value: isAttending,
+        id: guestId
+      },
+      dataType: 'json'
+    });
+  });
 
-		$.ajax({
-			url: '/ajax-temp',
-			type: "POST",
-			data: {
-				value: attendingValue,
-				id: guestId
-			},
-			dataType: 'json'
-		});
-	});
+  $(".is_complete_check").on('change', function() {
+    var todoid = $(this).data('todoid');
+    var complete = $(this).data('complete'); // grab complete
+
+    (complete == 1) ? $(this).data('complete', 0) : $(this).data('complete', 1); // new line
+
+    // console.log(complete)
+
+    $(this).addClass('active');
+
+    $.ajax({
+      url: '/updateTodo',
+      type: "POST",
+      data: {
+        id: todoid,
+        is_complete: complete // new code
+      },
+      dataType: 'json'
+    });
+  });
 </script>
 
 

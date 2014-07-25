@@ -148,24 +148,7 @@ public function ajax_update_purchased()
 
 	return array('status' => 'success');
 
-	// 
-
-	// $name = Input::get('name');
- //    $qty = Input::get('qty');
- //    $cost =Input::get('cost');
-
-    
- //    $error = false;
- //    $message = "Over Budget on your $id party";
-
- //    $result = array(
- //    	'error' => $error,
- //    	'message' => $message,
- //    	);
- //    return Redirect::to('/budget_item')->with('name', 'cost');
-
- //    }
-}
+	}
 
 
 	/**

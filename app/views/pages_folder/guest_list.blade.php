@@ -34,14 +34,10 @@
                     <td>{{{ $guest->email }}}</td>
                     <td>{{{ $guest->phone }}}</td>
                     <td>
-
-                          <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->plus }}}" @if ($guest->plus) checked @endif>
-
+                      <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
                     </td>
                     <td>
-
-                          <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->is_attending }}}" @if ($guest->is_attending) checked @endif>
-
+                      <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
                     </td>
                     <td>{{{ $guest->comment }}}</td>
                           <td>{{ Form::open(array('url' => action('GuestController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
@@ -259,17 +255,16 @@
 <script type="text/javascript">
 
   $(".plus_check").on('change', function() {
-    var plusValue = $(this).data('value');
     var guestId = $(this).data('guestid');
+    var isPlus = $(this).is(":checked");
 
-    $(".plus_check[data-value=" + plusValue + "]").addClass('active');
-    $(".plus_check[data-value!=" + plusValue + "]").removeClass('active');
+    $(this).addClass('active');
 
     $.ajax({
       url: '/plusOne',
       type: "POST",
       data: {
-        value: plusValue,
+        value: isPlus,
         id: guestId
       },
       dataType: 'json'
@@ -277,18 +272,15 @@
   });
 
   $(".is_attending_check").on('change', function() {
-    var attendingValue = $(this).data('value');
-    var showid = $(this).data('showid');
-
-    $(".is_attending_check[data-value=" + attendingValue + "]").addClass('active');
-    $(".is_attending_check[data-value!=" + attendingValue + "]").removeClass('active');
+    var guestId = $(this).data('guestid');
+    var isAttending = $(this).is(":checked");
 
     $.ajax({
       url: '/ajax-temp',
       type: "POST",
       data: {
-        value: attendingValue,
-        id: showid
+        value: isAttending,
+        id: guestId
       },
       dataType: 'json'
     });

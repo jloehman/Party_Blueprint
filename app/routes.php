@@ -52,13 +52,12 @@ Route::put('/update_purchase', 'BudgetItemController@ajax_update_purchased');
 // Contact form post route
 Route::post('/send', 'HomeController@send');
 
-
 //in controller or routes
 Route::post('/ajax-temp', function() {
 	$id = Input::get('id');
 
 	$guest = Guest::findOrFail($id);
-	$guest->is_attending = Input::get('value');
+	$guest->is_attending = (Input::get('value') == 'true') ? true : false;
 	$guest->save();
 
 	return Response::json(['success' => true]);
