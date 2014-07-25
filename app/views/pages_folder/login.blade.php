@@ -12,14 +12,14 @@
 		<div class="control-group">
   			<div class="controls">
   				<div class="input-prepend">
-        {{ Form::label('email', 'Email:')}}{{ Form::text('email',Input::old('email'), array('placeholder'=>'Email', 'class' => 'form-control'))}}
+        {{ Form::label('email', 'Email')}}{{ Form::text('email',Input::old('email'), array('placeholder'=>'Email', 'class' => 'form-control'))}}
     			</div>
     		</div>
     	</div>
     	<div class="control-group">
           	<div class="controls">
           		<div class="input-prepend">
-        {{ Form::label('password', 'Password:')}}{{ Form::password('password', array('placeholder'=>'Password', 'class' => 'form-control'))}}
+        {{ Form::label('password', 'Password')}}{{ Form::password('password', array('placeholder'=>'Password', 'class' => 'form-control'))}}
         		</div>
         	</div>
         </div>

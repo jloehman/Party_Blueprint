@@ -17,7 +17,7 @@ class Guests extends Migration {
 			$guests->increments('id');
 			$guests->integer('party_id')->unsigned();
 			$guests->string('name', 50);
-		    $guests->string('email', 200)->unique();
+		    $guests->string('email', 200);
 		    $guests->string('phone', 20);
 		    $guests->boolean('plus')->nullable;
 		    $guests->boolean('is_attending')->nullable();

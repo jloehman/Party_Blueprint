@@ -83,7 +83,7 @@
                       <div class="controls">
                         <div class="input-prepend">
                   {{ Form::label('name', 'Name') }}<br>
-                  {{ Form::text('name', Input::old('name')) }}<br>
+                  {{ Form::text('name', Input::old('name'), array('placeholder'=>'Name')) }}<br>
                   <!-- Change this error message -->
                   {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
                         </div>
@@ -92,7 +92,7 @@
                 <div class="control-group">  
                     <div class="controls">
                   {{ Form::label('qty', 'Quantity') }}<br>
-                  {{ Form::text('qty', Input::old('qty')) }}<br>
+                  {{ Form::text('qty', Input::old('qty'), array('placeholder'=>'ex:0'))}}<br>
                   <!-- Change this error message -->
                   {{ $errors->first('qty', '<span class="help-block">:message</span><br>') }}
                   </div>
@@ -100,7 +100,7 @@
                 <div class="control-group">  
                     <div class="controls">
                   {{ Form::label('cost', 'Cost') }}<br>
-                  {{ Form::text('cost', Input::old('cost')) }}<br>
+                  {{ Form::text('cost', Input::old('cost'), array('placeholder'=>'ex:0.00')) }}<br>
                   <!-- Change this error message -->
                   {{ $errors->first('cost', '<span class="help-block">:message</span><br>') }}
                     </div>
