@@ -7,11 +7,11 @@
 	</div>
 
 	<div class="create_button btn-lg">
-		<a href="{{{ action('WelcomeController@create') }}}" class="btn btn-success">Create New Party</a>
+		<a href="{{{ action('WelcomeController@create') }}}" class="btn-create btn-lg">Create New Party</a>
 	</div>
   	@if(Auth::user()->parties->count() > 0)
 		<div class="choose_party btn-group">
-		    <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+		    <button class="btn-choose btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
 		        Choose a Party <span class="caret"></span>
 		    </button>
 

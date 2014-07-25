@@ -3,6 +3,8 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/welcome.css">
 @yield('topscript')
 </head>
 <body>
