@@ -21,11 +21,17 @@ h1.steps_header {
 
 .step_one {
 	float: left;
+	margin-left: 280px;
 }
 .step_two {
 	float: left;
 	margin-left:100px;
 	margin-right: 100px;
+}
+
+.party_attributes {
+	font-family: 'La Belle Aurore', cursive;
+	font-size: 30px;
 }
 
 .btn {
@@ -35,6 +41,16 @@ h1.steps_header {
 	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
+
+#create_party {
+	margin-left:528px;
+}
+.form-control:input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+background-color: #FFF;
+background-image: none;
+color: rgb(0, 0, 0);
+}
+
 
 .btn-create {
 	background-color: #00d0c1;
