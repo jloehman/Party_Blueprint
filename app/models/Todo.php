@@ -21,6 +21,11 @@ class Todo extends Eloquent implements UserInterface, RemindableInterface {
     	'done_by' => 'required'
     ];
 
+     public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = ucfirst($value);
+    }
+
 	public function parties()
 	{
 		return $this->hasOne('Party');

@@ -56,7 +56,7 @@
 			    <br> -->
 			    <!-- {{ Form::hidden('is_admin', null, array('value'=>true)) }} -->
 			    <input type="hidden" name="is_admin" value="1">
-			    <button type="Submit" class="btn btn-default">Register</button>
+			    <button type="Submit" class="btn btn-success">Register</button>
 
 			    {{ Form::close()}}
 			</div>
@@ -83,7 +83,7 @@
 		  		<td>{{{ $user->last_name}}}</td>
 		  		<td>{{{ $user->email}}}</td>
 		  		<td>{{ Form::open(array('action' => array('AdminController@destroy', $user->id), 'method' => 'DELETE' )) }}
-					{{ Form::submit('Delete') }}
+					{{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
 					{{ Form::close() }}
 				</td>
 
