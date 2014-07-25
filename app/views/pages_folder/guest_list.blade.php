@@ -126,7 +126,7 @@
               </ul>
             <h3>New Guest</h3>
               {{-- Form::submit('Add Guests') --}}
-            {{ Form::open(array('action' => 'GuestController@store')) }}
+            {{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
                 <div class="control-group">  
                     <div class="controls">
                       <div class="input-prepend">
@@ -244,11 +244,11 @@
 
 
 
-	{{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
+	<!-- {{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
   <div>
 		{{ Form::label('name', 'Name') }}<br>
-		{{ Form::text('name', Input::old('name')) }}<br>
-		<!- Change this error message -->
+		{{ Form::text('name', Input::old('name')) }}<br> -->
+		
 		<!-- {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
 	</div>
 	<div>
