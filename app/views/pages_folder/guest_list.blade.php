@@ -244,11 +244,7 @@
 
 
 
-<<<<<<< HEAD
 	{{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
-=======
-	<!-- {{ Form::open(array('action' => 'GuestController@store')) }}
->>>>>>> master
   <div>
 		{{ Form::label('name', 'Name') }}<br>
 		{{ Form::text('name', Input::old('name')) }}<br>
