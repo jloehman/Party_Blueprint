@@ -48,7 +48,7 @@
 @foreach(BudgetItem::not_purchased() as $budget_item)
 
 		  		<li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
-		  	{{ Form::open(array('action' => array('BudgetItemController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
+		  	{{ Form::open(array('url' => action('BudgetItemController@destroy',[$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
 <font color="pink">{{ Form::submit('Delete') }}</font>
       {{ Form::close() }}
     </li>
