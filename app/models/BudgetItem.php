@@ -16,6 +16,13 @@ class BudgetItem extends Eloquent {
     	'qty' => 'numeric'
     ];
 
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = ucfirst($value);
+    }
+
+
+
 	public function parties()
 	{
 		return $this->hasOne('Party');

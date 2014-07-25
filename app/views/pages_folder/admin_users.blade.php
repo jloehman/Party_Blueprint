@@ -42,7 +42,7 @@
 		  		<td>{{{ $user->email}}}</td>
 		  		<td>{{{ $user->created_at}}}</td>
 		  		<td>{{ Form::open(array('action' => array('AdminController@destroy', $user->id), 'method' => 'DELETE' )) }}
-					{{ Form::submit('Delete') }}
+					{{ Form::submit('Delete',  array('class' => 'btn btn-danger')) }}
 					{{ Form::close() }}
 				</td>
 

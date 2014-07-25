@@ -15,6 +15,16 @@ class Party extends Eloquent {
     	'event_date' => 'required',
     ];
 
+     public function setPartyNameAttribute($value)
+    {
+        $this->attributes['party_name'] = ucfirst($value);
+    }
+
+     public function setLocationAttribute($value)
+    {
+        $this->attributes['location'] = ucfirst($value);
+    }
+
 	public function users()
 	{
 		return $this->hasOne('User');
