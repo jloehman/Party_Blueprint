@@ -2,8 +2,6 @@
 
 @section('topscript')
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
   <link rel="stylesheet" href="/css/budget_item.css">
 @stop
 
@@ -37,7 +35,7 @@
 
                       <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong>
                         ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
-                        {{ Form::open(array('action' => array('BudgetItemController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
+                        {{ Form::open(array('url' => action('BudgetItemController@destroy',[$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
                         <font color="pink">{{ Form::submit('Delete') }}</font>
                         {{ Form::close() }}
                      </li>
@@ -192,6 +190,7 @@
 @stop
 
 @section('bottomscript')
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 <script>
   $( "#not_purchased, #purchased" ).sortable({
       connectWith: ".connectedSortable"
