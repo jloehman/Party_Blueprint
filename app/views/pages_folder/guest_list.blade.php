@@ -106,7 +106,7 @@
                     <div class="controls">
                       <div class="input-prepend">
             {{ Form::label('name', 'Name') }}
-            {{ Form::text('name', Input::old('name')) }}
+            {{ Form::text('name', Input::old('name'), array('placeholder'=>'Name')) }}
             <!-- Change this error message -->
             {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
                       </div>
@@ -115,7 +115,7 @@
               <div class="control-group">  
                   <div class="controls">
             {{ Form::label('email', 'Email') }}
-            {{ Form::text('email', null, array('placeholder' => 'email')) }}
+            {{ Form::text('email', null, array('placeholder' => 'Email')) }}
             {{ $errors->first('email', '<span class="help-block">:message</span><br>') }}
                   </div>
               </div>
