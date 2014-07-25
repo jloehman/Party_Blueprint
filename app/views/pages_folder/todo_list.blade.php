@@ -32,8 +32,7 @@
                       <td>
                         <!-- this needs to be submitted -->
                         <!--this doesn't have a closing div and missing button tags-->
-                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked @endif>
-
+                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->
                       </td>
                         <td>{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
                           {{ Form::submit('Delete') }}
@@ -144,8 +143,11 @@
 
   $(".is_complete_check").on('change', function() {
     var todoid = $(this).data('todoid');
+    var complete = $(this).data('complete'); // grab complete
 
-    var isDone = $(this).is(":checked");
+    (complete == 1) ? $(this).data('complete', 0) : $(this).data('complete', 1); // new line
+
+    // console.log(complete)
 
     $(this).addClass('active');
 
@@ -154,7 +156,7 @@
       type: "POST",
       data: {
         id: todoid,
-        value: isDone
+        is_complete: complete // new code
       },
       dataType: 'json'
     });

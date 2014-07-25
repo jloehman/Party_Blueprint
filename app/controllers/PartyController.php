@@ -135,9 +135,10 @@ class PartyController extends \BaseController {
 
 	public function ajaxUpdatePlusOne() {
 		$id = Input::get('id');
+		$is_plus = (Input::get('value') == 'true') ? true : false;
 
 		$guest = Guest::findOrFail($id);
-		$guest->plus = Input::get('value');
+		$guest->plus = $is_plus;
 		$guest->save();
 
 		return Response::json(['success' => true]);
@@ -146,9 +147,10 @@ class PartyController extends \BaseController {
 
 	public function ajaxUpdateTodo() {
 		$id = Input::get('id');
-
+		$is_complete = (Input::get('is_complete') == 1) ? false : true;
+ 
 		$todo = Todo::findOrFail($id);
-		$todo->is_complete = true;
+		$todo->is_complete = $is_complete;
 		$todo->save();
 
 		return Response::json(['success' => true]);
