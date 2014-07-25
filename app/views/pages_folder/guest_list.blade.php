@@ -34,34 +34,13 @@
                     <td>{{{ $guest->email }}}</td>
                     <td>{{{ $guest->phone }}}</td>
                     <td>
-                      <div class="btn-group">
-                        <button type="button"
-                          class="btn btn-success plus-btn @if($guest->plus) active @endif"
-                          data-value="1" data-guestid="{{{ $guest->id }}}">
 
-                          <span class="glyphicon glyphicon-plus"></span>
-                        </button>
-                        <button type="button"
-                          class="btn btn-info plus-btn @if(!$guest->plus) active @endif"
-                          data-value="0" data-guestid="{{{ $guest->id }}}">
+                          <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->plus }}}" @if ($guest->plus) checked @endif>
 
-                          <span class="glyphicon glyphicon-remove"></span>
-                        </button>
-                      </div>
                     </td>
                     <td>
-                      <div class="btn-group">
-                        <button type="button"
-                          class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
-                          data-value="1" data-showid="{{{ $guest->id }}}">
 
-                          <span class="glyphicon glyphicon-ok"></span>
-
-                          <button type="button"
-                          class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
-                          data-value="0" data-showid="{{{ $guest->id }}}">
-
-                          <span class="glyphicon glyphicon-remove"></span>
+                          <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->is_attending }}}" @if ($guest->is_attending) checked @endif>
 
                     </td>
                     <td>{{{ $guest->comment }}}</td>
@@ -279,12 +258,12 @@
 
 <script type="text/javascript">
 
-  $(".plus-btn").on('click', function() {
+  $(".plus_check").on('change', function() {
     var plusValue = $(this).data('value');
     var guestId = $(this).data('guestid');
 
-    $(".plus-btn[data-value=" + plusValue + "]").addClass('active');
-    $(".plus-btn[data-value!=" + plusValue + "]").removeClass('active');
+    $(".plus_check[data-value=" + plusValue + "]").addClass('active');
+    $(".plus_check[data-value!=" + plusValue + "]").removeClass('active');
 
     $.ajax({
       url: '/plusOne',
@@ -297,12 +276,12 @@
     });
   });
 
-  $(".is_attending-btn").on('click', function() {
+  $(".is_attending_check").on('change', function() {
     var attendingValue = $(this).data('value');
     var showid = $(this).data('showid');
 
-    $(".is_attending-btn[data-value=" + attendingValue + "]").addClass('active');
-    $(".is_attending-btn[data-value!=" + attendingValue + "]").removeClass('active');
+    $(".is_attending_check[data-value=" + attendingValue + "]").addClass('active');
+    $(".is_attending_check[data-value!=" + attendingValue + "]").removeClass('active');
 
     $.ajax({
       url: '/ajax-temp',

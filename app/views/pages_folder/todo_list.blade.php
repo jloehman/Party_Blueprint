@@ -32,13 +32,8 @@
                       <td>
                         <!-- this needs to be submitted -->
                         <!--this doesn't have a closing div and missing button tags-->
-                      <div class="btn-group">
-                                      <button type="checkbox"
-                                        class="btn btn-success is_complete-btn @if($todo->is_complete) active @endif" 
-                                        data-todoid="{{{ $todo->id }}}"></button>
+                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked @endif>
 
-                                        <span class="glyphicon glyphicon-ok"></span>
-                      </div>
                       </td>
                         <td>{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
                           {{ Form::submit('Delete') }}
@@ -147,8 +142,10 @@
 @section('bottomscript')
 <script type="text/javascript">
 
-  $(".is_complete-btn").on('click', function() {
+  $(".is_complete_check").on('change', function() {
     var todoid = $(this).data('todoid');
+
+    var isDone = $(this).is(":checked");
 
     $(this).addClass('active');
 
@@ -156,7 +153,8 @@
       url: '/updateTodo',
       type: "POST",
       data: {
-        id: todoid
+        id: todoid,
+        value: isDone
       },
       dataType: 'json'
     });
