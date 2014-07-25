@@ -50,6 +50,89 @@
      </div>
    </div>
   </section>
+    <!--Content-->
+    <section id="content2" class="section">
+        <div class="container">
+           <div class="col-sm-12 text-center">
+                <h3>Meet the Team</h3>
+          </div>
+          <div class="row margin-40">
+
+          <!--Team Member-->
+          <div class="col-sm-4 margin-30">
+            <div class="team-container">
+              <div class="row">
+                <div class="col-xs-12 team-member">
+                  <img src="/party_soiree_template/bootstrap3/multipage/img/team1.jpg" class="img-responsive" alt="Title">
+                </div>
+              </div>
+                
+              <div class="row text-center">
+                <div class="col-xs-8 team-info">
+                  <h4><span class="white"> First Last | <small><em>Graphics</em></small></span></h4>
+                </div>
+              
+                <div class="col-xs-4 socialize">
+                  <ul class="list-inline">
+                    <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <!--Team Member-->
+          <div class="col-sm-4 margin-30">
+            <div class="team-container">
+              <div class="row">
+                <div class="col-xs-12 team-member">
+                  <img src="/party_soiree_template/bootstrap3/multipage/img/team2.jpg" class="img-responsive" alt="Title">
+                </div>
+              </div>
+                
+              <div class="row text-center">
+                <div class="col-xs-8 team-info">
+                  <h4><span class="white"> First Last | <small><em>Graphics</em></small></span></h4>
+                </div>
+              
+                <div class="col-xs-4 socialize">
+                  <ul class="list-inline">
+                    <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Team Member-->
+          <div class="col-sm-4 margin-30">
+            <div class="team-container">
+              <div class="row">
+                <div class="col-xs-12 team-member">
+                  <img src="/party_soiree_template/bootstrap3/multipage/img/team3.jpg" class="img-responsive" alt="Title">
+                </div>
+              </div>
+                
+              <div class="row text-center">
+                <div class="col-xs-8 team-info">
+                  <h4><span class="white"> First Last | <small><em>Graphics</em></small></span></h4>
+                </div>
+              
+                <div class="col-xs-4 socialize">
+                  <ul class="list-inline">
+                    <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div><!--End Team Member Row-->
+      </div>
+    </section>
    
 
  <!--  <form role="form" action="{{{ action('HomeController@send') }}}" method="POST" >
