@@ -1,7 +1,142 @@
 @extends('layouts.user_master')
 @section('content')
-<h1>Summary Page: <!--specific party name here--></h1>
-<div class="party_specs">
+
+<!--Content-->
+    <section id="page-title" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h3><strong>Summary: {{ $party->party_name }}</strong></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+<!--Content-->      
+    <section id="content2" class="section">
+      <div class="container">
+        <div class="row">
+          
+          <!--Column One-->
+          <div class="col-sm-8">
+          	<div class="specific_party">
+	          	<div class="table-responsive">
+	          		<!--Party specifics-->
+					<table class="table table-bordered tabel-striped">
+						<tr>
+							<th>Party Name</th>
+							<th>Location</th>
+							<th>Event Date</th>
+							<th>Event Time</th>
+							<th>Set Budget</th>
+
+						</tr>
+						<tr>
+							<td>{{{$party->party_name}}}</td>
+							<td>{{{$party->location}}}</td>
+							<td>{{{$party->event_date}}}</td>
+							<td>{{{$party->start_time}}}</td>
+							<!-- These coincide with the budget information -->
+							<td>${{{$party->budget}}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="guest_view">
+				<div class="table-responsive">
+					<!--Guest table-->
+			  		<table class="table table-bordered table-striped">
+			  			<tr>
+					  		<th>Name</th>
+					  		<th>Email</th>
+					  		<th>Phone</th>
+					  		<th><center>+1</center></th>
+					  		<th><center>RSVP</center></th>
+					  		<th>Notes</th>
+			  			</tr>
+						@if(count($guests) > 0)
+							@foreach($guests as $guest)
+					  			<tr>
+						  			<td>{{{ $guest->name }}}</td>
+						  			<td>{{{ $guest->email }}}</td>
+						  			<td>{{{ $guest->phone }}}</td>
+						  			<td>
+						  				<div class="btn-group">
+						  					<button type="button"
+						  						class="btn btn-success plus-btn @if($guest->plus) active @endif"
+						  						data-value="1" data-guestid="{{{ $guest->id }}}">
+
+						  						<span class="glyphicon glyphicon-plus"></span>
+						  					</button>
+						  					<button type="button"
+						  						class="btn btn-info plus-btn @if(!$guest->plus) active @endif"
+						  						data-value="0" data-guestid="{{{ $guest->id }}}">
+
+						  						<span class="glyphicon glyphicon-remove"></span>
+						  					</button>
+						  				</div>
+						  			</td>
+						  			<td>
+						  				<div class="btn-group">
+						  					<button type="button"
+						  						class="btn btn-success is_attending-btn @if($guest->is_attending) active @endif"
+						  						data-value="1" data-guestid="{{{ $guest->id }}}">
+
+						  						<span class="glyphicon glyphicon-ok"></span>
+
+						  						<button type="button"
+						  						class="btn btn-info is_attending-btn @if(!$guest->is_attending) active @endif"
+						  						data-value="0" data-guestid="{{{ $guest->id }}}">
+
+						  						<span class="glyphicon glyphicon-remove"></span>
+						  				</div>
+						  			</td>
+						  			<td>{{{ $guest->comment }}}
+						  			</td>
+					  			</tr>
+							@endforeach
+						@endif
+			  		</table>
+				</div>
+			</div>
+			<div class="todo_view">
+				<!--Todo View-->
+				<div class="table-responsive">
+				  <table class="table table-bordered table-striped">
+				  	<tr>
+				  		<th>Name</th>
+				  		<th>Done By</th>
+				  		<th>Completed</th>
+				  	</tr>
+						@if(count($todos) > 0)
+							@foreach($todos as $todo)
+							  	<tr>
+							  		<td>{{{ $todo->name }}}</td>
+							  		<td>{{{ $todo->done_by }}}</td>
+							  		<td></td>
+							  	</tr>
+							@endforeach
+						@endif
+				  </table>
+				</div>
+			</div>
+		</div><!--End Column One-->
+		 <!--Side Bar-->
+          <div class="col-sm-4">
+            <h3>Side Bar</h3>
+            <ul class="list-unstyled side-links">
+                <li><a href="{{ action('GuestController@index', $party->id) }}">Guests to Invite</a></li>
+                <li><a href="{{ action('PartyController@index', $party->id) }}">Planning List</a></li>
+                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget Items</a></li>
+                <li><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
+              </ul>
+            <br/>
+          </div>
+        </div><!--End Row-->
+    </div>
+</section>
+
+<!-- <h1>Summary Page: --> <!--specific party name here--><!-- </h1> -->
+<!-- <div class="party_specs">
 	<h2>Party Details</h2>
 	<div class="party_specs_row table-responsive">
 		<table class="table table-bordered tabel-striped">
@@ -10,22 +145,22 @@
 				<th>Location</th>
 				<th>Event Date</th>
 				<th>Event Time</th>
-				<th>Set Budget</th>
+				<th>Set Budget</th> -->
 
-			</tr>
+			<!-- </tr>
 			<tr>
 				<td>{{{$party->party_name}}}</td>
 				<td>{{{$party->location}}}</td>
 				<td>{{{$party->event_date}}}</td>
-				<td>{{{$party->start_time}}}</td>
+				<td>{{{$party->start_time}}}</td> -->
 				<!-- These coincide with the budget information -->
-				<td>${{{$party->budget}}}</td>
+				<!-- <td>${{{$party->budget}}}</td>
 			</tr>
 		</table>
 	</div>
-</div>
+</div> -->
 
-<div class="guest_view">
+<!-- <div class="guest_view">
 	<div class="table-responsive">
   		<table class="table table-bordered table-striped">
   			<tr>
@@ -73,8 +208,7 @@
 
 			  						<span class="glyphicon glyphicon-remove"></span>
 			  					</input>
-
-			  			</td>
+			  		<!-- 	</td>
 			  			<td>{{{ $guest->comment }}}
 			  			</td>
 		  			</tr>
@@ -85,8 +219,8 @@
 </div>
 
 <div class="todo_view">
-	<div class="table-responsive">
-	  <table class="table table-bordered table-striped">
+	<div class="table-responsive"> -->
+	  <!-- <table class="table table-bordered table-striped">
 	  	<tr>
 	  		<th>Name</th>
 	  		<th>Done By</th>
@@ -103,7 +237,7 @@
 			@endif
 	  </table>
 	</div>
-</div>
+</div> -->
 @stop
 
 @section('bottomscript')
