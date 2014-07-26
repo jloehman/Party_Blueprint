@@ -16,6 +16,58 @@
     <section id="content2" class="section">
       <div class="container">
         <div class="row">
+          <!--Side Bar-->
+          <div class="col-sm-4 fixed">
+            <h3>Side Bar</h3>
+            <ul class="list-unstyled side-links">
+                <li><a href="{{ action('GuestController@index', $party->id) }}">Guests to Invite</a></li>
+                <li><a href="{{ action('PartyController@index', $party->id) }}">Planning List</a></li>
+                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget Items</a></li>
+                <li><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
+              </ul>
+            <h3>New Guest</h3>
+              {{-- Form::submit('Add Guests') --}}
+            {{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
+                <div class="control-group">  
+                    <div class="controls">
+                      <div class="input-prepend">
+            {{ Form::label('name', 'Name') }}
+            {{ Form::text('name', Input::old('name'), array('placeholder'=>'Name')) }}
+            <!-- Change this error message -->
+            {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
+                      </div>
+                  </div>
+                </div>
+              <div class="control-group">  
+                  <div class="controls">
+            {{ Form::label('email', 'Email') }}
+            {{ Form::text('email', null, array('placeholder' => 'Email')) }}
+            {{ $errors->first('email', '<span class="help-block">:message</span><br>') }}
+                  </div>
+              </div>
+              <div class="control-group">  
+                  <div class="controls">
+            {{ Form::label('phone', 'Phone') }}
+            {{ Form::text('phone', null, array('placeholder' => '###-###-####')) }}
+            {{ $errors->first('phone', '<span class="help-block">:message</span><br>') }}
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="controls">
+            {{ Form::label('comment', 'Notes') }}
+                  <!-- <div class="wmd-panel">
+                      <div id="wmd-button-bar"></div> -->
+            {{ Form:: textarea('comment', Input::old('comment'), null, array('class' => 'wmd-input', 'id' => 'wmd-input')) }}
+            {{ $errors->first('comment', '<span class="help-block">:message</span><br>') }}
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                  <button type="Submit" class="btn btn-default"><strong>Add Guest</strong></button>
+                </div>
+              {{ Form::close() }}
+          </div>
+        </div><!--End Row-->
 <!--Column One-->
           <div class="col-sm-8">
               <div class="table-responsive">
@@ -91,58 +143,7 @@
     <!-- {{ Form::submit('Add Guest') }}
     {{ Form::close() }} -->
     </div><!--End Column One-->
-    <!--Side Bar-->
-          <div class="col-sm-4 fixed">
-            <h3>Side Bar</h3>
-            <ul class="list-unstyled side-links">
-                <li><a href="{{ action('GuestController@index', $party->id) }}">Guests to Invite</a></li>
-                <li><a href="{{ action('PartyController@index', $party->id) }}">Planning List</a></li>
-                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget Items</a></li>
-                <li><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
-              </ul>
-            <h3>New Guest</h3>
-              {{-- Form::submit('Add Guests') --}}
-            {{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
-                <div class="control-group">  
-                    <div class="controls">
-                      <div class="input-prepend">
-            {{ Form::label('name', 'Name') }}
-            {{ Form::text('name', Input::old('name'), array('placeholder'=>'Name')) }}
-            <!-- Change this error message -->
-            {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
-                      </div>
-                  </div>
-                </div>
-              <div class="control-group">  
-                  <div class="controls">
-            {{ Form::label('email', 'Email') }}
-            {{ Form::text('email', null, array('placeholder' => 'Email')) }}
-            {{ $errors->first('email', '<span class="help-block">:message</span><br>') }}
-                  </div>
-              </div>
-              <div class="control-group">  
-                  <div class="controls">
-            {{ Form::label('phone', 'Phone') }}
-            {{ Form::text('phone', null, array('placeholder' => '###-###-####')) }}
-            {{ $errors->first('phone', '<span class="help-block">:message</span><br>') }}
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="controls">
-            {{ Form::label('comment', 'Notes') }}
-                  <!-- <div class="wmd-panel">
-                      <div id="wmd-button-bar"></div> -->
-            {{ Form:: textarea('comment', Input::old('comment'), null, array('class' => 'wmd-input', 'id' => 'wmd-input')) }}
-            {{ $errors->first('comment', '<span class="help-block">:message</span><br>') }}
-                </div>
-            </div>
-            <div class="control-group">
-                <div class="controls">
-                  <button type="Submit" class="btn btn-default"><strong>Add Guest</strong></button>
-                </div>
-              {{ Form::close() }}
-          </div>
-        </div><!--End Row-->
+    
     </div>
 </section>
         
