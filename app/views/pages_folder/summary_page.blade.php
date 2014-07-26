@@ -11,9 +11,22 @@
         </div>
       </div>
     </section>
+    <!--Side Bar-->
+          <div class="col-sm-4">
+            <h3>Side Bar</h3>
+            <ul class="list-unstyled side-links">
+                <li><a href="{{ action('GuestController@index', $party->id) }}">Guests to Invite</a></li>
+                <li><a href="{{ action('PartyController@index', $party->id) }}">Planning List</a></li>
+                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget Items</a></li>
+                <li><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
+              </ul>
+            <br/>
+          </div>
+        </div><!--End Row-->
 <!--Content-->      
     <section id="content2" class="section">
       <div class="container">
+
         <div class="row">
           
           <!--Column One-->
@@ -99,18 +112,7 @@
 				</div>
 			</div>
 		</div><!--End Column One-->
-		 <!--Side Bar-->
-          <div class="col-sm-4">
-            <h3>Side Bar</h3>
-            <ul class="list-unstyled side-links">
-                <li><a href="{{ action('GuestController@index', $party->id) }}">Guests to Invite</a></li>
-                <li><a href="{{ action('PartyController@index', $party->id) }}">Planning List</a></li>
-                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget Items</a></li>
-                <li><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
-              </ul>
-            <br/>
-          </div>
-        </div><!--End Row-->
+		 
     </div>
 </section>
 
