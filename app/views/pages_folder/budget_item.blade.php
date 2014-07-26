@@ -33,10 +33,10 @@
                     <ul id="not_purchased" class="connectedSortable" >
               @foreach(BudgetItem::not_purchased() as $budget_item)
 
-                      <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong>
+                      <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="#00d0c1">{{{ $budget_item->name }}}</font></strong>
                         ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
                         {{ Form::open(array('url' => action('BudgetItemController@destroy',[$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
-                        <font color="pink">{{ Form::submit('Delete') }}</font>
+                        <font color="#00d0c1">{{ Form::submit('Delete') }}</font>
                         {{ Form::close() }}
                      </li>
               @endforeach
@@ -55,7 +55,7 @@
                   <ul id="purchased" class="connectedSortable features">
               @foreach(BudgetItem::is_purchased() as $budget_item)
 
-                      <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
+                      <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="#00d0c1">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
                     {{ Form::open(array('url' => action('BudgetItemController@destroy', [$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
                     <div class="control-group">
                         <div class="controls">
