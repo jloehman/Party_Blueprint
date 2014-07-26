@@ -79,10 +79,10 @@
 			@foreach($users as $user)
 			@if($user->is_admin == true)
 		  	<tr>
-		  		<td>{{{ $user->first_name }}}</td>
-		  		<td>{{{ $user->last_name}}}</td>
-		  		<td>{{{ $user->email}}}</td>
-		  		<td>{{ Form::open(array('action' => array('AdminController@destroy', $user->id), 'method' => 'DELETE' )) }}
+		  		<td class="text-center">{{{ $user->first_name }}}</td>
+		  		<td class="text-center">{{{ $user->last_name}}}</td>
+		  		<td class="text-center">{{{ $user->email}}}</td>
+		  		<td class="text-center">{{ Form::open(array('action' => array('AdminController@destroy', $user->id), 'method' => 'DELETE' )) }}
 					{{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
 					{{ Form::close() }}
 				</td>
