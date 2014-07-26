@@ -19,7 +19,7 @@ ul.sidebarnav {
 }
 a:hover {
     text-decoration: none;
-      color: #FF00FF;
+    color: #FF00FF;
 }
 
 #dashboard {
@@ -28,5 +28,7 @@ a:hover {
 }
 .sidebar-fixed {
 	position: absolute;
+	text-align: center;
+	color: black;
 }
 

@@ -12,14 +12,14 @@
       </div>
     </section>
     <!--Side Bar-->
-          <div class="col-sm-4">
-            <h3>Side Bar</h3>
-            <ul class="list-unstyled side-links">
-                <li><a href="{{ action('GuestController@index', $party->id) }}">Guests to Invite</a></li>
-                <li><a href="{{ action('PartyController@index', $party->id) }}">Planning List</a></li>
-                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget Items</a></li>
-                <li><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
-              </ul>
+          <div class="col-sm-2">
+            <h3><center><font color="#00d0c1">Menu</font></center></h3>
+            <ul class="list-unstyled side-links"><center>
+               <li><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
+                <li><a href="{{ action('PartyController@index', $party->id) }}">Planner</a></li>
+                <li><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget</a></li>
+                <li><a href="{{ action('PartyController@summary', $party->id) }}">My Soiree</a></li>
+             <center></ul>
             <br/>
           </div>
         </div><!--End Row-->
@@ -30,7 +30,7 @@
         <div class="row">
           
           <!--Column One-->
-          <div class="col-sm-8">
+          <div class="col-sm-10">
           	<div class="specific_party">
 	          	<div class="table-responsive">
 	          		<!--Party specifics-->
