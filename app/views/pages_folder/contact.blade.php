@@ -22,13 +22,13 @@
      <div class="col-sm-4">
         <div class="control-group">  
             <div class="controls">
-       {{ Form::label('name', 'Name:')}}
+       {{ Form::label('name', 'Name')}}
        {{ Form::text('name',Input::old('name'), array('placeholder'=>'Name', 'class' => 'form-control'))}}
             </div>
         </div>
         <div class="control-group">  
             <div class="controls">
-       {{ Form::label('email', 'Email:')}}
+       {{ Form::label('email', 'Email')}}
        {{ Form::text('email',Input::old('email'), array('placeholder'=>'Email', 'class' => 'form-control'))}}
             </div>
         </div>
@@ -36,7 +36,7 @@
       <div class="col-sm-8">
           <div class="control-group">
               <div class="controls">
-       {{ Form::label('message', 'Message:')}}
+       {{ Form::label('message', 'Message')}}
        {{ Form::textarea('message',Input::old('message'), array('placeholder'=>'Enter Your Message Here', 'class' => 'form-control'))}}
               </div>
           </div>
@@ -50,12 +50,23 @@
      </div>
    </div>
   </section>
+  <!--End of Form-->
+
+  <!--Spacer-->
+  <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h3>Meet the Team</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End of Spacer-->
+
     <!--Content-->
     <section id="content2" class="section">
         <div class="container">
-           <div class="col-sm-12 text-center">
-                <h3>Meet the Team</h3>
-          </div>
           <div class="row margin-40">
 
           <!--Team Member-->
@@ -69,13 +80,13 @@
                 
               <div class="row text-center">
                 <div class="col-xs-8 team-info">
-                  <h4><span class="white"> First Last | <small><em>Graphics</em></small></span></h4>
+                  <h4><span class="white"> Mallory | <small><em>Full Stack Web Developer</em></small></span></h4>
                 </div>
               
                 <div class="col-xs-4 socialize">
                   <ul class="list-inline">
-                    <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
-                    <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li><a class="linkedin" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                    <li><a class="github" href="http://www.facebook.com" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
                     </ul>
                 </div>
               </div>
@@ -93,13 +104,13 @@
                 
               <div class="row text-center">
                 <div class="col-xs-8 team-info">
-                  <h4><span class="white"> First Last | <small><em>Graphics</em></small></span></h4>
+                  <h4><span class="white"> Jason | <small><em>Full Stack Web Developer</em></small></span></h4>
                 </div>
               
                 <div class="col-xs-4 socialize">
                   <ul class="list-inline">
-                    <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
-                    <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li><a class="linkedin" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                    <li><a class="github" href="http://www.facebook.com" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
                     </ul>
                 </div>
               </div>
@@ -117,13 +128,13 @@
                 
               <div class="row text-center">
                 <div class="col-xs-8 team-info">
-                  <h4><span class="white"> First Last | <small><em>Graphics</em></small></span></h4>
+                  <h4><span class="white"> Lindsey | <small><em>Full Stack Web Developer</em></small></span></h4>
                 </div>
               
                 <div class="col-xs-4 socialize">
                   <ul class="list-inline">
-                    <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
-                    <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li><a class="linkedin" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                    <li><a class="github" href="http://www.facebook.com" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
                     </ul>
                 </div>
               </div>
