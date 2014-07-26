@@ -30,6 +30,8 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/party_soiree_template/bootstrap3/multipage/apple-touch-icon-72-precomposed.png">
       <link rel="apple-touch-icon-precomposed" href="/party_soiree_template/bootstrap3/multipage/apple-touch-icon-57-precomposed.png">
       <link rel="shortcut icon" href="/party_soiree_template/bootstrap3/multipage/favicon.png">
+      <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="/css/user_master.css">
       <link rel="stylesheet" href="/css/jquery.datetimepicker.css">
 
 @yield('topscript')
