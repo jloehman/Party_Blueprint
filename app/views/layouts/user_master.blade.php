@@ -30,8 +30,10 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/party_soiree_template/bootstrap3/multipage/apple-touch-icon-72-precomposed.png">
       <link rel="apple-touch-icon-precomposed" href="/party_soiree_template/bootstrap3/multipage/apple-touch-icon-57-precomposed.png">
       <link rel="shortcut icon" href="/party_soiree_template/bootstrap3/multipage/favicon.png">
-  
+      <link rel="stylesheet" href="/css/jquery.datetimepicker.css">
+
 @yield('topscript')
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -121,7 +123,7 @@
     <script>window.jQuery || document.write('<script src="/party_soiree_template/bootstrap3/multipage/js/jquery-1.10.1.min.js"><\/script>')</script>
     <script src="/party_soiree_template/bootstrap3/multipage/js/bootstrap.min.js"></script>
     <script src="/party_soiree_template/bootstrap3/multipage/js/main.js"></script>
-    
+    <script src="/js/jquery.datetimepicker.js" type="text/javascript"></script>
     <script>
       !function ($) {
         $(function(){

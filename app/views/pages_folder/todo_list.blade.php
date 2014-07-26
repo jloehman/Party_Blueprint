@@ -71,7 +71,7 @@
                 <div class="controls">
                   <div class="input-prepend">
               {{ Form::label('done_by', 'Done By') }}
-              {{ Form::text('done_by', null, array('placeholder' => 'YYYY-MM-DD')) }}
+              {{ Form::text('done_by', null, array('placeholder' => 'YYYY-MM-DD', 'id' => "datetimepicker")) }}
               {{ $errors->first('done_by', '<span class="help-block">:message</span><br>') }}
                   </div>
                 </div>
@@ -160,6 +160,14 @@
       },
       dataType: 'json'
     });
+  });
+</script>
+
+<script>
+  $('#datetimepicker').datetimepicker({
+    startDate: new Date(),
+    format: 'Y/m/d',
+    timepicker: false
   });
 </script>
 
