@@ -135,17 +135,6 @@
 	    
 	  </div>
 	</section>
-
-
-	<section id="footer">
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-sm-12 text-center">
-	        <p>@ Copyright. All Rights Reserved. Created by <a href="http://www.themearmada.com">Theme Armada.</a></p>
-	      </div>
-	    </div>
-	  </div>
-	</section>
  <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
