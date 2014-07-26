@@ -19,22 +19,22 @@
               <div class="table-responsive">
                   <table class="table table-bordered table-striped">
                     <tr>
-                      <th>Name</th>
-                      <th>Done By</th>
-                      <th>Completed</th>
-                      <th>Actions</th>
+                      <th class="text-center">Name</th>
+                      <th class="text-center">Done By</th>
+                      <th class="text-center">Completed</th>
+                      <th class="text-center">Action</th>
                     </tr>
                 @foreach($todos as $todo)
                     <tr>
-                      <td>{{{ $todo->name }}}</td>
-                      <td>{{{ $todo->done_by }}}</td>
+                      <td class="text-center">{{{ $todo->name }}}</td>
+                      <td class="text-center">{{{ $todo->done_by }}}</td>
                       <!-- this needs to be a checkbox -->
-                      <td>
+                      <td class="text-center">
                         <!-- this needs to be submitted -->
                         <!--this doesn't have a closing div and missing button tags-->
                          <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->
                       </td>
-                        <td>{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
+                        <td class="text-center">{{ Form::open(array('url' => action('PartyController@destroy',[$party->id, $todo->id]), 'method' => 'DELETE' )) }}
                           {{ Form::submit('Delete') }}
                           {{ Form::close() }}
                         </td>

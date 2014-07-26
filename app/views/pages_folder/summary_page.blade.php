@@ -23,20 +23,20 @@
 	          		<!--Party specifics-->
 					<table class="table table-bordered tabel-striped">
 						<tr>
-							<th>Party Name</th>
-							<th>Location</th>
-							<th>Event Date</th>
-							<th>Event Time</th>
-							<th>Set Budget</th>
+							<th class="text-center">Party Name</th>
+							<th class="text-center">Location</th>
+							<th class="text-center">Event Date</th>
+							<th class="text-center">Event Time</th>
+							<th class="text-center">Set Budget</th>
 
 						</tr>
 						<tr>
-							<td>{{{$party->party_name}}}</td>
-							<td>{{{$party->location}}}</td>
-							<td>{{{$party->event_date}}}</td>
-							<td>{{{$party->start_time}}}</td>
+							<td class="text-center">{{{$party->party_name}}}</td>
+							<td class="text-center">{{{$party->location}}}</td>
+							<td class="text-center">{{{$party->event_date}}}</td>
+							<td class="text-center">{{{$party->start_time}}}</td>
 							<!-- These coincide with the budget information -->
-							<td>${{{$party->budget}}}</td>
+							<td class="text-center">${{{$party->budget}}}</td>
 						</tr>
 					</table>
 				</div>
@@ -46,26 +46,26 @@
 					<!--Guest table-->
 			  		<table class="table table-bordered table-striped">
 			  			<tr>
-					  		<th>Name</th>
-					  		<th>Email</th>
-					  		<th>Phone</th>					
-					  		<th><center>RSVP</center></th>
-					  		<th><center>+1</center></th>
-					  		<th>Notes</th>
+					  		<th class="text-center">Name</th>
+					  		<th class="text-center">Email</th>
+					  		<th class="text-center">Phone</th>					
+					  		<th class="text-center"><center>RSVP</center></th>
+					  		<th class="text-center"><center>+1</center></th>
+					  		<th class="text-center">Notes</th>
 			  			</tr>
 						@if(count($guests) > 0)
 							@foreach($guests as $guest)
 					  			<tr>
-						  			<td>{{{ $guest->name }}}</td>
-						  			<td>{{{ $guest->email }}}</td>
-						  			<td>{{{ $guest->phone }}}</td>
-						  			<td>
+						  			<td class="text-center">{{{ $guest->name }}}</td>
+						  			<td class="text-center">{{{ $guest->email }}}</td>
+						  			<td class="text-center">{{{ $guest->phone }}}</td>
+						  			<td class="text-center">
                       <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
                     </td>
-                    <td>
+                    <td class="text-center">
                       <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
                     </td>
-						  			<td>{{{ $guest->comment }}}
+						  			<td class="text-center">{{{ $guest->comment }}}
 						  			</td>
 					  			</tr>
 							@endforeach
@@ -78,16 +78,16 @@
 				<div class="table-responsive">
 				  <table class="table table-bordered table-striped">
 				  	<tr>
-				  		<th>Name</th>
-				  		<th>Done By</th>
-				  		<th>Completed</th>
+				  		<th class="text-center">Name</th>
+				  		<th class="text-center">Done By</th>
+				  		<th class="text-center">Completed</th>
 				  	</tr>
 						@if(count($todos) > 0)
 							@foreach($todos as $todo)
 							  	<tr>
-							  		<td>{{{ $todo->name }}}</td>
-							  		<td>{{{ $todo->done_by }}}</td>
-							  		<td>
+							  		<td class="text-center">{{{ $todo->name }}}</td>
+							  		<td class="text-center">{{{ $todo->done_by }}}</td>
+							  		<td class="text-center">
                         <!-- this needs to be submitted -->
                         <!--this doesn't have a closing div and missing button tags-->
                          <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->

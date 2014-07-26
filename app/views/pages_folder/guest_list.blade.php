@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3><strong>Guest Page: {{ $party->party_name }}</strong></h3>
+            <h3><strong>Guests: {{ $party->party_name }}</strong></h3>
           </div>
         </div>
       </div>
@@ -21,25 +21,26 @@
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
                   <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>RSVP</th>
-                    <th><center>+1</center></th>
-                    <th>Notes</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">RSVP</th>
+                    <th class="text-center"><center>+1</center></th>
+                    <th class="text-center">Notes</th>
+                    <th class="text-center">Action</th>
                   </tr>
               @foreach($guests as $guest)
                   <tr>
-                    <td>{{{ $guest->name }}}</td>
-                    <td>{{{ $guest->email }}}</td>
-                    <td>{{{ $guest->phone }}}</td>
-                    <td>
+                    <td class="text-center">{{{ $guest->name }}}</td>
+                    <td class="text-center">{{{ $guest->email }}}</td>
+                    <td class="text-center">{{{ $guest->phone }}}</td>
+                    <td class="text-center">
                       <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
                     </td>
-                    <td>
+                    <td class="text-center">
                       <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
                     </td>
-                    <td>{{{ $guest->comment }}}</td>
+                    <td class="text-center">{{{ $guest->comment }}}</td>
                           <td>{{ Form::open(array('url' => action('GuestController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
                           {{ Form::submit('Delete') }}
                           {{ Form::close() }}
