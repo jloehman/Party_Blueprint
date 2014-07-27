@@ -11,7 +11,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;"><strong>BUDGET</strong></h3>
+            <h3 style="color:#626c72;font-size:80px;">BUDGET</h3>
           </div>
         </div>
       </div>
@@ -21,8 +21,8 @@
       <div class="container">
         <div class="row">
            <!--Side Bar-->
-          <div class="col-sm-4">
-            <h2 style="color:#626c72;font-size:50px;">Menu</h2>
+          <div class="col-sm-2">
+            <h3>Menu</h3>
             <ul class="list-unstyled side-links">
                 <li style="font-size:20px"><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
                 <li style="font-size:20px"><a href="{{ action('PartyController@index', $party->id) }}">Checklist</a></li>
@@ -66,7 +66,7 @@
               </div>
           </div><!--End Row-->
           <!--Column One-->
-          <div class="col-sm-8">
+          <div class="col-sm-10">
              <div class="receipt col-md-6">
               <h3 class="headline text-center"><strong>Budget Items</strong></h3>
               <div class="price">
