@@ -55,29 +55,29 @@
         <div class="row text-center">
           <!--Seciton 1-->
           <div class="col-sm-4 service margin-30">
-            <a href="#">
+            <a href="/about">
               <i class="fa fa-heart-o fa-4x light-gray"></i>
               <h3>About</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p>Learn more about Simple Soiree and how to use it to plan your next party in a more efficient way.</p>
             </a>
           </div>
 
           <!--Seciton 2-->
           <div class="col-sm-4 service margin-30">
-            <a href="#">
+            <a href="/contact">
               <i class="fa fa-envelope-o fa-4x light-gray"></i>
               <h3>Contact</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p>Feel free to send us a message if you have questions, comments, or ideas. We'll be in touch as soon as possible.</p>
             </a>
 
           </div>
           
           <!--Seciton 3-->
           <div class="col-sm-4 service margin-30">
-            <a href="#">
+            <a href="/register">
               <i class="fa fa-pencil-square-o fa-4x light-gray"></i>
               <h3>Register</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p>Register as a new user to gain access to your own party planning dashboard.</p>
             </a>
 
           </div>

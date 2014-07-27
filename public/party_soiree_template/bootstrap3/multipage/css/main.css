@@ -187,7 +187,7 @@ a:hover {
    Navigation styles
    ========================================================================== */
 .navbar-inverse {
-    background-color: #ff755a;
+    background-color:  #626c72;
     border-color: transparent;
 }
 
@@ -220,7 +220,7 @@ a:hover {
 }
 
 .navbar .nav > li > a:hover {
-  color: rgba(49,54,58,0.9);
+  color: #00d0c1;
 }
 
 .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
@@ -647,7 +647,7 @@ a:hover {
 }
 
 .team-info {
-  background: #ff755a;
+  background: #00d0c1;
   padding: 10px 10px 10px 10px;
   height: 60px;
 }
@@ -1036,7 +1036,7 @@ ul.icons li {
 }
 
 #bottom p a:hover {
-  color: #ff755a;
+  color: #00d0c1;
 	text-decoration: none;
 }
 

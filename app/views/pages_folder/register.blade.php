@@ -47,7 +47,7 @@
     <br> -->
     <div class="control-group">
         <div class="controls">
-            <button type="Submit" class="btn btn-default">SUBMIT</button>
+            <button type="Submit" class="btn btn-default">Submit</button>
         </div>
     </div>
     {{ Form::close()}}
