@@ -11,6 +11,9 @@
 /* ==========================================================================
    Global styles
    ========================================================================== */
+body {
+  background-image: url('/party_soiree_template/bootstrap3/multipage/img/grid_noise.png');
+}
 
 h1, h2, h3, h4, h5, h6, p {
   font-family: 'Open Sans', sans-serif;
@@ -205,10 +208,10 @@ a:hover {
   text-transform: uppercase;
   font-size: 14px;
 }
-
+/*
 .navbar-brand {
   margin-top: 15px;
-}
+}*/
 
 .navbar .nav > li > a {
   color: #FFFFFF;
