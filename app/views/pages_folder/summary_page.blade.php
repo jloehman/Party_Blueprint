@@ -63,8 +63,8 @@
 					  		<th class="text-center">Name</th>
 					  		<th class="text-center">Email</th>
 					  		<th class="text-center">Phone</th>					
-					  		<th class="text-center"><center>RSVP</center></th>
-					  		<th class="text-center"><center>+1</center></th>
+					  		<th class="text-center">RSVP</th>
+					  		<th class="text-center">+1</th>
 					  		<th class="text-center">Notes</th>
 			  			</tr>
 						@if(count($guests) > 0)
@@ -74,13 +74,12 @@
 						  			<td class="text-center">{{{ $guest->email }}}</td>
 						  			<td class="text-center">{{{ $guest->phone }}}</td>
 						  			<td class="text-center">
-                      <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
-                    </td>
-                    <td class="text-center">
-                      <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
-                    </td>
-						  			<td class="text-center">{{{ $guest->comment }}}
-						  			</td>
+                      					<input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
+                    				</td>
+                    				<td class="text-center">
+                      					<input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
+                    				</td>
+						  			<td class="text-center">{{{ $guest->comment }}}</td>
 					  			</tr>
 							@endforeach
 						@endif
@@ -102,10 +101,10 @@
 							  		<td class="text-center">{{{ $todo->name }}}</td>
 							  		<td class="text-center">{{{ $todo->done_by }}}</td>
 							  		<td class="text-center">
-                        <!-- this needs to be submitted -->
-                        <!--this doesn't have a closing div and missing button tags-->
-                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->
-                      </td>
+				                        <!-- this needs to be submitted -->
+				                        <!--this doesn't have a closing div and missing button tags-->
+				                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->
+				                    </td>
 							  	</tr>
 							@endforeach
 						@endif
