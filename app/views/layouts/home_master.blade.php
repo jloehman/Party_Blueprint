@@ -48,8 +48,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="/about">ABOUT</a></li>
-            <li class="active"><a href="/contact">CONTACT</a></li>
+            <li>
+            	<a href="/about"><span class="active" id="register">ABOUT</span></a>
+       		</li>
+       		<li>
+            	<a href="/contact"><span class="active" id="register">CONTACT</span></a>
+            </li>
             <li>
 				<a href="/register"><span class="active" id="register">REGISTER</span></a>
 			</li>
@@ -117,24 +121,10 @@
 	  <div class="container">
 	    <div class="row margin-40">
 	      <div class="col-sm-10 col-sm-offset-1 text-center">
-	        <p>112 E. Pecan St. San Antonio, TX 78205  |  <a href="/contact"><i class="icon-envelope-alt"></i> simplessoiree@gmail.com</a></p>
+	        <p>112 E. Pecan St. San Antonio, TX 78205  |  <a href="/contact">simplessoiree@gmail.com</a></p>
 	        <hr>
 	      </div>
 	    </div>
-	    
-	    <div class="row">
-	      <div class="col-sm-10 col-sm-offset-1 text-center">
-	        <!--Social Icons-->          
-	        <ul class="social-icons">
-						<li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="fa fa-twitter fa-3x"></i></a></li>
-						<li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook fa-3x"></i></a></li>
-						<li><a class="google" href="http://www.googleplus.com" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li>
-						<li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="fa fa-camera-retro fa-3x"></i></a></li>
-						<li><a class="pinterest" href="http://www.pinterest.com" target="_blank"><i class="fa fa-pinterest fa-3x"></i></a></li>
-					</ul>
-	      </div>
-	    </div>
-	    
 	  </div>
 	</section>
  <!-- Javascript

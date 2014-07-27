@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row margin-40">
             <div class="col-sm-6 col-sm-offset-3 text-center signup">
-              <h3>Log In</h3><br/>
+              <h3>Login</h3><br/>
 
    		{{ Form::open(array('action' => 'HomeController@doLogin')) }}
 		<div class="control-group">
@@ -25,7 +25,7 @@
         </div>
         <div class="control-group">
           	<div class="controls">
-        		<button type="Submit" class="btn btn-default">Log In</button>
+        		<button type="Submit" class="btn btn-default">Login</button>
     		</div>
       	      <a class="small-message" href="/register"><small>Need An Account?</small></a>
       	</div>
