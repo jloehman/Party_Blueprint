@@ -24,12 +24,12 @@
             <br/>
           </div>
         </div><!--End Row-->
-<!--Content-->      
+<!--Content-->
     <section id="content2" class="section">
       <div class="container">
 
         <div class="row">
-          
+
           <!--Column One-->
           <div class="col-sm-10">
           	<div class="specific_party">
@@ -61,7 +61,7 @@
 			  			<tr>
 					  		<th class="text-center">Name</th>
 					  		<th class="text-center">Email</th>
-					  		<th class="text-center">Phone</th>					
+					  		<th class="text-center">Phone</th>
 					  		<th class="text-center">RSVP</th>
 					  		<th class="text-center">+1</th>
 					  		<th class="text-center">Notes</th>
