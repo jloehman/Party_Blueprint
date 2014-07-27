@@ -17,7 +17,7 @@
        <section id="content2">
       	<div class="container">
         <div class="row margin-40">
-            <!--Blog Post-->
+            <!--Add New Administrator-->
             <div class="col-sm-6 col-sm-offset-3 text-center signup">
               <h3>Create A New Admin</h3><br>
               	{{ Form::open(array('action' => 'AdminController@store')) }}
@@ -56,15 +56,12 @@
 			    <br> -->
 			    <!-- {{ Form::hidden('is_admin', null, array('value'=>true)) }} -->
 			    <input type="hidden" name="is_admin" value="1">
-			    <button type="Submit" class="btn btn-success">Register</button>
+			    	<button type="Submit" class="btn btn-success">Register</button>
 
 			    {{ Form::close()}}
 			</div>
 		</div>
-              
-            </article>
-            
-            <!--Blog Post-->
+            <!--Existing Administrators-->
             <article class=" margin-60">
               <div class="col-sm-12 text-center adminbottom">
               	<h3>Existing Admins</h3><br>

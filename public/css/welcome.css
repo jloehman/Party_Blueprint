@@ -13,6 +13,7 @@ body {
 h1.steps_header {
 	font-family: 'La Belle Aurore', cursive;
 	font-size: 80px;
+	margin-left: 512px;
 }
 
 .steps {
@@ -40,6 +41,14 @@ h1.steps_header {
 	margin-left:468px;
 	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+button.btn {
+	margin-left: 0px;
+}
+
+input#party_name.form-control, input#location.form-control, input#datetimepicker.form-control, input#datetimepicker2.form-control, input#budget.form-control {
+	text-align: center
 }
 
 #create_party {
