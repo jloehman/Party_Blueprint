@@ -5,6 +5,7 @@ body {
 
 ul.sidebarnav {
 	list-style-type: none;
+	color:color:#00d0c1;;
 
 }
 .navbar {
@@ -15,7 +16,8 @@ ul.sidebarnav {
 	width: 194px;
 	text-align: left;
 	text-indent: 0px;
-	font-size: 20px;
+	
+
 }
 a:hover {
     text-decoration: none;

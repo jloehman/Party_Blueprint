@@ -39,7 +39,7 @@ h3 {
   font-weight: 300;
   letter-spacing: -1px;
   line-height: 34px;
-  color: #626c72;
+  color: 626c72;
 }
 
 h4 {
@@ -106,7 +106,7 @@ a:hover {
 
 ::selection {
 	background: #ff755a; /* Safari */
-	color: #FFFFFF;
+	color: #626c72;
 }
 ::-moz-selection {
 	background: #ff755a; /* Firefox */
@@ -478,7 +478,7 @@ a:hover {
 }
 
 .side-links li a {
-  color: #ff755a;
+  color: #00d0c1;
   font-weight: 600;
 }
 
@@ -701,7 +701,7 @@ a:hover {
 
 
 .headline {
-  background: #ff755a;
+  background: #00d0c1;
   padding: 6px 6px 0px 6px;
   background-size: contain;
   position: relative;
@@ -721,7 +721,7 @@ bottom: -15px;
 left: 44%;
 border-style: solid;
 border-width: 15px 15px 0;
-border-color: #ff755a transparent;
+border-color: #00d0c1 transparent;
 display: block;
 z-index: 1;
 }
