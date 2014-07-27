@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;"><strong>{{ $party->party_name }}</strong></h3>
+            <h3 style="color:#626c72;font-size:5em;"><strong>{{ $party->party_name }}</strong></h3>
           </div>
         </div>
       </div>
@@ -34,15 +34,14 @@
           <div class="col-sm-10">
           	<div class="specific_party">
 	          	<div class="table-responsive">
-	          		<!--Party specifics-->
-					<table class="table table-bordered tabel-striped">
+          		<!--Party specifics-->
+					<table class="table table-bordered table-striped">
 						<tr>
 							<th class="text-center">Party Name</th>
 							<th class="text-center">Location</th>
 							<th class="text-center">Event Date</th>
 							<th class="text-center">Event Time</th>
 							<th class="text-center">Set Budget</th>
-
 						</tr>
 						<tr>
 							<td class="text-center">{{{$party->party_name}}}</td>

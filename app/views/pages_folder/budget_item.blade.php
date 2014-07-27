@@ -11,12 +11,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;"><strong>{{ $party->party_name }}</strong></h3>
+            <h3 style="color:#626c72;font-size:80px;"><strong>{{{ $party->party_name }}}</strong></h3>
           </div>
         </div>
       </div>
     </section>
-<!--Content--> 
+<!--Content-->
   <section id="content2" class="section">
       <div class="container">
         <div class="row">
@@ -32,7 +32,7 @@
             <br/>
             <h3>Add Items</h3>
               {{ Form::open(array('action' => array('BudgetItemController@store', $party->id), "class" => "form-horizontal form-group")) }}
-                <div class="control-group">  
+                <div class="control-group">
                       <div class="controls">
                         <div class="input-prepend">
                   {{ Form::label('name', 'Name') }}<br>
@@ -42,7 +42,7 @@
                         </div>
                       </div>
                 </div>
-                <div class="control-group">  
+                <div class="control-group">
                     <div class="controls">
                   {{ Form::label('qty', 'Quantity') }}<br>
                   {{ Form::text('qty', Input::old('qty'), array('placeholder'=>'ex:0'))}}<br>
@@ -50,7 +50,7 @@
                   {{ $errors->first('qty', '<span class="help-block">:message</span><br>') }}
                   </div>
                 </div>
-                <div class="control-group">  
+                <div class="control-group">
                     <div class="controls">
                   {{ Form::label('cost', 'Cost') }}<br>
                   {{ Form::text('cost', Input::old('cost'), array('placeholder'=>'ex:0.00')) }}<br>
@@ -75,7 +75,7 @@
                 </p>
               </div>
                 <div id="ajax-message">
-                    <ul id="not_purchased" class="connectedSortable" >
+                    <ul id="not_purchased" class="connectedSortable">
               @foreach(BudgetItem::not_purchased() as $budget_item)
 
                       <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="#00d0c1">{{{ $budget_item->name }}}</font></strong>
