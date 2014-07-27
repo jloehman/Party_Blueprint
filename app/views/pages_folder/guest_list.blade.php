@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;"><strong>GUESTS</strong></h3>
+            <h3 style="color:#626c72;font-size:80px;">GUESTS</h3>
           </div>
         </div>
       </div>
@@ -17,14 +17,15 @@
       <div class="container">
         <div class="row">
           <!--Side Bar-->
-          <div class="col-sm-4 fixed">
-            <h2 style="color:#626c72;font-size:50px;">Menu</h2>
+          <div class="col-sm-2 fixed">
+            <h3>Menu</h3>
             <ul class="list-unstyled side-links">
                 <li style="font-size:20px"><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
                 <li style="font-size:20px"><a href="{{ action('PartyController@index', $party->id) }}">Checklist</a></li>
                 <li style="font-size:20px"><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget</a></li>
                 <li style="font-size:20px"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
-              </ul>
+            </ul>
+
             <h3>New Guest</h3>
               {{-- Form::submit('Add Guests') --}}
             {{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
@@ -69,7 +70,7 @@
           </div>
         </div><!--End Row-->
 <!--Column One-->
-          <div class="col-sm-8">
+          <div class="col-sm-10">
               <div class="table-responsive">
                 <table class="table table-bordered table-striped">
                   <tr>

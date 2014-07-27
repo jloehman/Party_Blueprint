@@ -7,28 +7,27 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;"><strong>{{ $party->party_name }}</strong></h3>
+            <h3 style="color:#626c72;font-size:80px;">{{ $party->party_name }}</h3>
           </div>
         </div>
       </div>
     </section>
     <!--Side Bar-->
-          <div class="col-sm-2">
-            <h2 style="color:#626c72;font-size:50px;">Menu</h2>
-            <ul class="list-unstyled side-links"><center>
-               <li style="font-size:20px;"><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
-                <li style="font-size:20px;"><a href="{{ action('PartyController@index', $party->id) }}">Checklist</a></li>
-                <li style="font-size:20px;"><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget</a></li>
-                <li style="font-size:20px;"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
-             <center></ul>
-            <br/>
-          </div>
-        </div><!--End Row-->
-<!--Content-->
     <section id="content2" class="section">
       <div class="container">
-
+        <!--Side Bar-->
         <div class="row">
+        	<div class="col-sm-2 fixed">
+	            <h3>Menu</h3>
+	            <ul class="list-unstyled side-links">
+	                <li style="font-size:20px"><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
+	                <li style="font-size:20px"><a href="{{ action('PartyController@index', $party->id) }}">Checklist</a></li>
+	                <li style="font-size:20px"><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget</a></li>
+	                <li style="font-size:20px"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
+	            </ul>
+        	</div>
+		<!--End Row-->
+		<!--Content-->
 
           <!--Column One-->
           <div class="col-sm-10">
@@ -147,8 +146,8 @@
 		  		<th>Name</th>
 		  		<th>Email</th>
 		  		<th>Phone</th>
-		  		<th><center>+1</center></th>
-		  		<th><center>RSVP</center></th>
+		  		<th>+1</center></th>
+		  		<th>RSVP</center></th>
 		  		<th>Notes</th>
   			</tr>
 			@if(count($guests) > 0)
