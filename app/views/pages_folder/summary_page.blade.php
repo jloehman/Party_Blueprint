@@ -24,25 +24,24 @@
             <br/>
           </div>
         </div><!--End Row-->
-<!--Content-->      
+<!--Content-->
     <section id="content2" class="section">
       <div class="container">
 
         <div class="row">
-          
+
           <!--Column One-->
           <div class="col-sm-10">
           	<div class="specific_party">
 	          	<div class="table-responsive">
-	          		<!--Party specifics-->
-					<table class="table table-bordered tabel-striped">
+          		<!--Party specifics-->
+					<table class="table table-bordered table-striped">
 						<tr>
 							<th class="text-center">Party Name</th>
 							<th class="text-center">Location</th>
 							<th class="text-center">Event Date</th>
 							<th class="text-center">Event Time</th>
 							<th class="text-center">Set Budget</th>
-
 						</tr>
 						<tr>
 							<td class="text-center">{{{$party->party_name}}}</td>
@@ -62,7 +61,7 @@
 			  			<tr>
 					  		<th class="text-center">Name</th>
 					  		<th class="text-center">Email</th>
-					  		<th class="text-center">Phone</th>					
+					  		<th class="text-center">Phone</th>
 					  		<th class="text-center">RSVP</th>
 					  		<th class="text-center">+1</th>
 					  		<th class="text-center">Notes</th>
