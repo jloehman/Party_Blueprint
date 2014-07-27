@@ -14,12 +14,12 @@
     </section>
     <!--Side Bar-->
           <div class="col-sm-2">
-            <h2 style="color:#626c72;font-size:50px;"><strong><center>Menu</center></strong></h2>
+            <h2 style="color:#626c72;font-size:50px;">Menu</h2>
             <ul class="list-unstyled side-links"><center>
-               <li style="font-size:20px;"><a href="{{ action('GuestController@index', $party->id) }}">guests</a></li>
-                <li style="font-size:20px;"><a href="{{ action('PartyController@index', $party->id) }}">checklist</a></li>
-                <li style="font-size:20px;"><a href="{{ action('BudgetItemController@index', $party->id) }}">budget</a></li>
-                <li style="font-size:20px;"><a href="{{ action('PartyController@summary', $party->id) }}">summary</a></li>
+               <li style="font-size:20px;"><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
+                <li style="font-size:20px;"><a href="{{ action('PartyController@index', $party->id) }}">Checklist</a></li>
+                <li style="font-size:20px;"><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget</a></li>
+                <li style="font-size:20px;"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
              <center></ul>
             <br/>
           </div>
