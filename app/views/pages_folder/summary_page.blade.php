@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:5em;"><strong>{{ $party->party_name }}</strong></h3>
+            <h3 style="color:#626c72;font-size:80px;"><strong>{{ $party->party_name }}</strong></h3>
           </div>
         </div>
       </div>
