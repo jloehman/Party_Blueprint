@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand img-responsive" href="index.html"><img src="/public/simple_soiree.jpeg" alt="logo"></a>
+          <a class="navbar-brand img-responsive" href="index.html"><img src="/img/LOGOresize.png" alt="logo"></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
