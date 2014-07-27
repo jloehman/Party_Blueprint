@@ -11,7 +11,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;"><strong>{{{ $party->party_name }}}</strong></h3>
+            <h3 style="color:#626c72;font-size:80px;"><strong>BUDGET</strong></h3>
           </div>
         </div>
       </div>
@@ -22,12 +22,12 @@
         <div class="row">
            <!--Side Bar-->
           <div class="col-sm-4">
-            <h2 style="color:#626c72;font-size:50px;"><strong><center>Menu</center></strong></h2>
+            <h2 style="color:#626c72;font-size:50px;">Menu</h2>
             <ul class="list-unstyled side-links">
-                <li style="font-size:20px"><a href="{{ action('GuestController@index', $party->id) }}">guests</a></li>
-                <li style="font-size:20px"><a href="{{ action('PartyController@index', $party->id) }}">checklist</a></li>
-                <li style="font-size:20px"><a href="{{ action('BudgetItemController@index', $party->id) }}">budget</a></li>
-                <li style="font-size:20px"><a href="{{ action('PartyController@summary', $party->id) }}">summary</a></li>
+                <li style="font-size:20px"><a href="{{ action('GuestController@index', $party->id) }}">Guests</a></li>
+                <li style="font-size:20px"><a href="{{ action('PartyController@index', $party->id) }}">Checklist</a></li>
+                <li style="font-size:20px"><a href="{{ action('BudgetItemController@index', $party->id) }}">Budget</a></li>
+                <li style="font-size:20px"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
               </ul>
             <br/>
             <h3>Add Items</h3>
