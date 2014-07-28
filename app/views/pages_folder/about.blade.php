@@ -102,7 +102,7 @@
             <div class="team-container">
               <div class="row">
                 <div class="col-xs-12 team-member">
-                  <img src="/party_soiree_template/bootstrap3/multipage/img/team1.jpg" class="img-responsive" alt="Title">
+                  <img src="/img/mallory1.jpg"  class="img-responsive" alt="Title">
                 </div>
               </div>
                 
@@ -126,7 +126,7 @@
             <div class="team-container">
               <div class="row">
                 <div class="col-xs-12 team-member">
-                  <img src="/party_soiree_template/bootstrap3/multipage/img/team2.jpg" class="img-responsive" alt="Title">
+                  <img src="/img/jason.jpg" class="img-responsive" alt="Title">
                 </div>
               </div>
                 
@@ -150,7 +150,7 @@
             <div class="team-container">
               <div class="row">
                 <div class="col-xs-12 team-member">
-                  <img src="/party_soiree_template/bootstrap3/multipage/img/team3.jpg" class="img-responsive" alt="Title">
+                  <img src="/img/lindsey.jpg" class="img-responsive" alt="Title">
                 </div>
               </div>
                 

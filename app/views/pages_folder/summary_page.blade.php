@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;">{{ $party->party_name }}</h3>
+            <h4 class="welcome">{{ $party->party_name }}</h4>
           </div>
         </div>
       </div>
@@ -54,6 +54,7 @@
 				</div>
 			</div>
 			<div class="guest_view">
+				<h3 class="text-center">Guests</h3>
 				<div class="table-responsive">
 					<!--Guest table-->
 			  		<table class="table table-bordered table-striped">
@@ -85,6 +86,7 @@
 				</div>
 			</div>
 			<div class="todo_view">
+				<h3 class="text-center">Checklist</h3>
 				<!--Todo View-->
 				<div class="table-responsive">
 				  <table class="table table-bordered table-striped">
