@@ -21,8 +21,6 @@ class BudgetItem extends Eloquent {
         $this->attributes['name'] = ucfirst($value);
     }
 
-
-
 	public function parties()
 	{
 		return $this->hasOne('Party');
@@ -38,6 +36,15 @@ class BudgetItem extends Eloquent {
 		return self::where('is_purchased', 0)->get();
 	}
 
+	public static function budget_for_party_not_purchased($id)
+	{
+		return self::where('party_id', $id)->where('is_purchased', 0)->orderBy('id','desc')->get();
+	}
+	
+	public static function budget_for_party_purchased($id)
+	{
+		return self::where('party_id', $id)->where('is_purchased', 1)->orderBy('id','desc')->get();
+	}
 	
 
 }

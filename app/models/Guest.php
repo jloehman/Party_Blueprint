@@ -22,12 +22,12 @@ class Guest extends Eloquent implements UserInterface, RemindableInterface {
     	'phone' => 'required',
     ];
 
-     public function setNameAttribute($value)
+    public function setNameAttribute($value)
     {
         $this->attributes['name'] = ucfirst($value);
     }
 
-     public function setCommentAttribute($value)
+    public function setCommentAttribute($value)
     {
         $this->attributes['comment'] = ucfirst($value);
     }

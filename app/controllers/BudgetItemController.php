@@ -15,12 +15,15 @@ class BudgetItemController extends \BaseController {
 	 */
 	public function index($id)
 	{
-		$budget_items = BudgetItem::orderBy('id','desc')->paginate(10);
+		// $budget_items = BudgetItem::orderBy('id','desc')->paginate(10);
+		$budget_items_not_purchased = BudgetItem::budget_for_party_not_purchased($id);
+		$budget_items_purchased = BudgetItem::budget_for_party_purchased($id);
 		$party = Party::find($id);
 		$sumOfPurchased = $party->budgetItemsPurchasedTotal();
 
 		$data = array(
-			'budget_items' => $budget_items,
+			'budget_items_not_purchased' => $budget_items_not_purchased,
+			'budget_items_purchased' => $budget_items_purchased,
 			'party' => $party,
 			'sumOfPurchased' => $sumOfPurchased
 		);
