@@ -6,3 +6,11 @@ li {
 	font-size: 100px;
 	font-family: 'La Belle Aurore', cursive;
 }
+
+.dropdown-menu {
+	background-color: #FFF;
+	min-width: 174px;
+	text-align: center;
+	left: 485px;
+
+}
