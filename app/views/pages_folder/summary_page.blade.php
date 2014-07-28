@@ -26,12 +26,14 @@
 	                <li style="font-size:20px"><a href="{{ action('PartyController@summary', $party->id) }}">Summary</a></li>
 	            </ul>
         	</div>
+
 		<!--End Row-->
 		<!--Content-->
 
           <!--Column One-->
           <div class="col-sm-10">
           	<div class="specific_party">
+          		<h3 class="text-center">Summary</h3>
 	          	<div class="table-responsive">
           		<!--Party specifics-->
 					<table class="table table-bordered table-striped">
@@ -53,6 +55,7 @@
 					</table>
 				</div>
 			</div>
+			<br>
 			<div class="guest_view">
 				<h3 class="text-center">Guests</h3>
 				<div class="table-responsive">
@@ -85,6 +88,7 @@
 			  		</table>
 				</div>
 			</div>
+			<br>
 			<div class="todo_view">
 				<h3 class="text-center">Checklist</h3>
 				<!--Todo View-->
