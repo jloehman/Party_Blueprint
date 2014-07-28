@@ -15,9 +15,25 @@ class UserTableSeeder extends DatabaseSeeder {
        $users->save();
 
        $users1 = new User();
-       $users1->first_name = 'me';
-       $users1->last_name = 'you';
-       $users1->email = 'me@gmail.com';
+       $users1->first_name = 'jason';
+       $users1->last_name = 'loehman';
+       $users1->email = 'jason@gmail.com';
+       $users1->password = 'password';
+       $users1->is_admin = false;
+       $users1->save();
+
+       $users1 = new User();
+       $users1->first_name = 'mallory';
+       $users1->last_name = 'wetherston';
+       $users1->email = 'mallory@gmail.com';
+       $users1->password = 'password';
+       $users1->is_admin = false;
+       $users1->save();
+
+       $users1 = new User();
+       $users1->first_name = 'lindsey';
+       $users1->last_name = 'neubauer';
+       $users1->email = 'lindsey@gmail.com';
        $users1->password = 'password';
        $users1->is_admin = false;
        $users1->save();
