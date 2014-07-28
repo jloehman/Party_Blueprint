@@ -1,6 +1,6 @@
 @extends('layouts.home_master')
  @section('content')
- <h1>ABOUT PAGE</h1>
+ 
     <!--Content-->
     <!--First Row Content-->
 
@@ -24,9 +24,19 @@
         </div>
       </div>
     </section>
-<!--End of First Row Content-->
 
-   
+<!--Spacer-->
+  <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <h3 style="font-size:60px;">Meet the Team</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End of Spacer-->
+
     <!--Content-->
     <section id="content2" class="section">
         <div class="container">
