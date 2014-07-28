@@ -164,8 +164,8 @@
 
         remaining -= parseInt(amount, 10);
 
-        $("#totalRemaining").data("remaining", test);
-        $("#totalRemaining").html('Remaining: $' + test);
+        $("#totalRemaining").data("remaining", remaining);
+        $("#totalRemaining").html('Remaining: $' + remaining);
       
 
     $.ajax({
