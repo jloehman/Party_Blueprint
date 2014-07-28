@@ -37,7 +37,7 @@
             <div class="team-container">
               <div class="row">
                 <div class="col-xs-12 team-member">
-                  <img src="/img/mallory1.jpg"  class="img-responsive" alt="Title">
+                  <img src="/img/Mallory1.jpg"  class="img-responsive" alt="Title">
                 </div>
               </div>
                 
