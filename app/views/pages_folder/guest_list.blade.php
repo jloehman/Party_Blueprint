@@ -7,7 +7,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3 style="color:#626c72;font-size:80px;">GUESTS</h3>
+            <h3 style="font-size:60px;">GUESTS</h3>
           </div>
         </div>
       </div>

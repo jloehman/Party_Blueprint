@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center">
-            <h3>About</h3>
+            <h3 style="font-size:60px;">About</h3>
           </div>
         </div>
       </div>
@@ -26,72 +26,7 @@
     </section>
 <!--End of First Row Content-->
 
-    <section id="content1" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7">
-            <h3>Step 1</h3>
-            <p class="lead">Login or Register as a New User</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-          </div>
-          
-          <div class="col-sm-5">
-            <iframe src="http://player.vimeo.com/video/65902068?title=0&amp;byline=0&amp;portrait=0&amp;color=ff755a" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-<!--End of First Row Content-->
-<!--Second Row Content-->
-<section id="content2" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-5">
-            <iframe src="http://player.vimeo.com/video/65902068?title=0&amp;byline=0&amp;portrait=0&amp;color=ff755a" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-          </div>
-          
-          <div class="col-sm-7">
-
-            <h3 class="pull_right">Step 2</h3>
-            <p class="lead">Create Your Own Party</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-
-          </div>
-        </div>
-      </div>
-    </section>
-<!--End of Second Row Content-->
-<!--Third Row Content-->
-<section id="content3" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7">
-            <h3>Step 3</h3>
-            <p class="lead">Plan Your Party</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br />
-          </div>
-          
-          <div class="col-sm-5">
-            <iframe src="http://player.vimeo.com/video/65902068?title=0&amp;byline=0&amp;portrait=0&amp;color=ff755a" width="100%" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-          </div>
-          
-        </div>
-      </div>
-    </section>
-<!--End of Third Row Content-->
-<!--Spacer-->
-  <section class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <h3>Meet the Team</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--End of Spacer-->
-
+   
     <!--Content-->
     <section id="content2" class="section">
         <div class="container">
