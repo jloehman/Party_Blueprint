@@ -13,9 +13,9 @@
         <div class="item one active">
           <div class="container animated fadeInUp">
             <div class="carousel-caption">
-              <h1>Introducing Lava</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p>
-              <a class="btn-main" href="party_soiree_template/bootstrap3/multipage/about.html"></a>
+              <!-- <h1>Introducing Lava</h1>
+              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p> -->
+              <!-- <a class="btn-main" href="party_soiree_template/bootstrap3/multipage/about.html"></a> -->
             </div>
           </div>
         </div>
