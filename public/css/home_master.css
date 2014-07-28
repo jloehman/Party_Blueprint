@@ -2,3 +2,9 @@
   background: url(/img/spring_dinner_party2.jpg) no-repeat center center;
   background-size: cover;
 }
+
+#signup {
+background: url(/img/flower.jpg) no-repeat;
+background-size: cover;
+padding-top: 120px;
+padding-bottom: 120px;
