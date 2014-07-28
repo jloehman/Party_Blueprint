@@ -44,7 +44,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-             <li><a id="user_name" class="active">Signed in as:{{ Auth::user()->first_name }}</a></li>
+             <li><a id="user_name" class="active">Signed in as:&nbsp;{{ Auth::user()->first_name }}</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Parties<b class="caret"></b></a>
                 <ul class="dropdown-menu">
