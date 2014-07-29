@@ -104,7 +104,7 @@
                     {{ Form::open(array('url' => action('BudgetItemController@destroy', [$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
                     <div class="control-group">
                         <div class="controls">
-                          <button type="Submit" class="btn btn-default"><strong>Delete</strong></button>
+                          <button type="Submit"><strong>Delete</strong></button>
                         </div>
                         {{ Form::close() }}
                     </div>
