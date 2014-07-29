@@ -23,6 +23,7 @@ div.container-form {
 
 ul.boxes {
 	margin: 0px;
+	width: 100%;
 }
 
 .boxes li {
@@ -30,6 +31,7 @@ ul.boxes {
 	list-style-type: none;
 	padding: 3px;
 	margin-bottom: 10px;
+	width: 100%;
 }
 
 .boxes {
@@ -42,8 +44,9 @@ ul.boxes {
 }
 
 #not_purchased, #purchased {
-    border: 1px solid #eee;
-    width: 182px;
+    background: #626c72;
+    border: 1px solid #626c72;
+    width: 100%;
     min-height: 100px;
     list-style-type: none;
     margin: 0;
@@ -56,6 +59,7 @@ ul.boxes {
     margin: 0 5px 5px 5px;
     padding: 5px;
     font-size: 1.2em;
-    width: 280px;
+    width: 98%;
     height: 62px;
+    
   }

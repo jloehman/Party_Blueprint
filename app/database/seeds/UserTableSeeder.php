@@ -15,27 +15,27 @@ class UserTableSeeder extends DatabaseSeeder {
        $users->save();
 
        $users1 = new User();
-       $users1->first_name = 'jason';
-       $users1->last_name = 'loehman';
+       $users1->first_name = 'Jason';
+       $users1->last_name = 'Loehman';
        $users1->email = 'jason@gmail.com';
        $users1->password = 'password';
        $users1->is_admin = false;
        $users1->save();
 
-       $users1 = new User();
-       $users1->first_name = 'mallory';
-       $users1->last_name = 'wetherston';
-       $users1->email = 'mallory@gmail.com';
-       $users1->password = 'password';
-       $users1->is_admin = false;
-       $users1->save();
+       $users2 = new User();
+       $users2->first_name = 'Mallory';
+       $users2->last_name = 'Weatherston';
+       $users2->email = 'mallory@gmail.com';
+       $users2->password = 'password';
+       $users2->is_admin = false;
+       $users2->save();
 
-       $users1 = new User();
-       $users1->first_name = 'lindsey';
-       $users1->last_name = 'neubauer';
-       $users1->email = 'lindsey@gmail.com';
-       $users1->password = 'password';
-       $users1->is_admin = false;
-       $users1->save();
+       $users3 = new User();
+       $users3->first_name = 'Lindsey';
+       $users3->last_name = 'Neubauer';
+       $users3->email = 'lindsey@gmail.com';
+       $users3->password = 'password';
+       $users3->is_admin = false;
+       $users3->save();
 	}
 }
