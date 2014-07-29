@@ -3,15 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		  <title>Simple Soiree</title>
-		  <meta name="keywords" content="made with bootstrap, wrap bootstrap themes, bootstrap agency themes, creative bootstrap sites, Lava theme, responsive bootstrap theme, mobile website themes, bootstrap portfolio, theme armada">
 		  <meta name="description" content="">
-		  <meta name="viewport" content="width=device-width">
-		  
-		  <meta property="og:title" content="Lava | Designed By Theme Armada">
-			<meta property="og:type" content="website">
-			<meta property="og:url" content="http://www.themearmada.com/demos/lava">
-			<meta property="og:site_name" content="Theme Armada">
-			<meta property="og:description" content="made with bootstrap, wrap bootstrap themes, bootstrap agency themes, creative bootstrap sites, Lava theme, responsive bootstrap theme, mobile website themes, bootstrap portfolio, theme armada">
+		  <meta name="viewport" content="width=device-width"
 
 		  <!-- Styles -->
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/font-awesome.min.css">
@@ -69,46 +62,7 @@
       </div>
     </div>
 	<!-- navigation -->
-<!-- 		<div class="container" id="cp-top">
-			<div class="row visible-desktop">
-				<div class="span12 cp-nav">
-					<a href="/">
-					<div class="cp-logo"><img src="/public/simple_soiree.jpeg" alt="logo">
-					</div> </a> 
-					<ul>
-						<li>
-							<a href="/register"><span class="cp-nav-link" id="register">REGISTER</span></a>
-						</li>
-						<li>
-							<a href="/contact"><span class="cp-nav-link" id="clients">CONTACT</span></a>
-						</li>
-						<li>
-							<a href="/about"><span class="cp-nav-link" id="contact">ABOUT</span></a>
-						</li>
-							@if (Auth::check())
-		 					<!-- user is logged in -->
-							<!-- <li>{{ link_to_action('HomeController@logout', 'LOGOUT') }}</li>
-							@else
-   							<!-- user not NOT logged in -->
-    						<!-- <li>{{ link_to_action('HomeController@showLogin', 'LOGIN') }}</li>
-    						@endif
-					</ul>
-				</div>
-			</div>-->
-			<!-- <div class="row hidden-desktop">
-				<div class="span12 cp-nav">
-					<a href="index.html">
-					<div class="cp-logo"><img src="simple_soiree_template/img/logo.png" alt="logo">
-					</div></a>
 
-					<select id="cp-nav-mobile" size="1">
-						<option value="/about" id="index" selected>ABOUT</option>
-						<option value="/contact" id="portfolio">CONTACT</option>
-						<option value="/register" id="services">REGISTER</option>
-					</select>
-				</div>
-			</div>
-		</div> --><!-- end navigation -->
 		@if (Session::has('successMessage'))
 		   <div class="alert alert-success">{{{ Session::get('successMessage') }}}</div>
 		@endif

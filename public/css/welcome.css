@@ -1,28 +1,40 @@
 body {
 	background-image: url('/party_soiree_template/bootstrap3/multipage/img/grid_noise.png');
 }
+::selection {
+	background: none;
+}
 
  h1.welcome {
-	font-size: 100px;
-	font-family: 'La Belle Aurore', cursive;
+	font-size: 70px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 	margin-top: 200px;
 	margin-left: 260px;
 	margin-right: 15px;
+	margin-bottom: 1em;
+	color: #000;
 }
 
 h1.steps_header {
-	font-family: 'La Belle Aurore', cursive;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 	font-size: 80px;
-	margin-left: 512px;
+	margin-top: 2em;
+	margin-left: 485px;
+	margin-bottom: 1em;
+	color: #000;
 }
-
+em {
+	color: #000;
+}
 .steps {
 	position: relative;
 }
 
 .step_one {
 	float: left;
-	margin-left: 280px;
+	margin-left: 252px;
 }
 .step_two {
 	float: left;
@@ -31,7 +43,8 @@ h1.steps_header {
 }
 
 .party_attributes {
-	font-family: 'La Belle Aurore', cursive;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 	font-size: 30px;
 }
 
@@ -64,6 +77,7 @@ color: rgb(0, 0, 0);
 .btn-create {
 	background-color: #00d0c1;
 	color: #000;
+	margin-top: 30px;
 	margin-left:468px;
 	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
           box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
@@ -101,4 +115,13 @@ a.list-group-item:hover, .list-group-item {
 	background-color: #FFF;
 	border: none;
 
+}
+
+.adminfooter {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#626c72;
 }
