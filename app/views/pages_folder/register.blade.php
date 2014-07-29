@@ -42,9 +42,7 @@
             </div>
         </div>
     </div>
-    <!-- {{ Form::label('password_confirm', 'Confirm Password:')}}
-        {{ Form::password('password_confirm', array('class' => 'form-control'))}}
-    <br> -->
+
     <div class="control-group">
         <div class="controls">
             <button type="Submit" class="btn btn-default">Submit</button>
@@ -55,6 +53,4 @@
         </div><!--End Row-->
     </div><!--End Container-->
 </section>
-
-
 @stop

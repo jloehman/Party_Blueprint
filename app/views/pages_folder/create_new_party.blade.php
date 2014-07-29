@@ -28,7 +28,7 @@
         				<div class="controls">
 					{{ Form::label('party_name', 'Party Name', array('class' => 'party_attributes')) }}<br>
 					{{ Form::text('party_name', Input::old('party_name'), array('placeholder'=>'Party Name', 'class' => 'form-control')) }}
-					<!-- Change this error message -->
+					<!-- Error message -->
 					{{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
 						</div>
 					</div>
@@ -37,7 +37,7 @@
         					<div class="input-prepend">
 					{{ Form::label('location', 'Location', array('class' => 'party_attributes')) }}<br>
 					{{ Form::text('location', Input::old('location'), array('placeholder'=>'Location', 'class' => 'form-control')) }}<br>
-					<!-- Change this error message -->
+					<!-- Error message -->
 					{{ $errors->first('location', '<span class="help-block">:message</span><br>') }}
 							</div>
 						</div>
@@ -47,7 +47,7 @@
         					<div class="input-prepend">
 					{{ Form::label('event_date', 'Event Date', array('class' => 'party_attributes')) }}<br>
 					{{ Form::text('event_date', Input::old('event_date'), array('placeholder'=>'YYYY-MM-DD', 'class' => 'form-control', 'id' => "datetimepicker")) }}<br>
-					<!-- Change this error message -->
+					<!-- Error message -->
 					{{ $errors->first('event_date', '<span class="help-block">:message</span><br>') }}
 							</div>
 						</div>
@@ -57,7 +57,7 @@
         					<div class="input-prepend">
 					{{ Form::label('start_time', 'Event Time', array('class' => 'party_attributes')) }}<br>
 					{{ Form::text('start_time', Input::old('start_time'), array('placeholder'=>'00:00:00', 'class' => 'form-control', 'id' => 'datetimepicker2')) }}<br>
-					<!-- Change this error message -->
+					<!-- Error message -->
 					{{ $errors->first('start_time', '<span class="help-block">:message</span><br>') }}
 							</div>
 						</div>
@@ -67,7 +67,7 @@
         					<div class="input-prepend">
 					{{ Form::label('budget', 'Budget', array('class' => 'party_attributes')) }}<br>
 					{{ Form::text('budget', Input::old('budget'), array('placeholder'=>'ex: 0.00', 'class' => 'form-control')) }}<br>
-					<!-- Change this error message -->
+					<!-- Error message -->
 					{{ $errors->first('budget', '<span class="help-block">:message</span><br>') }}
 							</div>
 						</div>

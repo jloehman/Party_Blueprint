@@ -2,7 +2,6 @@
 @section('content')
 
 <!--Content-->
-
     <section id="page-title" class="section">
       <div class="container">
         <div class="row">
@@ -105,8 +104,6 @@
 							  		<td class="text-center">{{{ $todo->name }}}</td>
 							  		<td class="text-center">{{{ $todo->done_by }}}</td>
 							  		<td class="text-center">
-				                        <!-- this needs to be submitted -->
-				                        <!--this doesn't have a closing div and missing button tags-->
 				                         <input type="checkbox" class="is_complete_check" data-todoid="{{{ $todo->id }}}" @if ($todo->is_complete) checked="checked" data-complete="1" @else data-complete="0" @endif> <!-- new code -->
 				                    </td>
 							  	</tr>
@@ -116,7 +113,6 @@
 				</div>
 			</div>
 		</div><!--End Column One-->
-		 
     </div>
 </section>
 
@@ -164,7 +160,6 @@
 
     (complete == 1) ? $(this).data('complete', 0) : $(this).data('complete', 1); // new line
 
-    // console.log(complete)
 
     $(this).addClass('active');
 
@@ -173,7 +168,7 @@
       type: "POST",
       data: {
         id: todoid,
-        is_complete: complete // new code
+        is_complete: complete
       },
       dataType: 'json'
     });

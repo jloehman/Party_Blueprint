@@ -8,29 +8,30 @@
             <div class="col-sm-6 col-sm-offset-3 text-center signup">
               <h3>Login</h3><br/>
 
-   		{{ Form::open(array('action' => 'HomeController@doLogin')) }}
-		<div class="control-group">
-  			<div class="controls">
-  				<div class="input-prepend">
+   		  {{ Form::open(array('action' => 'HomeController@doLogin')) }}
+        		<div class="control-group">
+          			<div class="controls">
+          				<div class="input-prepend">
         {{ Form::label('email', 'Email')}}{{ Form::text('email',Input::old('email'), array('placeholder'=>'Email', 'class' => 'form-control'))}}
-    			</div>
-    		</div>
-    	</div>
-    	<div class="control-group">
-          	<div class="controls">
-          		<div class="input-prepend">
+            			</div>
+            		</div>
+            </div>
+          	<div class="control-group">
+                <div class="controls">
+                		<div class="input-prepend">
         {{ Form::label('password', 'Password')}}{{ Form::password('password', array('placeholder'=>'Password', 'class' => 'form-control'))}}
+              		  </div>
+              	</div>
+            </div>
+            <div class="control-group">
+              	<div class="controls">
+            		<button type="Submit" class="btn btn-default">Login</button>
         		</div>
-        	</div>
-        </div>
-        <div class="control-group">
-          	<div class="controls">
-        		<button type="Submit" class="btn btn-default">Login</button>
-    		</div>
       	      <a class="small-message" href="/register"><small>Need An Account?</small></a>
-      	</div>
+      	    </div>
         {{ Form::close() }}
-        	</div><!--End Span6-->
+
+        	</div>
         </div><!--End Row-->
       </div><!--End Container-->
     </section>

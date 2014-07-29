@@ -3,18 +3,18 @@
 @section('content')
 
 <!--Content-->
-    <section id="page-title" class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 text-center">
-            <h3 style="font-size:60px;">GUESTS</h3>
-          </div>
-        </div>
+<section id="page-title" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h3 style="font-size:60px;">GUESTS</h3>
       </div>
-    </section>
-<!--Content-->      
-    <section id="content2" class="section">
-      <div class="container">
+    </div>
+  </div>
+</section>
+<!--Content-->
+<section id="content2" class="section">
+    <div class="container">
         <div class="row">
           <!--Side Bar-->
           <div class="col-sm-2 fixed">
@@ -27,26 +27,25 @@
             </ul>
 
             <h3>New Guest</h3>
-              {{-- Form::submit('Add Guests') --}}
               {{ Form::open(array('action' => array('GuestController@store', $party->id))) }}
-                <div class="control-group">  
+                <div class="control-group">
                     <div class="controls">
                       <div class="input-prepend">
               {{ Form::label('name', 'Name') }}
               {{ Form::text('name', Input::old('name'), array('placeholder'=>'Name')) }}
-              <!-- Change this error message -->
+              <!-- Error message -->
               {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
                       </div>
                   </div>
                 </div>
-              <div class="control-group">  
+              <div class="control-group">
                   <div class="controls">
               {{ Form::label('email', 'Email') }}
               {{ Form::text('email', null, array('placeholder' => 'Email')) }}
               {{ $errors->first('email', '<span class="help-block">:message</span><br>') }}
                   </div>
               </div>
-              <div class="control-group">  
+              <div class="control-group">
                   <div class="controls">
               {{ Form::label('phone', 'Phone') }}
               {{ Form::text('phone', null, array('placeholder' => '###-###-####')) }}
@@ -56,8 +55,6 @@
               <div class="form-group">
                   <div class="controls">
               {{ Form::label('comment', 'Notes') }}
-                    <!-- <div class="wmd-panel">
-                        <div id="wmd-button-bar"></div> -->
               {{ Form:: textarea('comment', Input::old('comment'), null, array('class' => 'wmd-input', 'id' => 'wmd-input')) }}
               {{ $errors->first('comment', '<span class="help-block">:message</span><br>') }}
                 </div>
@@ -70,40 +67,40 @@
           </div>
         </div><!--End Row-->
 <!--Column One-->
-          <div class="col-sm-10">
-              <div class="table-responsive">
-                <table class="table table-bordered table-striped">
-                  <tr>
-                    <th class="text-center">Name</th>
-                    <th class="text-center">Email</th>
-                    <th class="text-center">Phone</th>
-                    <th class="text-center">RSVP</th>
-                    <th class="text-center"><center>+1</center></th>
-                    <th class="text-center">Notes</th>
-                    <th class="text-center">Action</th>
-                  </tr>
-              @foreach($guests as $guest)
-                  <tr>
-                    <td class="text-center">{{{ $guest->name }}}</td>
-                    <td class="text-center">{{{ $guest->email }}}</td>
-                    <td class="text-center">{{{ $guest->phone }}}</td>
-                    <td class="text-center">
-                      <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
-                    </td>
-                    <td class="text-center">
-                      <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
-                    </td>
-                    <td class="text-center">{{{ $guest->comment }}}</td>
-                          <td>{{ Form::open(array('url' => action('GuestController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
-                          {{ Form::submit('Delete') }}
-                          {{ Form::close() }}
-                        </td>
+        <div class="col-sm-10">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <tr>
+                  <th class="text-center">Name</th>
+                  <th class="text-center">Email</th>
+                  <th class="text-center">Phone</th>
+                  <th class="text-center">RSVP</th>
+                  <th class="text-center"><center>+1</center></th>
+                  <th class="text-center">Notes</th>
+                  <th class="text-center">Action</th>
+                </tr>
+            @foreach($guests as $guest)
+                <tr>
+                  <td class="text-center">{{{ $guest->name }}}</td>
+                  <td class="text-center">{{{ $guest->email }}}</td>
+                  <td class="text-center">{{{ $guest->phone }}}</td>
+                  <td class="text-center">
+                    <input type="checkbox" class="is_attending_check" data-guestid="{{{ $guest->id }}}" @if ($guest->is_attending) checked @endif>
+                  </td>
+                  <td class="text-center">
+                    <input type="checkbox" class="plus_check" data-guestid="{{{ $guest->id }}}" @if ($guest->plus) checked @endif>
+                  </td>
+                  <td class="text-center">{{{ $guest->comment }}}</td>
+                        <td>{{ Form::open(array('url' => action('GuestController@destroy',[$party->id, $guest->id]), 'method' => 'DELETE' )) }}
+                        {{ Form::submit('Delete') }}
+                        {{ Form::close() }}
+                      </td>
 
-                        </tr>
-                    @endforeach
-                      </table>
-                    </div>
-      
+                      </tr>
+            @endforeach
+            </table>
+          </div>
+
 @stop
 
 @section('bottomscript')

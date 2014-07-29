@@ -6,9 +6,6 @@
 		  <meta name="keywords" content="made with bootstrap, wrap bootstrap themes, bootstrap agency themes, creative bootstrap sites, Lava theme, responsive bootstrap theme, mobile website themes, bootstrap portfolio, theme armada">
 		  <meta name="description" content="">
 		  <meta name="viewport" content="width=device-width">
-		  
-		
-
 		  <!-- Styles -->
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/font-awesome.min.css">
 		  <link rel="stylesheet" href="party_soiree_template/bootstrap3/multipage/css/animate.css">
@@ -51,11 +48,8 @@
         </div><!--/.navbar-collapse -->
       </div>
     </div>
-	
 @yield('content')
 
-	
-	
 <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -63,7 +57,6 @@
     <script>window.jQuery || document.write('<script src="party_soiree_template/bootstrap3/multipage/js/jquery-1.10.1.min.js"><\/script>')</script>
     <script src="party_soiree_template/bootstrap3/multipage/bootstrap3/multipage/js/bootstrap.min.js"></script>
     <script src="party_soiree_template/bootstrap3/multipage/bootstrap3/multipage/js/main.js"></script>
-    
     <script>
       !function ($) {
         $(function(){

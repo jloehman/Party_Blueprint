@@ -42,9 +42,9 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">View Parties<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <!--NEED logic around the drop down box-->
+                  <!--Logic around the drop down box-->
                  @foreach(Auth::user()->parties as $party)
-      <!-- when one of these is chosen, I need it to render the specific information -->
+      			  <!-- When one is chosen, it to renders the party's specific information -->
                   <a href="{{{ action('PartyController@summary', $party->id) }}}" class="list-group-item">{{{ $party->party_name }}}</a><br>
                 @endforeach
                 </ul>
@@ -67,9 +67,3 @@
 @yield('bottomscript')
 </body>
 </html>
-
-
-
-
-
-
