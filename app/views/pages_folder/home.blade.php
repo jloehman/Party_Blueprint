@@ -13,9 +13,6 @@
         <div class="item one active">
           <div class="container animated fadeInUp">
             <div class="carousel-caption">
-              <!-- <h1>Introducing Lava</h1>
-              <p class="lead margin-40"><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</em></p> -->
-              <!-- <a class="btn-main" href="party_soiree_template/bootstrap3/multipage/about.html"></a> -->
             </div>
           </div>
         </div>
@@ -42,9 +39,8 @@
               <h3>Contact</h3>
               <p>Feel free to send us a message if you have questions, comments, or ideas. We'll be in touch as soon as possible.</p>
             </a>
-
           </div>
-          
+
           <!--Seciton 3-->
           <div class="col-sm-4 service margin-30">
             <a href="/register">
@@ -52,10 +48,9 @@
               <h3>Register</h3>
               <p>Register as a new user to gain access to your own party planning dashboard.</p>
             </a>
-
           </div>
-          
         </div>
       </div>
     </section>
+<!--End Service-->
 @stop

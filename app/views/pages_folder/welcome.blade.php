@@ -1,4 +1,3 @@
-<!--This needs an if statement to show either just the create or both the create and drop down option-->
 @extends('layouts.welcome_create_master')
 @section('content')
 <div class="container">
@@ -17,8 +16,6 @@
 
 		  <div class="dropdown-menu" role="menu">
 		  	@foreach(Auth::user()->parties as $party)
-	  	<!-- when one of these is chosen, I need it to render the specific information -->
-
 		        <a href="{{{ action('PartyController@summary', $party->id) }}}" class="list-group-item">{{{ $party->party_name }}}</a><br>
 			@endforeach
 		  </div>

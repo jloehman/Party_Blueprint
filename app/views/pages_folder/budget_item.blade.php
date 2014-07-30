@@ -37,7 +37,7 @@
                         <div class="input-prepend">
                   {{ Form::label('name', 'Name') }}<br>
                   {{ Form::text('name', Input::old('name'), array('placeholder'=>'Name')) }}<br>
-                  <!-- Change this error message -->
+                  <!-- Error message -->
                   {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
                         </div>
                       </div>
@@ -46,7 +46,7 @@
                     <div class="controls">
                   {{ Form::label('qty', 'Quantity') }}<br>
                   {{ Form::text('qty', Input::old('qty'), array('placeholder'=>'ex:0'))}}<br>
-                  <!-- Change this error message -->
+                  <!-- Error message -->
                   {{ $errors->first('qty', '<span class="help-block">:message</span><br>') }}
                   </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="controls">
                   {{ Form::label('cost', 'Cost') }}<br>
                   {{ Form::text('cost', Input::old('cost'), array('placeholder'=>'ex:0.00')) }}<br>
-                  <!-- Change this error message -->
+                  <!-- Error message -->
                   {{ $errors->first('cost', '<span class="help-block">:message</span><br>') }}
                     </div>
                 </div>
@@ -112,82 +112,9 @@
                   </ul>
               </div>
             </div><!--End of Column-->
-       
         </div>
       </div>
     </section>
-
-
-<!-- <h1>To Buy Items for {{ $party->party_name }}</h1>
-<div class="table">
-  <table class="table">
-    <th>Add an Item Here</th>
-    <th>Items to Purchase</th>
-    <th>Receipt</th>
-  </table>
-</div> -->
-<!-- <div class="container-responsive">
-  <div class="row-fluid">
-    <div class="col-md-3">
-      {{ Form::open(array('action' => array('BudgetItemController@store', $party->id), "class" => "form-horizontal form-group")) }}
-  <div>
-      {{ Form::label('name', 'Name') }}<br>
-      {{ Form::text('name', Input::old('name')) }}<br>
-      <!Change this error message -->
-      <!-- {{ $errors->first('name', '<span class="help-block">:message</span><br>') }}
-    </div>
-    <div>
-      {{ Form::label('qty', 'Quantity') }}<br>
-      {{ Form::text('qty', Input::old('qty')) }}<br>
-      <!-Change this error message -->
-      <!-- {{ $errors->first('qty', '<span class="help-block">:message</span><br>') }}
-    </div>
-    <div>
-      {{ Form::label('cost', 'Cost') }}<br>
-      {{ Form::text('cost', Input::old('cost')) }}<br>
-      <! Change this error message -->
-      <!-- {{ $errors->first('cost', '<span class="help-block">:message</span><br>') }}
-    </div>
-      {{ Form::submit('Add Item') }}
-      {{ Form::close() }}
-  </div> -->
-     <!-- <div class="receipt col-md-3">
-      <div id="ajax-message">
-      <ul id="not_purchased" class="connectedSortable" >
-@foreach(BudgetItem::not_purchased() as $budget_item)
-
-          <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
-        {{ Form::open(array('url' => action('BudgetItemController@destroy',[$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
-<font color="pink">{{ Form::submit('Delete') }}</font>
-      {{ Form::close() }}
-    </li>
-@endforeach
-        </ul>
-      </div>
-  </div> -->
- <!--   <div class="receipt col-md-3">
-    <p><em>Budget:</em> ${{ $party->budget }}</p>
-    <p id="totalRemaining" data-remaining="{{ $party->budget - $sumOfPurchased }}">
-      <em>Total Remaining:</em> ${{ $party->budget - $sumOfPurchased }}
-    </p>
-      <ul id="purchased" class="connectedSortable">
-@foreach(BudgetItem::is_purchased() as $budget_item)
-
-          <li class="ui-state-default list-group-item" data-budgetid="{{$budget_item->id }}" data-amount="{{{ $budget_item->cost }}}"> <strong><font color="blue">{{{ $budget_item->name }}}</font></strong> ${{{ $budget_item->cost }}} (qty{{{ $budget_item->qty }}})
-        {{ Form::open(array('url' => action('BudgetItemController@destroy', [$party->id, $budget_item->id]), 'method' => 'DELETE' )) }}
-        <font color="pink">{{ Form::submit('Delete') }}</font>
-            {{ Form::close() }}
-
-
-@endforeach
-        </ul>
-      </div> -->
-      <!-- </div>
-</div>
-</div> -->
-
-  {{-- Form::submit('Create A New Item That Needs to be Purchased') --}}
-
 @stop
 
 @section('bottomscript')
@@ -237,7 +164,6 @@
 
         $("#totalRemaining").data("remaining", remaining);
         $("#totalRemaining").html('Remaining: $' + remaining);
-      
 
     $.ajax({
       url: "/update_purchase",

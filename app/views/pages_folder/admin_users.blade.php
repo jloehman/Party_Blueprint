@@ -1,6 +1,6 @@
 @extends('layouts.admin_master')
 
-@section('content') 
+@section('content')
 
  <section id="page-title" class="section">
       <div class="container">
@@ -11,17 +11,13 @@
         </div>
       </div>
     </section>
-      
-      
-    <!--Content-->      
+
+    <!--Content-->
     <section id="content2">
-    
-    <div class="container">
+    	<div class="container">
        <!--  <div class="row"> -->
-          
           <!--Column One-->
           <div class="col-sm-12 text-center">
-            
             <!--Blog Post-->
             <article class="margin-60">
   				<h3>Existing Users</h3><br>
@@ -51,11 +47,8 @@
 		  				</table>
 					</div>
 			</article>
-            
         </div><!--End Column One-->
-          
     </div><!--End Row-->
-            
     </section>
 
     <section class="adminUserFooter">
